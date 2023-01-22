@@ -1,0 +1,76 @@
+# Created by https://www.gitignore.io/api/xcode,swift,cocoapods
+
+### Mac ###
+*.DS_Store
+*.xcuserstate
+xcuserdata/
+
+### Swift ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+/build/
+/DerivedData/
+/vendor/
+*.pyc
+
+
+## Build time logs
+build_time_profile.log
+build_time_profile_slowest.log
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+## Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+*.orig
+
+## Obj-C/Swift specific
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+## Playgrounds
+/timeline.xctimeline
+/playground.xcworkspace
+
+# Swift Package Manager
+#
+# Add this line if you want to avoid checking in source code from Swift Package Manager dependencies.
+# Packages/
+# Package.pins
+.build/
+
+# CocoaPods - Refactored to standalone file
+
+# Carthage - Refactored to standalone file
+
+### Xcode ###
+# Xcode
+#
+# gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+
+## Build generated
+
+## Various settings
+
+## Other
+
+### Xcode Patch ###
+ios-app/!*.xcodeproj/xcshareddata/
+ios-app/!*.xcworkspace/contents.xcworkspacedata
+ios-app//*.gcno
