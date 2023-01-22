@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct FinderLostApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
             let appState =  AppState(
