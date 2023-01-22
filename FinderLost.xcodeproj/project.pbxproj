@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		552F5577297D428500E2EFBF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5576297D428500E2EFBF /* AppState.swift */; };
+		552F5579297D429600E2EFBF /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5578297D429600E2EFBF /* AppAction.swift */; };
+		552F557B297D42A600E2EFBF /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F557A297D42A600E2EFBF /* Reducer.swift */; };
+		552F557F297D42D200E2EFBF /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F557E297D42D200E2EFBF /* Store.swift */; };
+		552F5581297D4D3500E2EFBF /* StoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5580297D4D3500E2EFBF /* StoreTests.swift */; };
+		552F5584297D66F200E2EFBF /* UserPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5583297D66F200E2EFBF /* UserPreferencesView.swift */; };
+		552F5586297D670200E2EFBF /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5585297D670200E2EFBF /* SearchView.swift */; };
+		552F5588297D671400E2EFBF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5587297D671400E2EFBF /* HomeView.swift */; };
+		552F558A297D672900E2EFBF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5589297D672900E2EFBF /* TabBarView.swift */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
-		55FE80DB294D066200763BE7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80DA294D066200763BE7 /* ContentView.swift */; };
 		55FE80DD294D066400763BE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DC294D066400763BE7 /* Assets.xcassets */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
-		55FE80EA294D066400763BE7 /* FinderLostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80E9294D066400763BE7 /* FinderLostTests.swift */; };
+		55FE80EA294D066400763BE7 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80E9294D066400763BE7 /* AppStateTests.swift */; };
 		55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F3294D066400763BE7 /* FinderLostUITests.swift */; };
 		55FE80F6294D066400763BE7 /* FinderLostUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F5294D066400763BE7 /* FinderLostUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
@@ -34,13 +42,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		552F5576297D428500E2EFBF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		552F5578297D429600E2EFBF /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
+		552F557A297D42A600E2EFBF /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
+		552F557E297D42D200E2EFBF /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		552F5580297D4D3500E2EFBF /* StoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTests.swift; sourceTree = "<group>"; };
+		552F5583297D66F200E2EFBF /* UserPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPreferencesView.swift; sourceTree = "<group>"; };
+		552F5585297D670200E2EFBF /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		552F5587297D671400E2EFBF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		552F5589297D672900E2EFBF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
-		55FE80DA294D066200763BE7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		55FE80DC294D066400763BE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		55FE80E5294D066400763BE7 /* FinderLostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderLostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55FE80E9294D066400763BE7 /* FinderLostTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostTests.swift; sourceTree = "<group>"; };
+		55FE80E9294D066400763BE7 /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		55FE80EF294D066400763BE7 /* FinderLostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderLostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80F3294D066400763BE7 /* FinderLostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostUITests.swift; sourceTree = "<group>"; };
 		55FE80F5294D066400763BE7 /* FinderLostUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -71,6 +87,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		552F5575297D426D00E2EFBF /* AppBase */ = {
+			isa = PBXGroup;
+			children = (
+				552F5576297D428500E2EFBF /* AppState.swift */,
+				552F5578297D429600E2EFBF /* AppAction.swift */,
+				552F557A297D42A600E2EFBF /* Reducer.swift */,
+				552F557E297D42D200E2EFBF /* Store.swift */,
+			);
+			path = AppBase;
+			sourceTree = "<group>";
+		};
+		552F5582297D66E000E2EFBF /* App */ = {
+			isa = PBXGroup;
+			children = (
+				552F5587297D671400E2EFBF /* HomeView.swift */,
+				552F5585297D670200E2EFBF /* SearchView.swift */,
+				552F5589297D672900E2EFBF /* TabBarView.swift */,
+				552F5583297D66F200E2EFBF /* UserPreferencesView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -94,9 +132,10 @@
 		55FE80D7294D066200763BE7 /* FinderLost */ = {
 			isa = PBXGroup;
 			children = (
-				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
-				55FE80DA294D066200763BE7 /* ContentView.swift */,
+				552F5582297D66E000E2EFBF /* App */,
+				552F5575297D426D00E2EFBF /* AppBase */,
 				55FE80DC294D066400763BE7 /* Assets.xcassets */,
+				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
 				55FE80DE294D066400763BE7 /* Preview Content */,
 			);
 			path = FinderLost;
@@ -113,7 +152,8 @@
 		55FE80E8294D066400763BE7 /* FinderLostTests */ = {
 			isa = PBXGroup;
 			children = (
-				55FE80E9294D066400763BE7 /* FinderLostTests.swift */,
+				55FE80E9294D066400763BE7 /* AppStateTests.swift */,
+				552F5580297D4D3500E2EFBF /* StoreTests.swift */,
 			);
 			path = FinderLostTests;
 			sourceTree = "<group>";
@@ -257,7 +297,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55FE80DB294D066200763BE7 /* ContentView.swift in Sources */,
+				552F557F297D42D200E2EFBF /* Store.swift in Sources */,
+				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
+				552F5577297D428500E2EFBF /* AppState.swift in Sources */,
+				552F5579297D429600E2EFBF /* AppAction.swift in Sources */,
+				552F5586297D670200E2EFBF /* SearchView.swift in Sources */,
+				552F557B297D42A600E2EFBF /* Reducer.swift in Sources */,
+				552F5588297D671400E2EFBF /* HomeView.swift in Sources */,
+				552F5584297D66F200E2EFBF /* UserPreferencesView.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,7 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55FE80EA294D066400763BE7 /* FinderLostTests.swift in Sources */,
+				55FE80EA294D066400763BE7 /* AppStateTests.swift in Sources */,
+				552F5581297D4D3500E2EFBF /* StoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
