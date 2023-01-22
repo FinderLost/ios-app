@@ -9,6 +9,7 @@ import SwiftUI
 
 struct UserPreferencesView: View {
     @ObservedObject var store: Store<AppState, AppAction>
+
     var body: some View {
         VStack {
             TextField(
