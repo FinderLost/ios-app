@@ -19,9 +19,8 @@ struct FinderLostApp: App {
                 initialState: appState,
                 reducer: appReducer
             )
-            MainView(
-                store: store
-            )
+            TabBarView(store: store)
+                .edgesIgnoringSafeArea(.all)
         }
     }
 }

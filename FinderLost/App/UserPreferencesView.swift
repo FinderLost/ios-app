@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  UserPreferencesView.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 22/1/23.
@@ -7,9 +7,8 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct UserPreferencesView: View {
     @ObservedObject var store: Store<AppState, AppAction>
-
     var body: some View {
         VStack {
             TextField(
