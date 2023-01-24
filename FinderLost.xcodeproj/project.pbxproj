@@ -20,6 +20,7 @@
 		552F5595297D75A000E2EFBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552F5594297D75A000E2EFBF /* GoogleService-Info.plist */; };
 		552F5599297D786800E2EFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552F5598297D786800E2EFBF /* Assets.xcassets */; };
 		552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F559A297D791E00E2EFBF /* AppDelegate.swift */; };
+		5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5591F661297F2341007F7A1C /* GoogleSignIn */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
 		55FE80EA294D066400763BE7 /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80E9294D066400763BE7 /* AppStateTests.swift */; };
@@ -57,6 +58,7 @@
 		552F5594297D75A000E2EFBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		552F5598297D786800E2EFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552F559A297D791E00E2EFBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5591F667297F2EC9007F7A1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				552F5591297D739300E2EFBF /* FirebaseAuth in Frameworks */,
+				5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,15 +96,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		552F5575297D426D00E2EFBF /* CommonConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				552F559A297D791E00E2EFBF /* AppDelegate.swift */,
-				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
-			);
-			path = CommonConfiguration;
-			sourceTree = "<group>";
-		};
 		552F5582297D66E000E2EFBF /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +110,7 @@
 		552F5592297D752100E2EFBF /* LostThings */ = {
 			isa = PBXGroup;
 			children = (
+				5591F663297F2C24007F7A1C /* Info */,
 				552F5596297D75A700E2EFBF /* Resource */,
 				552F5593297D757A00E2EFBF /* Firebase */,
 			);
@@ -141,7 +136,6 @@
 		552F5597297D777E00E2EFBF /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
-				552F5575297D426D00E2EFBF /* CommonConfiguration */,
 				552F5592297D752100E2EFBF /* LostThings */,
 			);
 			path = Configuration;
@@ -156,6 +150,23 @@
 				552F557E297D42D200E2EFBF /* Store.swift */,
 			);
 			path = Architecture;
+			sourceTree = "<group>";
+		};
+		552F559D297D879F00E2EFBF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				552F559A297D791E00E2EFBF /* AppDelegate.swift */,
+				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5591F663297F2C24007F7A1C /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				5591F667297F2EC9007F7A1C /* Info.plist */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		55FE80CC294D066200763BE7 = {
@@ -184,6 +195,7 @@
 				552F5582297D66E000E2EFBF /* App */,
 				552F559C297D794500E2EFBF /* Architecture */,
 				552F5597297D777E00E2EFBF /* Configuration */,
+				552F559D297D879F00E2EFBF /* Main */,
 				55FE80DE294D066400763BE7 /* Preview Content */,
 			);
 			path = FinderLost;
@@ -233,6 +245,7 @@
 			name = FinderLost;
 			packageProductDependencies = (
 				552F5590297D739300E2EFBF /* FirebaseAuth */,
+				5591F661297F2341007F7A1C /* GoogleSignIn */,
 			);
 			productName = FinderLost;
 			productReference = 55FE80D5294D066200763BE7 /* FinderLost.app */;
@@ -308,6 +321,7 @@
 			mainGroup = 55FE80CC294D066200763BE7;
 			packageReferences = (
 				552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = 55FE80D6294D066200763BE7 /* Products */;
 			projectDirPath = "";
@@ -523,7 +537,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinderLost/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				EXCLUDED_ARCHS = "i386 x86_64";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderLost/Configuration/LostThings/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -552,7 +568,9 @@
 				DEVELOPMENT_ASSET_PATHS = "\"FinderLost/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
+				EXCLUDED_ARCHS = "i386 x86_64";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = FinderLost/Configuration/LostThings/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -697,6 +715,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -704,6 +730,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		5591F661297F2341007F7A1C /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
