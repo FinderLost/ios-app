@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		550F6032298568A600BFF1B0 /* UserSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F6031298568A600BFF1B0 /* UserSessionState.swift */; };
 		552F5577297D428500E2EFBF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5576297D428500E2EFBF /* AppState.swift */; };
 		552F5579297D429600E2EFBF /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5578297D429600E2EFBF /* AppAction.swift */; };
 		552F557B297D42A600E2EFBF /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F557A297D42A600E2EFBF /* Reducer.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		550F6031298568A600BFF1B0 /* UserSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionState.swift; sourceTree = "<group>"; };
 		552F5576297D428500E2EFBF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		552F5578297D429600E2EFBF /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		552F557A297D42A600E2EFBF /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -112,6 +114,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		550F60302985689A00BFF1B0 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				552F5576297D428500E2EFBF /* AppState.swift */,
+				550F6031298568A600BFF1B0 /* UserSessionState.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
 		552F5582297D66E000E2EFBF /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,8 +171,8 @@
 		552F559C297D794500E2EFBF /* Architecture */ = {
 			isa = PBXGroup;
 			children = (
+				550F60302985689A00BFF1B0 /* State */,
 				552F5578297D429600E2EFBF /* AppAction.swift */,
-				552F5576297D428500E2EFBF /* AppState.swift */,
 				552F557A297D42A600E2EFBF /* Reducer.swift */,
 				552F557E297D42D200E2EFBF /* Store.swift */,
 				55A735AF2985371F00C700B5 /* StoreMock.swift */,
@@ -477,6 +488,7 @@
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
 				552F5577297D428500E2EFBF /* AppState.swift in Sources */,
 				55A7359E298335F800C700B5 /* UserDefault.swift in Sources */,
+				550F6032298568A600BFF1B0 /* UserSessionState.swift in Sources */,
 				55A735B02985371F00C700B5 /* StoreMock.swift in Sources */,
 				552F5579297D429600E2EFBF /* AppAction.swift in Sources */,
 				552F5586297D670200E2EFBF /* SearchView.swift in Sources */,
