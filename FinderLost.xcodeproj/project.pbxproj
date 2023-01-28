@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		550F6032298568A600BFF1B0 /* UserSessionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F6031298568A600BFF1B0 /* UserSessionState.swift */; };
+		550F60342985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550F60332985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift */; };
 		552F5577297D428500E2EFBF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5576297D428500E2EFBF /* AppState.swift */; };
 		552F5579297D429600E2EFBF /* AppAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5578297D429600E2EFBF /* AppAction.swift */; };
 		552F557B297D42A600E2EFBF /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F557A297D42A600E2EFBF /* Reducer.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		550F6031298568A600BFF1B0 /* UserSessionState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionState.swift; sourceTree = "<group>"; };
+		550F60332985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIViewLyfeCycle.swift; sourceTree = "<group>"; };
 		552F5576297D428500E2EFBF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		552F5578297D429600E2EFBF /* AppAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAction.swift; sourceTree = "<group>"; };
 		552F557A297D42A600E2EFBF /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				552F557A297D42A600E2EFBF /* Reducer.swift */,
 				552F557E297D42D200E2EFBF /* Store.swift */,
 				55A735AF2985371F00C700B5 /* StoreMock.swift */,
+				550F60332985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift */,
 			);
 			path = Architecture;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				552F5579297D429600E2EFBF /* AppAction.swift in Sources */,
 				552F5586297D670200E2EFBF /* SearchView.swift in Sources */,
 				552F557B297D42A600E2EFBF /* Reducer.swift in Sources */,
+				550F60342985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift in Sources */,
 				55A735A1298336CB00C700B5 /* UserSessionUseCase.swift in Sources */,
 				552F5588297D671400E2EFBF /* HomeView.swift in Sources */,
 				55A735A82983385D00C700B5 /* UserSessionUserDefault.swift in Sources */,
