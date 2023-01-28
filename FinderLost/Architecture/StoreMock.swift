@@ -9,10 +9,7 @@ import SwiftUI
 
 extension PreviewProvider {
     static var storeMock: Store<AppState, AppAction> {
-        let appState =  AppState(
-            userName: "",
-            userEmail: ""
-        )
+        let appState =  AppState()
         return Store<AppState, AppAction>(
             initialState: appState,
             reducer: appReducer

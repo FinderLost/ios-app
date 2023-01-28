@@ -11,16 +11,16 @@ import SwiftUI
 struct FinderLostApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
+    private let appState: AppState
+    private let store: Store<AppState, AppAction>
+
+    init() {
+        self.appState = AppState()
+        self.store = Store(initialState: appState, reducer: appReducer)
+    }
+
     var body: some Scene {
         WindowGroup {
-            let appState =  AppState(
-                userName: "",
-                userEmail: ""
-            )
-            let store = Store(
-                initialState: appState,
-                reducer: appReducer
-            )
             TabBarView(store: store)
                 .edgesIgnoringSafeArea(.all)
         }
