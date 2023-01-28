@@ -11,7 +11,7 @@ import Foundation
 @testable import FinderLost
 
 class UserDefaultTests: XCTestCase {
-    private var sut: UserDefault<String?>!
+    private var sut: UserDefault<String>!
     private let testKey = "test_key"
     private let testValue = "test_value"
     private let testDefaultValue = "default_value"
@@ -22,23 +22,12 @@ class UserDefaultTests: XCTestCase {
         sut = .init(testKey, defaultValue: testDefaultValue)
     }
 
-    override func tearDown() {
-        super.tearDown()
-        sut = nil
-    }
-
-    func testWrappedValue_whenNoValueIsSet() {
+    func test_dispatch_updates_state_whenNoValueIsSet() {
         XCTAssertEqual(sut.wrappedValue, testDefaultValue)
     }
 
-    func testWrappedValue_setsAndGetsValueCorrectly() {
+    func test_dispatch_updates_state_setsAndGetsValueCorrectly() {
         sut.wrappedValue = testValue
         XCTAssertEqual(sut.wrappedValue, testValue)
-    }
-
-    func testWrappedValue_returnsDefaultValueWhenValueIsSetToNil() {
-        sut.wrappedValue = testValue
-        sut.wrappedValue = nil
-        XCTAssertEqual(sut.wrappedValue, testDefaultValue)
     }
 }
