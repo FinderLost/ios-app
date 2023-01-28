@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TabBarView: View {
     @ObservedObject var store: Store<AppState, AppAction>
+
     var body: some View {
         TabView {
             HomeView(store: store)
@@ -21,12 +22,20 @@ struct TabBarView: View {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            UserPreferencesView(store: store)
+            UserProfileView(store: store)
                 .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
+                    Image(systemName: "person.fill")
+                    Text("Profile")
                 }
         }
         .accentColor(.green)
+    }
+}
+
+struct TabBarView_Previews: PreviewProvider {
+    static var previews: some View {
+        TabBarView(store: storeMock)
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Default preview")
     }
 }
