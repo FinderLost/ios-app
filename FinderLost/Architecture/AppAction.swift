@@ -6,6 +6,5 @@
 //
 
 enum AppAction {
-    case updateUserName(String)
-    case updateUserEmail(String)
+    case tabbar(SwiftUIViewLyfeCycle)
 }

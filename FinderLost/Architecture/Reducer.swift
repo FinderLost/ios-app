@@ -11,10 +11,7 @@ typealias Reducer<State, Action> = (State, Action) -> State
 func appReducer(state: AppState, action: AppAction) -> AppState {
     var newState = state
     switch action {
-    case let .updateUserName(name):
-        newState.userName = name
-    case let .updateUserEmail(email):
-        newState.userEmail = email
+    case .tabbar(_): break
     }
     return newState
 }

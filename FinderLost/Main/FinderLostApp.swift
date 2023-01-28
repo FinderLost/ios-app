@@ -23,6 +23,7 @@ struct FinderLostApp: App {
         WindowGroup {
             TabBarView(store: store)
                 .edgesIgnoringSafeArea(.all)
+                .onAppear() { store.dispatch(.tabbar(.onAppear)) }
         }
     }
 }
