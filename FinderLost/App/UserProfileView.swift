@@ -36,10 +36,10 @@ struct UserProfileView: View {
     }
 }
 
-//struct UserProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        UserProfileView(store: storeMock)
-//            .previewLayout(PreviewLayout.sizeThatFits)
-//            .previewDisplayName("Default preview")
-//    }
-//}
+struct UserProfileView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserProfileView(store: storeMock)
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Default preview")
+    }
+}

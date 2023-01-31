@@ -14,3 +14,11 @@ struct SearchView: View {
         Text("\(store.state.login.error)")
     }
 }
+
+struct SearchView_Previews: PreviewProvider {
+    static var previews: some View {
+        SearchView(store: storeMock)
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Default preview")
+    }
+}
