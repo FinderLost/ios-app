@@ -17,13 +17,12 @@ extension Login: HandlerBase {
                 .map(Action.submodule)
                 .eraseToAnyPublisher()
 
-        case let .checkAsync(token):
-            return Future { promise in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    promise(.success(.checkLogin(.success("Middlewarer \(token)"))))
-                }
-            }.eraseToAnyPublisher()
-
+        case .checkSession:
+            return FirebaseAuthProviderImpl()
+                .currentUserPublisher()
+                .map { Action.result(.checkSession(.success($0))) }
+                .catch { Just(Action.result(.checkSession(.failure($0)))) }
+                .eraseToAnyPublisher()
         default: return Empty().eraseToAnyPublisher()
         }
     }

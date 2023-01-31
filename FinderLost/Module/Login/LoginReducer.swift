@@ -10,9 +10,9 @@ extension Login: ReducerBase {
     static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
         switch action {
-        case let .checkLogin(.success(token)):
-            newState.token = token
-        case let .checkLogin(.failure(error)):
+        case let .result(.checkSession(.success(value))):
+            newState.userId = value
+        case let .result(.checkSession(.failure(error))):
             newState.error = error.localizedDescription
         case let .submodule(.checkSubmodule(value)):
             newState.error = value
