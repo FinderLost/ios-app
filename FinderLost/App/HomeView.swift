@@ -14,3 +14,11 @@ struct HomeView: View {
         Text("\(store.state.login.token)")
     }
 }
+
+struct HomeView_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeView(store: storeMock)
+            .previewLayout(PreviewLayout.sizeThatFits)
+            .previewDisplayName("Default preview")
+    }
+}
