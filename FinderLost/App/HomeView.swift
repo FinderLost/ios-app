@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct HomeView: View {
-    @ObservedObject var store: Store<AppState, AppAction>
+    @ObservedObject var store: Store<FinderLost>
 
     var body: some View {
-        Text("HomeView")
+        Text("\(store.state.login.token)")
     }
 }
