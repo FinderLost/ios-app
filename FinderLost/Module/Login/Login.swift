@@ -8,13 +8,17 @@
 // MARK: - Module Login
 enum Login {
     struct State {
-        var token: String = ""
+        var userId: String = ""
+        var tokenSession: String = ""
         var error: String = ""
         var submodule: Submodule.State = .init()
     }
+    enum ResultAction {
+        case checkSession(Result<String, Error>)
+    }
     enum Action {
-        case checkLogin(Result<String, Error>)
-        case checkAsync(String)
+        case result(ResultAction)
+        case checkSession
         case submodule(Submodule.Action)
     }
 }

@@ -15,20 +15,11 @@ struct UserProfileView: View {
             Image(systemName: "person.fill")
                 .resizable()
                 .frame(width: 80, height: 80)
-            TextField("Token", text: $store.state.login.token)
+            TextField("Token", text: $store.state.login.userId)
             TextField("Error", text: $store.state.login.error)
             Section(header: Text("Login with")) {
-                Button("Google") {
-                    store.dispatch(.login(.checkAsync("checkAsync0")))
-                }
-                Button("Google1") {
-                    store.dispatch(.login(.checkAsync("checkAsync1")))
-                }
-                Button("Google2") {
-                    store.dispatch(.login(.checkAsync("checkAsync2")))
-                }
-                Button("Submodule") {
-                    store.dispatch(.login(.submodule(.checkAsync("checkAsyncSub3"))))
+                Button("CheckSession") {
+                    store.dispatch(.login(.checkSession))
                 }
             }
         }
