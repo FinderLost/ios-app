@@ -19,16 +19,16 @@ struct UserProfileView: View {
             TextField("Error", text: $store.state.login.error)
             Section(header: Text("Login with")) {
                 Button("Google") {
-                    store.dispatch(.login(.checkAsync("checkAsync")))
+                    store.dispatch(.login(.checkAsync("checkAsync0")))
                 }
                 Button("Google1") {
-                    store.dispatch(.login(.checkAsync1("checkAsync1")))
+                    store.dispatch(.login(.checkAsync("checkAsync1")))
                 }
                 Button("Google2") {
-                    store.dispatch(.login(.checkAsync2("checkAsync2")))
+                    store.dispatch(.login(.checkAsync("checkAsync2")))
                 }
                 Button("Submodule") {
-                    store.dispatch(.login(.submodule(.checkAsync("checkAsyncSub"))))
+                    store.dispatch(.login(.submodule(.checkAsync("checkAsyncSub3"))))
                 }
             }
         }
