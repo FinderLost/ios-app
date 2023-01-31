@@ -8,11 +8,10 @@
 import SwiftUI
 
 extension PreviewProvider {
-    static var storeMock: Store<AppState, AppAction> {
-        let appState =  AppState()
-        return Store<AppState, AppAction>(
-            initialState: appState,
-            reducer: appReducer
+    static var storeMock: Store<FinderLost> {
+        StoreImpl(
+            initialState: FinderLost.State(),
+            reducer: FinderLost.reduce
         )
     }
 }

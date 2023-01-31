@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @ObservedObject var store: Store<AppState, AppAction>
+    @ObservedObject var store: Store<FinderLost>
 
     var body: some View {
         TabView {
@@ -28,7 +28,6 @@ struct TabBarView: View {
                     Text("Profile")
                 }
         }
-        .accentColor(.green)
     }
 }
 
