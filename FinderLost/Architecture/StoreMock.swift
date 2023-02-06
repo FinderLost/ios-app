@@ -11,7 +11,8 @@ extension PreviewProvider {
     static var storeMock: Store<FinderLost> {
         StoreImpl(
             initialState: FinderLost.State(),
-            reducer: FinderLost.reduce
+            reducer: FinderLost.reduce,
+            context: FinderLost.context
         )
     }
 }
