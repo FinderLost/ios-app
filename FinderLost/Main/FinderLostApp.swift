@@ -13,9 +13,9 @@ struct FinderLostApp: App {
 
     private let store = StoreImpl(
         initialState: FinderLost.State(),
-        reducer: FinderLost.reduce
+        reducer: FinderLost.reduce,
+        context: FinderLost.context
     )
-        .use(FinderLost.handle)
 
     var body: some Scene {
         WindowGroup {
@@ -24,3 +24,4 @@ struct FinderLostApp: App {
         }
     }
 }
+ 
