@@ -6,24 +6,23 @@
 //
 
 import Combine
-import Foundation
+import Factory
 
-// MARK: - Login Handler
-extension Login: HandlerBase {
-    static func handle(_ action: Action, with state: State) -> AnyPublisher<Action, Never> {
-        switch action {
-        case let .submodule(action):
-            return Submodule.handle(action, with: state.submodule)
-                .map(Action.submodule)
-                .eraseToAnyPublisher()
+extension Login {
+    class HandlerImpl<Action: ReduxAction, State>: Handler {
+        @Injected(Container.userRepository)
+        private var userRepository: UserRepository
 
-        case .checkSession:
-            return FirebaseAuthProviderImpl()
-                .currentUserPublisher()
-                .map { Action.result(.checkSession(.success($0))) }
-                .catch { Just(Action.result(.checkSession(.failure($0)))) }
-                .eraseToAnyPublisher()
-        default: return Empty().eraseToAnyPublisher()
+        func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
+            guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
+            switch action {
+            case .checkSession:
+                return userRepository.checkSession()
+                    .compactMap { Login.Action.checkSessionResult(.success($0)) }
+                    .catch { Just(Login.Action.checkSessionResult(.failure($0))) }
+                    .eraseToAnyPublisher()
+            default: return Empty().eraseToAnyPublisher()
+            }
         }
     }
 }
