@@ -6,18 +6,14 @@
 //
 
 // MARK: - Login Reducer
-extension Login: ReducerBase {
+extension Login: Reducer {
     static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
         switch action {
-        case let .result(.checkSession(.success(value))):
+        case let .checkSessionResult(.success(value)):
             newState.userId = value
-        case let .result(.checkSession(.failure(error))):
+        case let .checkSessionResult(.failure(error)):
             newState.error = error.localizedDescription
-        case let .submodule(.checkSubmodule(value)):
-            newState.error = value
-        case let .submodule(action):
-            newState.submodule = Submodule.reduce(action, with: state.submodule)
         default: break
         }
         return newState
