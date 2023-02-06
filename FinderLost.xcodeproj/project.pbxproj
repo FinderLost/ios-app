@@ -17,23 +17,25 @@
 		552F5595297D75A000E2EFBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552F5594297D75A000E2EFBF /* GoogleService-Info.plist */; };
 		552F5599297D786800E2EFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552F5598297D786800E2EFBF /* Assets.xcassets */; };
 		552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F559A297D791E00E2EFBF /* AppDelegate.swift */; };
-		557CD48B2989808400C3DB09 /* ReduxBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48A2989808400C3DB09 /* ReduxBase.swift */; };
+		557CD48B2989808400C3DB09 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48A2989808400C3DB09 /* Redux.swift */; };
 		557CD48D2989809200C3DB09 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48C2989809200C3DB09 /* Reducer.swift */; };
 		557CD48F298980A000C3DB09 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48E298980A000C3DB09 /* Handler.swift */; };
 		557CD492298980B600C3DB09 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD491298980B600C3DB09 /* Store.swift */; };
 		557CD495298980E700C3DB09 /* FinderLost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD494298980E700C3DB09 /* FinderLost.swift */; };
 		557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4972989811000C3DB09 /* FinderLostReducer.swift */; };
-		557CD49A2989813700C3DB09 /* FinderLostHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4992989813700C3DB09 /* FinderLostHandler.swift */; };
+		557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4992989813700C3DB09 /* FinderLostContextor.swift */; };
 		557CD49D298981FC00C3DB09 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD49C298981FC00C3DB09 /* Login.swift */; };
 		557CD49F2989821200C3DB09 /* LoginReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD49E2989821200C3DB09 /* LoginReducer.swift */; };
 		557CD4A12989822A00C3DB09 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4A02989822A00C3DB09 /* LoginHandler.swift */; };
-		557CD4A42989825C00C3DB09 /* SubmoduleReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4A32989825C00C3DB09 /* SubmoduleReducer.swift */; };
-		557CD4A62989826E00C3DB09 /* SubmoduleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4A52989826E00C3DB09 /* SubmoduleHandler.swift */; };
-		557CD4A82989827C00C3DB09 /* Submodule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4A72989827C00C3DB09 /* Submodule.swift */; };
 		557CD4AB298991E300C3DB09 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 557CD4AA298991E300C3DB09 /* Factory */; };
+		557CD4AE298995C400C3DB09 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4AD298995C400C3DB09 /* UserRepository.swift */; };
+		558C90F12991A10000B8E835 /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F02991A10000B8E835 /* Publisher+.swift */; };
+		558C90F32991A15000B8E835 /* ReduxAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F22991A15000B8E835 /* ReduxAction.swift */; };
+		558C90F52991A18300B8E835 /* HandlerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F42991A18300B8E835 /* HandlerContext.swift */; };
+		558C90F72991A32600B8E835 /* Contextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F62991A32600B8E835 /* Contextor.swift */; };
+		558C90FA2991B5CF00B8E835 /* ContainerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F92991B5CF00B8E835 /* ContainerDI.swift */; };
 		5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5591F661297F2341007F7A1C /* GoogleSignIn */; };
 		55A7359E298335F800C700B5 /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A7359D298335F800C700B5 /* UserDefault.swift */; };
-		55A735A1298336CB00C700B5 /* UserSessionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735A0298336CB00C700B5 /* UserSessionUseCase.swift */; };
 		55A735A82983385D00C700B5 /* UserSessionUserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735A72983385D00C700B5 /* UserSessionUserDefault.swift */; };
 		55A735AE2985363B00C700B5 /* FirebaseAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AD2985363B00C700B5 /* FirebaseAuthProvider.swift */; };
 		55A735B02985371F00C700B5 /* StoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AF2985371F00C700B5 /* StoreMock.swift */; };
@@ -74,22 +76,24 @@
 		552F5594297D75A000E2EFBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		552F5598297D786800E2EFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552F559A297D791E00E2EFBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		557CD48A2989808400C3DB09 /* ReduxBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxBase.swift; sourceTree = "<group>"; };
+		557CD48A2989808400C3DB09 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		557CD48C2989809200C3DB09 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		557CD48E298980A000C3DB09 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
 		557CD491298980B600C3DB09 /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		557CD494298980E700C3DB09 /* FinderLost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLost.swift; sourceTree = "<group>"; };
 		557CD4972989811000C3DB09 /* FinderLostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostReducer.swift; sourceTree = "<group>"; };
-		557CD4992989813700C3DB09 /* FinderLostHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostHandler.swift; sourceTree = "<group>"; };
+		557CD4992989813700C3DB09 /* FinderLostContextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostContextor.swift; sourceTree = "<group>"; };
 		557CD49C298981FC00C3DB09 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		557CD49E2989821200C3DB09 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
 		557CD4A02989822A00C3DB09 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
-		557CD4A32989825C00C3DB09 /* SubmoduleReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmoduleReducer.swift; sourceTree = "<group>"; };
-		557CD4A52989826E00C3DB09 /* SubmoduleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmoduleHandler.swift; sourceTree = "<group>"; };
-		557CD4A72989827C00C3DB09 /* Submodule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Submodule.swift; sourceTree = "<group>"; };
+		557CD4AD298995C400C3DB09 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		558C90F02991A10000B8E835 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Publisher+.swift"; path = "FinderLost/InternalFramework/Publisher+.swift"; sourceTree = SOURCE_ROOT; };
+		558C90F22991A15000B8E835 /* ReduxAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxAction.swift; sourceTree = "<group>"; };
+		558C90F42991A18300B8E835 /* HandlerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerContext.swift; sourceTree = "<group>"; };
+		558C90F62991A32600B8E835 /* Contextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contextor.swift; sourceTree = "<group>"; };
+		558C90F92991B5CF00B8E835 /* ContainerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerDI.swift; sourceTree = "<group>"; };
 		5591F667297F2EC9007F7A1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55A7359D298335F800C700B5 /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
-		55A735A0298336CB00C700B5 /* UserSessionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUseCase.swift; sourceTree = "<group>"; };
 		55A735A72983385D00C700B5 /* UserSessionUserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionUserDefault.swift; sourceTree = "<group>"; };
 		55A735AD2985363B00C700B5 /* FirebaseAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthProvider.swift; sourceTree = "<group>"; };
 		55A735AF2985371F00C700B5 /* StoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMock.swift; sourceTree = "<group>"; };
@@ -195,8 +199,9 @@
 				552F559A297D791E00E2EFBF /* AppDelegate.swift */,
 				557CD494298980E700C3DB09 /* FinderLost.swift */,
 				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
-				557CD4992989813700C3DB09 /* FinderLostHandler.swift */,
+				557CD4992989813700C3DB09 /* FinderLostContextor.swift */,
 				557CD4972989811000C3DB09 /* FinderLostReducer.swift */,
+				558C90F92991B5CF00B8E835 /* ContainerDI.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -204,9 +209,12 @@
 		557CD4892989807600C3DB09 /* Redux */ = {
 			isa = PBXGroup;
 			children = (
-				557CD48A2989808400C3DB09 /* ReduxBase.swift */,
-				557CD48C2989809200C3DB09 /* Reducer.swift */,
+				558C90F62991A32600B8E835 /* Contextor.swift */,
 				557CD48E298980A000C3DB09 /* Handler.swift */,
+				558C90F42991A18300B8E835 /* HandlerContext.swift */,
+				557CD48C2989809200C3DB09 /* Reducer.swift */,
+				557CD48A2989808400C3DB09 /* Redux.swift */,
+				558C90F22991A15000B8E835 /* ReduxAction.swift */,
 				557CD491298980B600C3DB09 /* Store.swift */,
 			);
 			path = Redux;
@@ -216,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				557CD49B298981F000C3DB09 /* Login */,
-				557CD4A22989823D00C3DB09 /* Submodule */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -231,14 +238,12 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		557CD4A22989823D00C3DB09 /* Submodule */ = {
+		557CD4AC2989957600C3DB09 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				557CD4A72989827C00C3DB09 /* Submodule.swift */,
-				557CD4A52989826E00C3DB09 /* SubmoduleHandler.swift */,
-				557CD4A32989825C00C3DB09 /* SubmoduleReducer.swift */,
+				557CD4AD298995C400C3DB09 /* UserRepository.swift */,
 			);
-			path = Submodule;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		5591F663297F2C24007F7A1C /* Info */ = {
@@ -263,23 +268,15 @@
 			isa = PBXGroup;
 			children = (
 				55A7359D298335F800C700B5 /* UserDefault.swift */,
+				558C90F02991A10000B8E835 /* Publisher+.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		55A7359F298336BE00C700B5 /* UseCase */ = {
-			isa = PBXGroup;
-			children = (
-				55A735A0298336CB00C700B5 /* UserSessionUseCase.swift */,
-			);
-			path = UseCase;
 			sourceTree = "<group>";
 		};
 		55A735A2298336EB00C700B5 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
 				55A735A3298336F800C700B5 /* Entity */,
-				55A7359F298336BE00C700B5 /* UseCase */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -294,6 +291,7 @@
 		55A735A42983371600C700B5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				557CD4AC2989957600C3DB09 /* Repository */,
 				55A735A62983384600C700B5 /* Source */,
 			);
 			path = Data;
@@ -538,31 +536,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558C90F12991A10000B8E835 /* Publisher+.swift in Sources */,
+				558C90F52991A18300B8E835 /* HandlerContext.swift in Sources */,
 				55A735AE2985363B00C700B5 /* FirebaseAuthProvider.swift in Sources */,
-				557CD4A42989825C00C3DB09 /* SubmoduleReducer.swift in Sources */,
-				557CD4A82989827C00C3DB09 /* Submodule.swift in Sources */,
+				558C90F72991A32600B8E835 /* Contextor.swift in Sources */,
+				557CD4AE298995C400C3DB09 /* UserRepository.swift in Sources */,
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
 				55A7359E298335F800C700B5 /* UserDefault.swift in Sources */,
 				55A735B02985371F00C700B5 /* StoreMock.swift in Sources */,
 				552F5586297D670200E2EFBF /* SearchView.swift in Sources */,
 				550F60342985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift in Sources */,
-				557CD4A62989826E00C3DB09 /* SubmoduleHandler.swift in Sources */,
 				557CD48F298980A000C3DB09 /* Handler.swift in Sources */,
 				557CD48D2989809200C3DB09 /* Reducer.swift in Sources */,
 				557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */,
 				557CD49F2989821200C3DB09 /* LoginReducer.swift in Sources */,
-				55A735A1298336CB00C700B5 /* UserSessionUseCase.swift in Sources */,
 				552F5588297D671400E2EFBF /* HomeView.swift in Sources */,
 				557CD4A12989822A00C3DB09 /* LoginHandler.swift in Sources */,
 				557CD49D298981FC00C3DB09 /* Login.swift in Sources */,
 				55A735A82983385D00C700B5 /* UserSessionUserDefault.swift in Sources */,
-				557CD49A2989813700C3DB09 /* FinderLostHandler.swift in Sources */,
+				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
 				557CD492298980B600C3DB09 /* Store.swift in Sources */,
+				558C90F32991A15000B8E835 /* ReduxAction.swift in Sources */,
 				552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */,
-				557CD48B2989808400C3DB09 /* ReduxBase.swift in Sources */,
+				557CD48B2989808400C3DB09 /* Redux.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
+				558C90FA2991B5CF00B8E835 /* ContainerDI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
