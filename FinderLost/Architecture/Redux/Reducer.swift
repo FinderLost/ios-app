@@ -5,8 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
 //
 
-// MARK: - ARCHITECTURE OK - Reducer
-typealias Reducer<State, Action> = (Action, State) -> State
-protocol ReducerBase: ReduxBase {
+typealias Reduce<Action, State> = (Action, State) -> State
+protocol Reducer: Redux {
     static func reduce(_ action: Action, with state: State) -> State
 }
