@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import Factory
 
 struct UserProfileView: View {
+    @Injected(Container.loginHandler)
+    private var loginHandler: HandlerOf<FinderLost>
+
     @ObservedObject var store: Store<FinderLost>
+
+    init(store: Store<FinderLost>) {
+        self.store = store
+        self.store.use(loginHandler)
+    }
 
     var body: some View {
         List {
