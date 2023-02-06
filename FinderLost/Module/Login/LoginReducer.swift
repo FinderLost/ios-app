@@ -5,7 +5,6 @@
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
 //
 
-// MARK: - Login Reducer
 extension Login: Reducer {
     static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
