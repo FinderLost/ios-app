@@ -9,14 +9,25 @@ import Combine
 import Factory
 
 protocol UserRepository {
-    func checkSession() -> AnyPublisher<String, Error>
+    func getUserSession() -> AnyPublisher<UserSession, Error>
 }
 
 class UserRepositoryImpl: UserRepository {
-    @Injected(Container.firebaseAuthProvider)
-    private var firebaseAuthProvider: FirebaseAuthProvider
-    
-    func checkSession() -> AnyPublisher<String, Error> {
-        firebaseAuthProvider.currentUserPublisher()
+    @Injected(Container.userSessionUserDefault)
+    private var userSessionUserDefault: UserSessionUserDefault
+
+    func getUserSession() -> AnyPublisher<UserSession, Error> {
+        Future { [weak self] promise in
+            guard let self else { return }
+            guard
+                self.userSessionUserDefault.sessionToken.isNotEmpty,
+                self.userSessionUserDefault.userId.isNotEmpty
+            else { return promise(.failure(CError.isEmpty)) }
+            let userSession = UserSession(
+                token: self.userSessionUserDefault.sessionToken,
+                userId: self.userSessionUserDefault.userId
+            )
+            promise(.success(userSession))
+        }.eraseToAnyPublisher()
     }
 }
