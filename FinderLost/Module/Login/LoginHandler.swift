@@ -16,10 +16,10 @@ extension Login {
         func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
             guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
             switch action {
-            case .checkSession:
-                return userRepository.checkSession()
-                    .compactMap { Login.Action.checkSessionResult(.success($0)) }
-                    .catch { Just(Login.Action.checkSessionResult(.failure($0))) }
+             case .getUserSession:
+                return userRepository.getUserSession()
+                    .compactMap { Login.Action.getUserSessionResult(.success($0)) }
+                    .catch { Just(Login.Action.getUserSessionResult(.failure($0))) }
                     .eraseToAnyPublisher()
             default: return Empty().eraseToAnyPublisher()
             }
