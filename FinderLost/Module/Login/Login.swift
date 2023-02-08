@@ -7,11 +7,10 @@
 
 enum Login {
     struct State {
-        var userId: String = ""
-        var error: String = ""
+        var userId: String?
     }
     enum Action: ReduxAction {
-        case checkSession
-        case checkSessionResult(Result<String, Error>)
+        case getUserSession
+        case getUserSessionResult(Result<UserSession, Error>)
     }
 }
