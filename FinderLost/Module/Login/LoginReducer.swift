@@ -9,10 +9,10 @@ extension Login: Reducer {
     static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
         switch action {
-        case let .checkSessionResult(.success(value)):
-            newState.userId = value
-        case let .checkSessionResult(.failure(error)):
-            newState.error = error.localizedDescription
+        case let .getUserSessionResult(.success(value)):
+            newState.userId = value.userId
+        case .getUserSessionResult(.failure):
+            newState.userId = nil
         default: break
         }
         return newState
