@@ -11,7 +11,7 @@ struct SearchView: View {
     @ObservedObject var store: Store<FinderLost>
 
     var body: some View {
-        Text("\(store.state.login.error)")
+        Text("SearchView")
     }
 }
 
