@@ -18,9 +18,7 @@ struct UserProfileView: View {
                 .frame(width: 80, height: 80)
             Text(store.state.login.userId ?? "NoUser")
             Section(header: Text("Login with")) {
-                Button("CheckSession") {
-                    store.dispatch(.login(.checkSession))
-                }
+                Button("CheckSession") { }
             }
         }
     }

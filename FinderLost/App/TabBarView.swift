@@ -6,9 +6,18 @@
 //
 
 import SwiftUI
+import Factory
 
 struct TabBarView: View {
+    @Injected(Container.loginHandler)
+    private var loginHandler: HandlerOf<FinderLost>
+
     @ObservedObject var store: Store<FinderLost>
+
+    init(store: Store<FinderLost>) {
+        self.store = store
+        self.store.use(loginHandler)
+    }
 
     var body: some View {
         TabView {
@@ -27,6 +36,8 @@ struct TabBarView: View {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
+        }.onAppear {
+            store.dispatch(.login(.getUserSession))
         }
     }
 }
