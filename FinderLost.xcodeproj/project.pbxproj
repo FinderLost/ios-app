@@ -20,6 +20,8 @@
 		554B5D3D2994398C007E9DA1 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D3C2994398C007E9DA1 /* String+.swift */; };
 		554B5D3F29943999007E9DA1 /* Bool+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D3E29943999007E9DA1 /* Bool+.swift */; };
 		554B5D4129943AC4007E9DA1 /* CError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D4029943AC4007E9DA1 /* CError.swift */; };
+		554B5D432994438C007E9DA1 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D422994438C007E9DA1 /* UserSession.swift */; };
+		554B5D4529944F48007E9DA1 /* GoogleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D4429944F48007E9DA1 /* GoogleAuthProvider.swift */; };
 		557CD48B2989808400C3DB09 /* Redux.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48A2989808400C3DB09 /* Redux.swift */; };
 		557CD48D2989809200C3DB09 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48C2989809200C3DB09 /* Reducer.swift */; };
 		557CD48F298980A000C3DB09 /* Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD48E298980A000C3DB09 /* Handler.swift */; };
@@ -82,6 +84,8 @@
 		554B5D3C2994398C007E9DA1 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		554B5D3E29943999007E9DA1 /* Bool+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+.swift"; sourceTree = "<group>"; };
 		554B5D4029943AC4007E9DA1 /* CError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CError.swift; sourceTree = "<group>"; };
+		554B5D422994438C007E9DA1 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		554B5D4429944F48007E9DA1 /* GoogleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthProvider.swift; sourceTree = "<group>"; };
 		557CD48A2989808400C3DB09 /* Redux.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Redux.swift; sourceTree = "<group>"; };
 		557CD48C2989809200C3DB09 /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		557CD48E298980A000C3DB09 /* Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Handler.swift; sourceTree = "<group>"; };
@@ -293,6 +297,7 @@
 			isa = PBXGroup;
 			children = (
 				554B5D4029943AC4007E9DA1 /* CError.swift */,
+				554B5D422994438C007E9DA1 /* UserSession.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 			isa = PBXGroup;
 			children = (
 				55A735AD2985363B00C700B5 /* FirebaseAuthProvider.swift */,
+				554B5D4429944F48007E9DA1 /* GoogleAuthProvider.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -558,6 +564,7 @@
 				550F60342985765200BFF1B0 /* SwiftUIViewLyfeCycle.swift in Sources */,
 				557CD48F298980A000C3DB09 /* Handler.swift in Sources */,
 				557CD48D2989809200C3DB09 /* Reducer.swift in Sources */,
+				554B5D4529944F48007E9DA1 /* GoogleAuthProvider.swift in Sources */,
 				557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */,
 				557CD49F2989821200C3DB09 /* LoginReducer.swift in Sources */,
 				552F5588297D671400E2EFBF /* HomeView.swift in Sources */,
@@ -565,6 +572,7 @@
 				557CD49D298981FC00C3DB09 /* Login.swift in Sources */,
 				55A735A82983385D00C700B5 /* UserSessionUserDefault.swift in Sources */,
 				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
+				554B5D432994438C007E9DA1 /* UserSession.swift in Sources */,
 				554B5D3F29943999007E9DA1 /* Bool+.swift in Sources */,
 				557CD492298980B600C3DB09 /* Store.swift in Sources */,
 				558C90F32991A15000B8E835 /* ReduxAction.swift in Sources */,

@@ -6,40 +6,32 @@
 //
 
 import Factory
-
 import Combine
-
 import Firebase
-import GoogleSignIn
 
 protocol FirebaseAuthProvider {
-    func currentUserPublisher() -> AnyPublisher<String, Error>
+    func signIn(credential: AuthCredential) -> AnyPublisher<UserSession, Error>
 }
 
 class FirebaseAuthProviderImpl: FirebaseAuthProvider {
-    @Injected(Container.firebaseApp)
-    private var firebaseApp: FirebaseApp?
     @Injected(Container.firebaseAuth)
     private var firebaseAuth: Auth
-    @Injected(Container.googleSignIn)
-    private var googleSignIn: GIDSignIn
 
-    func currentUserPublisher() -> AnyPublisher<String, Error> {
+    func signIn(credential: AuthCredential) -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
             guard let self else { return }
-            let credential = GoogleAuthProvider.credential(
-                withIDToken: "idToken",
-                accessToken: "user.accessToken.tokenString"
-            )
             self.firebaseAuth.signIn(with: credential) { result, error in
-                if let result {
-                    promise(.success("\(result)"))
-                }
                 if let error {
                     promise(.failure(error))
                 }
+                if let result {
+                    let userSession = UserSessionImpl(
+                        token: result.user.providerID,
+                        userId: result.additionalUserInfo?.providerID ?? ""
+                    )
+                    promise(.success(userSession))
+                }
             }
-        }
-        .eraseToAnyPublisher()
+        }.eraseToAnyPublisher()
     }
 }

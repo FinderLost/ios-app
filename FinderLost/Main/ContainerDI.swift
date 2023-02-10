@@ -30,4 +30,13 @@ extension Container {
     static let firebaseAuthProvider = Factory<FirebaseAuthProvider>(scope: .singleton) {
         FirebaseAuthProviderImpl()
     }
+    static let googleAuthProvider = Factory<GoogleAuthProviderI>(scope: .singleton) {
+        GoogleAuthProviderImpl()
+    }
+}
+
+extension Container {
+    static let userSessionUserDefault = Factory<UserSessionUserDefault>(scope: .singleton) {
+        UserSessionUserDefault()
+    }
 }
