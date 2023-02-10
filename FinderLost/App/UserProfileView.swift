@@ -16,9 +16,17 @@ struct UserProfileView: View {
             Image(systemName: "person.fill")
                 .resizable()
                 .frame(width: 80, height: 80)
-            Text(store.state.login.userId ?? "NoUser")
+            Text(store.state.login.email ?? "No email")
             Section(header: Text("Login with")) {
-                Button("CheckSession") { }
+                if store.state.login.hasSession.not {
+                    Button("Login") {
+                        store.dispatch(.login(.signIn))
+                    }
+                } else {
+                    Button("Sign Out") {
+                        store.dispatch(.login(.signOut))
+                    }
+                }
             }
         }
     }
