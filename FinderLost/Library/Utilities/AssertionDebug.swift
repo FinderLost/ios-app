@@ -11,5 +11,6 @@ public func assertionDebug(
     file: StaticString = #file,
     line: UInt = #line
 ) {
-    assertionFailure(message(), file: file, line: line)
+    debugPrint(message())
+//    assertionFailure(message(), file: file, line: line)
 }
