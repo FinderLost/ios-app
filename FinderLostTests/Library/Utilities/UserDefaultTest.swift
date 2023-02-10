@@ -22,11 +22,11 @@ class UserDefaultTests: XCTestCase {
         sut = .init(testKey, defaultValue: testDefaultValue)
     }
 
-    func test_dispatch_updates_state_whenNoValueIsSet() {
+    func testDispatchUpdatesStateWhenNoValueIsSet() {
         XCTAssertEqual(sut.wrappedValue, testDefaultValue)
     }
 
-    func test_dispatch_updates_state_setsAndGetsValueCorrectly() {
+    func testDispatchUpdatesStateSetsAndGetsValueCorrectly() {
         sut.wrappedValue = testValue
         XCTAssertEqual(sut.wrappedValue, testValue)
     }

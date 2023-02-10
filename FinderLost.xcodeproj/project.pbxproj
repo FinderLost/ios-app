@@ -33,7 +33,6 @@
 		557CD4A12989822A00C3DB09 /* LoginHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4A02989822A00C3DB09 /* LoginHandler.swift */; };
 		557CD4AB298991E300C3DB09 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 557CD4AA298991E300C3DB09 /* Factory */; };
 		557CD4AE298995C400C3DB09 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4AD298995C400C3DB09 /* UserRepository.swift */; };
-		558C90F12991A10000B8E835 /* Publisher+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F02991A10000B8E835 /* Publisher+.swift */; };
 		558C90F32991A15000B8E835 /* ReduxAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F22991A15000B8E835 /* ReduxAction.swift */; };
 		558C90F52991A18300B8E835 /* HandlerContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F42991A18300B8E835 /* HandlerContext.swift */; };
 		558C90F72991A32600B8E835 /* Contextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558C90F62991A32600B8E835 /* Contextor.swift */; };
@@ -48,6 +47,8 @@
 		55A735C52985496800C700B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C42985496800C700B5 /* GoogleSignIn */; };
 		55D37C3A2996CA2C00947787 /* Optional+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C392996CA2C00947787 /* Optional+.swift */; };
 		55D37C3C2996CFD200947787 /* AssertionDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C3B2996CFD200947787 /* AssertionDebug.swift */; };
+		55D37C402996D5C700947787 /* Publisher+mapCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C3F2996D5C700947787 /* Publisher+mapCast.swift */; };
+		55D37C422996D5E700947787 /* Publisher+mapCastTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C412996D5E700947787 /* Publisher+mapCastTest.swift */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
 		55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F3294D066400763BE7 /* FinderLostUITests.swift */; };
@@ -96,7 +97,6 @@
 		557CD49E2989821200C3DB09 /* LoginReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducer.swift; sourceTree = "<group>"; };
 		557CD4A02989822A00C3DB09 /* LoginHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandler.swift; sourceTree = "<group>"; };
 		557CD4AD298995C400C3DB09 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
-		558C90F02991A10000B8E835 /* Publisher+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Publisher+.swift"; path = "FinderLost/InternalFramework/Publisher+.swift"; sourceTree = SOURCE_ROOT; };
 		558C90F22991A15000B8E835 /* ReduxAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReduxAction.swift; sourceTree = "<group>"; };
 		558C90F42991A18300B8E835 /* HandlerContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerContext.swift; sourceTree = "<group>"; };
 		558C90F62991A32600B8E835 /* Contextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contextor.swift; sourceTree = "<group>"; };
@@ -109,6 +109,8 @@
 		55A735B1298541AA00C700B5 /* UserDefaultTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultTest.swift; sourceTree = "<group>"; };
 		55D37C392996CA2C00947787 /* Optional+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Optional+.swift"; sourceTree = "<group>"; };
 		55D37C3B2996CFD200947787 /* AssertionDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionDebug.swift; sourceTree = "<group>"; };
+		55D37C3F2996D5C700947787 /* Publisher+mapCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+mapCast.swift"; sourceTree = "<group>"; };
+		55D37C412996D5E700947787 /* Publisher+mapCastTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+mapCastTest.swift"; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -264,14 +266,14 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
-		55A7359B298335CB00C700B5 /* InternalFramework */ = {
+		55A7359B298335CB00C700B5 /* Library */ = {
 			isa = PBXGroup;
 			children = (
 				55A735A42983371600C700B5 /* Data */,
 				55A735A2298336EB00C700B5 /* Domain */,
 				55A7359C298335E600C700B5 /* Utilities */,
 			);
-			path = InternalFramework;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		55A7359C298335E600C700B5 /* Utilities */ = {
@@ -280,7 +282,7 @@
 				55D37C3B2996CFD200947787 /* AssertionDebug.swift */,
 				554B5D3E29943999007E9DA1 /* Bool+.swift */,
 				55D37C392996CA2C00947787 /* Optional+.swift */,
-				558C90F02991A10000B8E835 /* Publisher+.swift */,
+				55D37C3F2996D5C700947787 /* Publisher+mapCast.swift */,
 				554B5D3C2994398C007E9DA1 /* String+.swift */,
 				55A7359D298335F800C700B5 /* UserDefault.swift */,
 			);
@@ -346,6 +348,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		55D37C3D2996D58600947787 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				55D37C3E2996D59300947787 /* Utilities */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		55D37C3E2996D59300947787 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				55D37C412996D5E700947787 /* Publisher+mapCastTest.swift */,
+				55A735B1298541AA00C700B5 /* UserDefaultTest.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -373,7 +392,7 @@
 				552F5582297D66E000E2EFBF /* App */,
 				552F559C297D794500E2EFBF /* Architecture */,
 				552F5597297D777E00E2EFBF /* Configuration */,
-				55A7359B298335CB00C700B5 /* InternalFramework */,
+				55A7359B298335CB00C700B5 /* Library */,
 				552F559D297D879F00E2EFBF /* Main */,
 				557CD493298980D100C3DB09 /* Module */,
 				55FE80DE294D066400763BE7 /* Preview Content */,
@@ -392,7 +411,7 @@
 		55FE80E8294D066400763BE7 /* FinderLostTests */ = {
 			isa = PBXGroup;
 			children = (
-				55A735B1298541AA00C700B5 /* UserDefaultTest.swift */,
+				55D37C3D2996D58600947787 /* Library */,
 			);
 			path = FinderLostTests;
 			sourceTree = "<group>";
@@ -552,7 +571,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				554B5D4129943AC4007E9DA1 /* CustomError.swift in Sources */,
-				558C90F12991A10000B8E835 /* Publisher+.swift in Sources */,
 				558C90F52991A18300B8E835 /* HandlerContext.swift in Sources */,
 				55A735AE2985363B00C700B5 /* FirebaseAuthProvider.swift in Sources */,
 				558C90F72991A32600B8E835 /* Contextor.swift in Sources */,
@@ -580,6 +598,7 @@
 				558C90F32991A15000B8E835 /* ReduxAction.swift in Sources */,
 				552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */,
 				557CD48B2989808400C3DB09 /* Redux.swift in Sources */,
+				55D37C402996D5C700947787 /* Publisher+mapCast.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
@@ -592,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D37C422996D5E700947787 /* Publisher+mapCastTest.swift in Sources */,
 				55A735B2298541AA00C700B5 /* UserDefaultTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
