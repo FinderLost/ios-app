@@ -15,28 +15,39 @@ final class PublisherMapCastTest: XCTestCase {
     struct TypeA: TypeToTest {}
     struct TypeB: TypeToTest {}
     struct TypeC {}
-    func testMapCastFiltersOutNonMatchingElements() {
-        let typeToTest: [Any] = [TypeA(), TypeB(), TypeA(), TypeB()]
-        let castedPublisher = typeToTest.publisher
-            .mapCast(TypeToTest.self)
+    var typeToTest: [Any] = [TypeA(), TypeB(), TypeA()]
+    private var cancellables = Set<AnyCancellable>()
 
-        let expectation = XCTestExpectation(description: "Only matching elements should be received")
+    func testMapCastMatchingAllElements() {
         var receivedElements = [TypeToTest]()
 
-        castedPublisher
+        typeToTest.publisher
+            .mapCast(TypeToTest.self)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .finished:
-                    XCTAssertEqual(receivedElements.count, typeToTest.count)
-                    expectation.fulfill()
+                    XCTAssertEqual(receivedElements.count, self.typeToTest.count)
                 case let .failure(error):
                     XCTFail("Unexpected error: \(error)")
                 }
             }, receiveValue: { receivedElements.append($0) })
             .store(in: &cancellables)
-
-        wait(for: [expectation], timeout: 0.1)
     }
 
-    private var cancellables = Set<AnyCancellable>()
+    func testMapCastNoMatchingAllElements() {
+        var receivedElements = [TypeToTest]()
+        typeToTest.append(TypeC())
+
+        typeToTest.publisher
+            .mapCast(TypeToTest.self)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    XCTAssertEqual(receivedElements.count, self.typeToTest.count - 1)
+                case let .failure(error):
+                    XCTFail("Unexpected error: \(error)")
+                }
+            }, receiveValue: { receivedElements.append($0) })
+            .store(in: &cancellables)
+    }
 }
