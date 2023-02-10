@@ -17,7 +17,7 @@ protocol UserRepository {
     func signOut() -> AnyPublisher<Void, Error>
 }
 
-class UserRepositoryImpl: UserRepository {
+final class UserRepositoryImpl: UserRepository {
     @Injected(Container.userSessionUserDefault)
     private var userSessionUserDefault: UserSessionUserDefault
 

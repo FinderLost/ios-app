@@ -9,4 +9,3 @@ protocol Redux {
     associatedtype Action
     associatedtype State
 }
-
