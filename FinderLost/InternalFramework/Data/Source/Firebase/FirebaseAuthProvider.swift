@@ -13,7 +13,7 @@ protocol FirebaseAuthProvider {
     func signIn(credential: AuthCredential) -> AnyPublisher<UserSession, Error>
 }
 
-class FirebaseAuthProviderImpl: FirebaseAuthProvider {
+final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
     @Injected(Container.firebaseAuth)
     private var firebaseAuth: Auth
 
