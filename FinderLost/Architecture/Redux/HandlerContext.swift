@@ -29,7 +29,10 @@ final class HandlerContextImpl<Action: ReduxAction, State>: HandlerContext {
     }
 
     func nextAction(_ nextAction: ReduxAction) -> ReduxAction? {
-        guard let nextAction = nextAction as? Action else { return nil }
+        guard let nextAction = nextAction as? Action else {
+            assertionDebug("Fails to unwrap the next action")
+            return nil
+        }
         return next(nextAction)
     }
 }
