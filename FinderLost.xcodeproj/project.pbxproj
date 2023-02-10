@@ -49,6 +49,7 @@
 		55D37C3C2996CFD200947787 /* AssertionDebug.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C3B2996CFD200947787 /* AssertionDebug.swift */; };
 		55D37C402996D5C700947787 /* Publisher+mapCast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C3F2996D5C700947787 /* Publisher+mapCast.swift */; };
 		55D37C422996D5E700947787 /* Publisher+mapCastTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C412996D5E700947787 /* Publisher+mapCastTest.swift */; };
+		55D37C462996E6B000947787 /* HandlerContextImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D37C452996E6B000947787 /* HandlerContextImplTests.swift */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
 		55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F3294D066400763BE7 /* FinderLostUITests.swift */; };
@@ -111,6 +112,7 @@
 		55D37C3B2996CFD200947787 /* AssertionDebug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionDebug.swift; sourceTree = "<group>"; };
 		55D37C3F2996D5C700947787 /* Publisher+mapCast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+mapCast.swift"; sourceTree = "<group>"; };
 		55D37C412996D5E700947787 /* Publisher+mapCastTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+mapCastTest.swift"; sourceTree = "<group>"; };
+		55D37C452996E6B000947787 /* HandlerContextImplTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerContextImplTests.swift; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -365,6 +367,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		55D37C432996E69300947787 /* Architecture */ = {
+			isa = PBXGroup;
+			children = (
+				55D37C442996E6A300947787 /* Redux */,
+			);
+			path = Architecture;
+			sourceTree = "<group>";
+		};
+		55D37C442996E6A300947787 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				55D37C452996E6B000947787 /* HandlerContextImplTests.swift */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
@@ -411,6 +429,7 @@
 		55FE80E8294D066400763BE7 /* FinderLostTests */ = {
 			isa = PBXGroup;
 			children = (
+				55D37C432996E69300947787 /* Architecture */,
 				55D37C3D2996D58600947787 /* Library */,
 			);
 			path = FinderLostTests;
@@ -611,6 +630,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55D37C462996E6B000947787 /* HandlerContextImplTests.swift in Sources */,
 				55D37C422996D5E700947787 /* Publisher+mapCastTest.swift in Sources */,
 				55A735B2298541AA00C700B5 /* UserDefaultTest.swift in Sources */,
 			);
