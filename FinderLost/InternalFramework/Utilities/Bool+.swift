@@ -6,6 +6,5 @@
 //
 
 extension Bool {
-    @inlinable
     var not: Bool { !self }
 }
