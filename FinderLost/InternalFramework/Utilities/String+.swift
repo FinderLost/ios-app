@@ -6,6 +6,5 @@
 //
 
 extension String {
-    @inlinable
     var isNotEmpty: Bool { isEmpty.not }
 }
