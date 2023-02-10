@@ -37,6 +37,6 @@ extension Container {
 
 extension Container {
     static let userSessionUserDefault = Factory<UserSessionUserDefault>(scope: .singleton) {
-        UserSessionUserDefault()
+        UserSessionUserDefaultImpl()
     }
 }

@@ -29,14 +29,9 @@ class UserRepositoryImpl: UserRepository {
     func getSession() -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
             guard let self else { return }
-            guard
-                self.userSessionUserDefault.sessionToken.isNotEmpty,
-                self.userSessionUserDefault.userId.isNotEmpty
-            else { return promise(.failure(CError.isEmpty)) }
-            let userSession = UserSessionImpl(
-                token: self.userSessionUserDefault.sessionToken,
-                userId: self.userSessionUserDefault.userId
-            )
+            guard let userSession = self.userSessionUserDefault.get() else {
+                return promise(.failure(CustomError.isEmpty))
+            }
             promise(.success(userSession))
         }.eraseToAnyPublisher()
     }
@@ -44,8 +39,7 @@ class UserRepositoryImpl: UserRepository {
     func signOut() -> AnyPublisher<Void, Error> {
         Future { [weak self] promise in
             guard let self else { return }
-            self.userSessionUserDefault.userId = ""
-            self.userSessionUserDefault.sessionToken = ""
+            self.userSessionUserDefault.delete()
             promise(.success(()))
         }.eraseToAnyPublisher()
     }
@@ -59,8 +53,7 @@ class UserRepositoryImpl: UserRepository {
     private func saveSession(_ userSession: UserSession) -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
             guard let self else { return }
-            self.userSessionUserDefault.userId = userSession.userId
-            self.userSessionUserDefault.sessionToken = userSession.token
+            self.userSessionUserDefault.save(userSession: userSession)
             promise(.success(userSession))
         }.eraseToAnyPublisher()
     }
