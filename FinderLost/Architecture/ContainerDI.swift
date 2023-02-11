@@ -5,6 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 6/2/23.
 //
 
+import Data
 import Redux
 import Domain
 
