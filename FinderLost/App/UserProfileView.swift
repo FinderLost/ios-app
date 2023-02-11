@@ -14,10 +14,15 @@ struct UserProfileView: View {
 
     var body: some View {
         List {
-            Image(systemName: "person.fill")
-                .resizable()
-                .frame(width: 80, height: 80)
-            Text(store.state.login.email ?? "No email")
+            HStack {
+                Image(systemName: "person.fill")
+                    .resizable()
+                    .frame(width: 45, height: 45)
+                VStack {
+                    Text(store.state.login.email ?? "No email")
+                    Text(store.state.login.name ?? "No name")
+                }
+            }
             Section(header: Text("Login with")) {
                 if store.state.login.hasSession.not {
                     Button("Login") {

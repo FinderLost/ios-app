@@ -12,6 +12,7 @@ enum Login {
     struct State {
         var userId: String?
         var email: String?
+        var name: String?
         var hasSession: Bool { userId.isNotNil }
     }
     enum Action: ReduxAction {
