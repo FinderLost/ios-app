@@ -5,6 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 16/12/22.
 //
 
+import Redux
 import SwiftUI
 
 @main
