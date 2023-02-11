@@ -8,19 +8,21 @@
 import Domain
 import Utilities
 
-protocol UserSessionUserDefault {
+public protocol UserSessionUserDefault {
     func get() -> UserSession?
     func delete()
     func save(userSession: UserSession)
 }
 
-final class UserSessionUserDefaultImpl: UserSessionUserDefault {
+public final class UserSessionUserDefaultImpl: UserSessionUserDefault {
     @UserDefault("userId", defaultValue: "")
     var userId: String
     @UserDefault("sessionToken", defaultValue: "")
     var sessionToken: String
 
-    func get() -> UserSession? {
+    public init() { }
+    
+    public func get() -> UserSession? {
         guard sessionToken.isNotEmpty, userId.isNotEmpty else { return nil }
         return UserSessionImpl(
             token: sessionToken,
@@ -28,12 +30,12 @@ final class UserSessionUserDefaultImpl: UserSessionUserDefault {
         )
     }
 
-    func delete() {
+    public func delete() {
         userId = ""
         sessionToken = ""
     }
 
-    func save(userSession: UserSession) {
+    public func save(userSession: UserSession) {
         userId = userSession.userId
         sessionToken = userSession.token
     }
