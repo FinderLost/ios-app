@@ -5,36 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "Redux"
-               BuildableName = "Redux"
-               BlueprintName = "Redux"
-               ReferencedContainer = "container:">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ReduxTests"
-               BuildableName = "ReduxTests"
-               BlueprintName = "ReduxTests"
-               ReferencedContainer = "container:">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -46,9 +16,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Redux"
-            BuildableName = "Redux"
-            BlueprintName = "Redux"
+            BlueprintIdentifier = "UtilitiesTests"
+            BuildableName = "UtilitiesTests"
+            BlueprintName = "UtilitiesTests"
             ReferencedContainer = "container:">
          </BuildableReference>
       </CodeCoverageTargets>
@@ -57,9 +27,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ReduxTests"
-               BuildableName = "ReduxTests"
-               BlueprintName = "ReduxTests"
+               BlueprintIdentifier = "UtilitiesTests"
+               BuildableName = "UtilitiesTests"
+               BlueprintName = "UtilitiesTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -82,15 +52,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Redux"
-            BuildableName = "Redux"
-            BlueprintName = "Redux"
-            ReferencedContainer = "container:">
-         </BuildableReference>
-      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
