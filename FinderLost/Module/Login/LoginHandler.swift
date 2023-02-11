@@ -6,6 +6,8 @@
 //
 
 import Redux
+import Domain
+
 import Combine
 import Factory
 

@@ -15,9 +15,9 @@
 		552F5595297D75A000E2EFBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 552F5594297D75A000E2EFBF /* GoogleService-Info.plist */; };
 		552F5599297D786800E2EFBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 552F5598297D786800E2EFBF /* Assets.xcassets */; };
 		552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F559A297D791E00E2EFBF /* AppDelegate.swift */; };
-		554B5D4129943AC4007E9DA1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D4029943AC4007E9DA1 /* CustomError.swift */; };
-		554B5D432994438C007E9DA1 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D422994438C007E9DA1 /* UserSession.swift */; };
 		554B5D4529944F48007E9DA1 /* GoogleAuthProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554B5D4429944F48007E9DA1 /* GoogleAuthProvider.swift */; };
+		5566D72A29978D81005A3A93 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 5566D72929978D81005A3A93 /* Domain */; };
+		5566D72D29978DD1005A3A93 /* UserSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5566D72C29978DD1005A3A93 /* UserSessionImpl.swift */; };
 		557CD495298980E700C3DB09 /* FinderLost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD494298980E700C3DB09 /* FinderLost.swift */; };
 		557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4972989811000C3DB09 /* FinderLostReducer.swift */; };
 		557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4992989813700C3DB09 /* FinderLostContextor.swift */; };
@@ -66,9 +66,9 @@
 		552F5594297D75A000E2EFBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		552F5598297D786800E2EFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552F559A297D791E00E2EFBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		554B5D4029943AC4007E9DA1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		554B5D422994438C007E9DA1 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		554B5D4429944F48007E9DA1 /* GoogleAuthProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthProvider.swift; sourceTree = "<group>"; };
+		5566D72829978D64005A3A93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
+		5566D72C29978DD1005A3A93 /* UserSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionImpl.swift; sourceTree = "<group>"; };
 		557CD494298980E700C3DB09 /* FinderLost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLost.swift; sourceTree = "<group>"; };
 		557CD4972989811000C3DB09 /* FinderLostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostReducer.swift; sourceTree = "<group>"; };
 		557CD4992989813700C3DB09 /* FinderLostContextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostContextor.swift; sourceTree = "<group>"; };
@@ -97,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5566D72A29978D81005A3A93 /* Domain in Frameworks */,
 				557CD4AB298991E300C3DB09 /* Factory in Frameworks */,
 				55EDCE6C2996F255002A52BD /* Redux in Frameworks */,
 				552F5591297D739300E2EFBF /* FirebaseAuth in Frameworks */,
@@ -190,6 +191,14 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		5566D72B29978DC0005A3A93 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				5566D72C29978DD1005A3A93 /* UserSessionImpl.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		557CD493298980D100C3DB09 /* Module */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,31 +237,14 @@
 			isa = PBXGroup;
 			children = (
 				55A735A42983371600C700B5 /* Data */,
-				55A735A2298336EB00C700B5 /* Domain */,
 			);
 			path = Library;
-			sourceTree = "<group>";
-		};
-		55A735A2298336EB00C700B5 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				55A735A3298336F800C700B5 /* Entity */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		55A735A3298336F800C700B5 /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				554B5D4029943AC4007E9DA1 /* CustomError.swift */,
-				554B5D422994438C007E9DA1 /* UserSession.swift */,
-			);
-			path = Entity;
 			sourceTree = "<group>";
 		};
 		55A735A42983371600C700B5 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				5566D72B29978DC0005A3A93 /* Entity */,
 				557CD4AC2989957600C3DB09 /* Repository */,
 				55A735A62983384600C700B5 /* Source */,
 			);
@@ -288,8 +280,9 @@
 		55D37C4F2996ED1E00947787 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				55D37C502996ED1E00947787 /* Utilities */,
+				5566D72829978D64005A3A93 /* Domain */,
 				55D37C522996ED8100947787 /* Redux */,
+				55D37C502996ED1E00947787 /* Utilities */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -375,6 +368,7 @@
 				557CD4AA298991E300C3DB09 /* Factory */,
 				55EDCE6B2996F255002A52BD /* Redux */,
 				55EDCE6D2996F25E002A52BD /* Utilities */,
+				5566D72929978D81005A3A93 /* Domain */,
 			);
 			productName = FinderLost;
 			productReference = 55FE80D5294D066200763BE7 /* FinderLost.app */;
@@ -500,7 +494,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				554B5D4129943AC4007E9DA1 /* CustomError.swift in Sources */,
 				55A735AE2985363B00C700B5 /* FirebaseAuthProvider.swift in Sources */,
 				557CD4AE298995C400C3DB09 /* UserRepository.swift in Sources */,
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
@@ -514,9 +507,9 @@
 				557CD49D298981FC00C3DB09 /* Login.swift in Sources */,
 				55A735A82983385D00C700B5 /* UserSessionUserDefault.swift in Sources */,
 				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
-				554B5D432994438C007E9DA1 /* UserSession.swift in Sources */,
 				552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
+				5566D72D29978DD1005A3A93 /* UserSessionImpl.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
 				558C90FA2991B5CF00B8E835 /* ContainerDI.swift in Sources */,
@@ -882,6 +875,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		5566D72929978D81005A3A93 /* Domain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Domain;
 		};
 		557CD4AA298991E300C3DB09 /* Factory */ = {
 			isa = XCSwiftPackageProductDependency;

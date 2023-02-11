@@ -5,8 +5,12 @@
 //  Created by Andres Felipe Alzate Restrepo on 28/1/23.
 //
 
-import Factory
+import Domain
+
 import Combine
+
+import Factory
+
 import Firebase
 
 protocol FirebaseAuthProvider {

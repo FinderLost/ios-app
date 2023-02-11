@@ -5,17 +5,13 @@
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
 //
 
+import Domain
+
 import Combine
 import Factory
 
 import Firebase
 import GoogleSignIn
-
-protocol UserRepository {
-    func getSession() -> AnyPublisher<UserSession, Error>
-    func signIn() -> AnyPublisher<UserSession, Error>
-    func signOut() -> AnyPublisher<Void, Error>
-}
 
 final class UserRepositoryImpl: UserRepository {
     @Injected(Container.userSessionUserDefault)

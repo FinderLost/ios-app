@@ -5,6 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 26/1/23.
 //
 
+import Domain
 import Utilities
 
 protocol UserSessionUserDefault {
