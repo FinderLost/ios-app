@@ -5,6 +5,8 @@
 //  Created by Andres Felipe Alzate Restrepo on 26/1/23.
 //
 
+import Utilities
+
 protocol UserSessionUserDefault {
     func get() -> UserSession?
     func delete()
