@@ -5,7 +5,9 @@
 //  Created by Andres Felipe Alzate Restrepo on 6/2/23.
 //
 
-protocol HandlerContext {
+import Utilities
+
+public protocol HandlerContext {
     associatedtype Action
     associatedtype State
     var action: Action { get }
@@ -13,12 +15,12 @@ protocol HandlerContext {
     func nextAction(_ action: ReduxAction) -> ReduxAction?
 }
 
-final class HandlerContextImpl<Action: ReduxAction, State>: HandlerContext {
+public final class HandlerContextImpl<Action: ReduxAction, State>: HandlerContext {
     private let next: (Action) -> ReduxAction
-    let action: Action
-    let state: State
+    public let action: Action
+    public let state: State
 
-    init(
+    public init(
         action: Action,
         state: State,
         next: @escaping (Action) -> ReduxAction
@@ -28,7 +30,7 @@ final class HandlerContextImpl<Action: ReduxAction, State>: HandlerContext {
         self.next = next
     }
 
-    func nextAction(_ nextAction: ReduxAction) -> ReduxAction? {
+    public func nextAction(_ nextAction: ReduxAction) -> ReduxAction? {
         guard let nextAction = nextAction as? Action else {
             assertionDebug("Fails to unwrap the next action")
             return nil

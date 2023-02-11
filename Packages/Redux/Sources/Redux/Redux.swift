@@ -5,7 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
 //
 
-protocol Redux {
+public protocol Redux {
     associatedtype Action
     associatedtype State
 }
