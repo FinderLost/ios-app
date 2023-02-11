@@ -5,7 +5,6 @@
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
 //
 
-import Data
 import Domain
 
 import Combine
@@ -14,7 +13,7 @@ import Factory
 import Firebase
 import GoogleSignIn
 
-final class UserRepositoryImpl: UserRepository {
+public final class UserRepositoryImpl: UserRepository {
     @Injected(Container.userSessionUserDefault)
     private var userSessionUserDefault: UserSessionUserDefault
 
@@ -23,7 +22,9 @@ final class UserRepositoryImpl: UserRepository {
     @Injected(Container.googleAuthProvider)
     private var googleAuthProvider: GoogleAuthProviderI
 
-    func getSession() -> AnyPublisher<UserSession, Error> {
+    public init() { }
+    
+    public func getSession() -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
             guard let self else { return }
             guard let userSession = self.userSessionUserDefault.get() else {
@@ -33,7 +34,7 @@ final class UserRepositoryImpl: UserRepository {
         }.eraseToAnyPublisher()
     }
 
-    func signOut() -> AnyPublisher<Void, Error> {
+    public func signOut() -> AnyPublisher<Void, Error> {
         Future { [weak self] promise in
             guard let self else { return }
             self.userSessionUserDefault.delete()
@@ -41,7 +42,7 @@ final class UserRepositoryImpl: UserRepository {
         }.eraseToAnyPublisher()
     }
 
-    func signIn() -> AnyPublisher<UserSession, Error> {
+    public func signIn() -> AnyPublisher<UserSession, Error> {
         signInWithGoogle()
             .flatMap(saveSession)
             .eraseToAnyPublisher()

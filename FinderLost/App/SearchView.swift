@@ -6,6 +6,8 @@
 //
 
 import Redux
+
+import Factory
 import SwiftUI
 
 struct SearchView: View {

@@ -60,12 +60,3 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
         )
     }
 }
-
-extension UIApplication {
-    var firstWindowScene: UIWindowScene? {
-        UIApplication.shared.connectedScenes.first as? UIWindowScene
-    }
-    var firstRootViewController: UIViewController? {
-        firstWindowScene?.windows.first?.rootViewController
-    }
-}

@@ -29,11 +29,11 @@ final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
                     promise(.failure(error))
                 }
                 if let result {
-                    let userSession = UserSessionImpl(
-                        token: result.user.providerID,
-                        userId: result.additionalUserInfo?.providerID ?? ""
-                    )
-                    promise(.success(userSession))
+//                    let userSession = UserSessionImpl(
+//                        token: result.user.providerID,
+//                        userId: result.additionalUserInfo?.providerID ?? ""
+//                    )
+//                    promise(.success(userSession))
                 }
             }
         }.eraseToAnyPublisher()
