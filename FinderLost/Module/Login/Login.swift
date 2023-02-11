@@ -6,6 +6,7 @@
 //
 
 import Redux
+import Domain
 
 enum Login {
     struct State {
