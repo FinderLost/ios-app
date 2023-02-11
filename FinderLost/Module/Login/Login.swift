@@ -23,4 +23,3 @@ enum Login {
         case signOutResult(Result<Void, Error>)
     }
 }
-
