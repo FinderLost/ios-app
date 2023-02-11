@@ -5,4 +5,4 @@
 //  Created by Andres Felipe Alzate Restrepo on 6/2/23.
 //
 
-protocol ReduxAction { }
+public protocol ReduxAction { }

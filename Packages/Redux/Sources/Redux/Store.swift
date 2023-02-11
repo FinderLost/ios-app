@@ -7,15 +7,17 @@
 
 import Combine
 
-typealias Store<_Reducer: Reducer> = StoreImpl<_Reducer.Action, _Reducer.State>
-final class StoreImpl<Action, State>: ObservableObject {
-    @Published var state: State
+import Utilities
+
+public typealias Store<_Reducer: Reducer> = StoreImpl<_Reducer.Action, _Reducer.State>
+final public class StoreImpl<Action, State>: ObservableObject {
+    @Published public var state: State
     private let reduce: Reduce<Action, State>
     private let context: Context<Action, State>
     private var handlers: [any Handler<Action, State>] = []
     private var cancellables: [ AnyCancellable] = []
 
-    init(
+    public init(
         initialState: State,
         reducer: @escaping Reduce<Action, State>,
         context: @escaping Context<Action, State>
@@ -25,7 +27,7 @@ final class StoreImpl<Action, State>: ObservableObject {
         self.context = context
     }
 
-    func dispatch(_ action: Action) {
+    public func dispatch(_ action: Action) {
         let context = context(action, state)
         handlers.forEach { handler in
             handler.handle(context)
@@ -39,7 +41,7 @@ final class StoreImpl<Action, State>: ObservableObject {
     }
 
     @discardableResult
-    func use(_ handler: any Handler<Action, State>...) -> Self {
+    public func use(_ handler: any Handler<Action, State>...) -> Self {
         handlers += handler
         return self
     }
