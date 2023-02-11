@@ -6,5 +6,5 @@
 //
 
 extension Bool {
-    var not: Bool { !self }
+    public var not: Bool { !self }
 }

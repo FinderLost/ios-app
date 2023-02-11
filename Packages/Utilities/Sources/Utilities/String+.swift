@@ -6,5 +6,5 @@
 //
 
 extension String {
-    var isNotEmpty: Bool { isEmpty.not }
+    public var isNotEmpty: Bool { isEmpty.not }
 }
