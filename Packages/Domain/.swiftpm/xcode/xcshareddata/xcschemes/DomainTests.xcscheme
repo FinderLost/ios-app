@@ -16,9 +16,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Domain"
-            BuildableName = "Domain"
-            BlueprintName = "Domain"
+            BlueprintIdentifier = "DomainTests"
+            BuildableName = "DomainTests"
+            BlueprintName = "DomainTests"
             ReferencedContainer = "container:">
          </BuildableReference>
       </CodeCoverageTargets>

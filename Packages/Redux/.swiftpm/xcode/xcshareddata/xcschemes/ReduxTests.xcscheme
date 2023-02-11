@@ -16,9 +16,9 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Redux"
-            BuildableName = "Redux"
-            BlueprintName = "Redux"
+            BlueprintIdentifier = "ReduxTests"
+            BuildableName = "ReduxTests"
+            BlueprintName = "ReduxTests"
             ReferencedContainer = "container:">
          </BuildableReference>
       </CodeCoverageTargets>
