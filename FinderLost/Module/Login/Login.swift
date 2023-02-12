@@ -7,14 +7,16 @@
 
 import Redux
 import Domain
-
+import UIKit
 enum Login {
-    struct SignIn {
+    struct SignIn: Codable {
         var userId: String
         var email: String
         var name: String
+        var imageUrl: URL?
     }
-    enum State {
+    // TODO: - Update the redux architecture to implement the State as Codable by default
+    enum State: Codable {
         case idle
         case signIn(SignIn)
         case signOut
@@ -22,6 +24,14 @@ enum Login {
 
         var isLoading: Bool {
             if case .loading = self { return true }
+            return false
+        }
+        var isSignIn: Bool {
+            if case .signIn = self { return true }
+            return false
+        }
+        var isSignOut: Bool {
+            if case .signOut = self { return true }
             return false
         }
         var lastSignIn: SignIn? {

@@ -18,19 +18,21 @@ extension Login: Reducer {
         case
             let .getUserSessionResult(.success(value)),
             let .signInResult(.success(value)):
-            let signIn = SignIn(
+            let signIn = SignIn( // TODO: - other way to reuse the last state
                 userId: value.userId,
                 email: state.lastSignIn?.email ?? "",
-                name: state.lastSignIn?.name ?? ""
+                name: state.lastSignIn?.name ?? "",
+                imageUrl: state.lastSignIn?.imageUrl
             )
             newState = .signIn(signIn)
 
         case
             let .getInfoResult(.success(value)):
-            let signIn = SignIn(
+            let signIn = SignIn( // TODO: - other way to reuse the last state
                 userId: state.lastSignIn?.userId ?? "",
                 email: value.email,
-                name: value.name
+                name: value.name,
+                imageUrl: value.imageUrl
             )
 
             newState = .signIn(signIn)
@@ -43,7 +45,6 @@ extension Login: Reducer {
                 .getInfoResult(.failure):
             newState = .signOut
 
-        default: break
         }
 
         return newState
