@@ -6,8 +6,10 @@
 //
 
 import Domain
+import Foundation
 
 struct UserInfoImpl: Domain.UserInfo {
     let name: String
     let email: String
+    let imageUrl: URL?
 }
