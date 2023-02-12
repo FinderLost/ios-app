@@ -18,11 +18,14 @@ import GoogleSignIn
 protocol GoogleAuthProviderI {
     func getCredential(userSession: UserSession) -> AuthCredential
     func signIn() -> AnyPublisher<UserSession, Error>
+    func getInfo() -> AnyPublisher<Domain.UserInfo, Error>
 }
 
 final class GoogleAuthProviderImpl: GoogleAuthProviderI {
     @Injected(Container.firebaseApp)
     private var firebaseApp: FirebaseApp?
+    @Injected(Container.googleSignIn)
+    private var googleSignIn: GIDSignIn
 
     func signIn() -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
@@ -31,10 +34,10 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
 
             // Create Google Sign In configuration object.
             let config = GIDConfiguration(clientID: clientID)
-            GIDSignIn.sharedInstance.configuration = config
+            self.googleSignIn.configuration = config
 
             // Start the sign in flow!
-            GIDSignIn.sharedInstance.signIn(
+            self.googleSignIn.signIn(
                 withPresenting: UIApplication.shared.firstRootViewController ?? .init()
             ) { result, error in
                 if let error {
@@ -59,5 +62,16 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
             withIDToken: userSession.userId,
             accessToken: userSession.token
         )
+    }
+
+    func getInfo() -> AnyPublisher<Domain.UserInfo, Error> {
+        Future { [weak self] promise in
+            guard let profile = self?.googleSignIn.currentUser?.profile else { return }
+            let user = UserInfoImpl(
+                name: profile.name,
+                email: profile.email
+            )
+            promise(.success(user))
+        }.eraseToAnyPublisher()
     }
 }
