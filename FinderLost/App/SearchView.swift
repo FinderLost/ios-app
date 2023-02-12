@@ -20,7 +20,8 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView(store: storeMock)
+        let store = FinderLost.storeBuilderFake()
+        SearchView(store: store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }

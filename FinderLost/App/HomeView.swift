@@ -18,7 +18,8 @@ struct HomeView: View {
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(store: storeMock)
+        let store = FinderLost.storeBuilderFake()
+        HomeView(store: store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }
