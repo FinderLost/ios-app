@@ -7,8 +7,6 @@
 
 import Combine
 
-import Utilities
-
 public typealias Store<_Reducer: Reducer> = StoreImpl<_Reducer.Action, _Reducer.State>
 final public class StoreImpl<Action, State>: ObservableObject {
     @Published public var state: State
@@ -28,6 +26,8 @@ final public class StoreImpl<Action, State>: ObservableObject {
     }
 
     public func dispatch(_ action: Action) {
+        state = reduce(action, state)
+        
         let context = context(action, state)
         handlers.forEach { handler in
             handler.handle(context)
@@ -36,8 +36,6 @@ final public class StoreImpl<Action, State>: ObservableObject {
                 .sink(receiveValue: dispatch)
                 .store(in: &cancellables)
         }
-
-        state = reduce(action, state)
     }
 
     @discardableResult
