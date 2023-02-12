@@ -20,6 +20,12 @@ extension Login {
             guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
             switch action {
 
+            case .signInResult(.success):
+                return userRepository.getInfo()
+                    .compactMap { Login.Action.getInfoResult(.success($0)) }
+                    .catch { Just(Login.Action.getInfoResult(.failure($0))) }
+                    .eraseToAnyPublisher()
+
             case .signIn:
                 return userRepository.signIn()
                     .compactMap { Login.Action.signInResult(.success($0)) }
