@@ -13,7 +13,7 @@ final public class StoreImpl<Action, State>: ObservableObject {
     private let reduce: Reduce<Action, State>
     private let context: Context<Action, State>
     private var handlers: [any Handler<Action, State>] = []
-    private var cancellables: [ AnyCancellable] = []
+    private var cancellables: [AnyCancellable] = []
 
     public init(
         initialState: State,

@@ -15,6 +15,7 @@ import Factory
 import Firebase
 import GoogleSignIn
 
+// TODO: - Improve the protocol name
 protocol GoogleAuthProviderI {
     func getCredential(userSession: UserSession) -> AuthCredential
     func signIn() -> AnyPublisher<UserSession, Error>
@@ -29,8 +30,13 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
 
     func signIn() -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
-            guard let self else { return }
-            guard let clientID = self.firebaseApp?.options.clientID else { return }
+            guard
+                let self,
+                let clientID = self.firebaseApp?.options.clientID
+            else {
+                promise(.failure(CustomError.isEmpty))
+                return
+            }
 
             // Create Google Sign In configuration object.
             let config = GIDConfiguration(clientID: clientID)
@@ -66,10 +72,14 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
 
     func getInfo() -> AnyPublisher<Domain.UserInfo, Error> {
         Future { [weak self] promise in
-            guard let profile = self?.googleSignIn.currentUser?.profile else { return }
+            guard let profile = self?.googleSignIn.currentUser?.profile else {
+                promise(.failure(CustomError.isEmpty))
+                return
+            }
             let user = UserInfoImpl(
                 name: profile.name,
-                email: profile.email
+                email: profile.email,
+                imageUrl: profile.imageURL(withDimension: 80) // TODO: - another way
             )
             promise(.success(user))
         }.eraseToAnyPublisher()
