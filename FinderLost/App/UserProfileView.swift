@@ -6,6 +6,7 @@
 //
 
 import Redux
+import Utilities
 import DesignSystem
 
 import SwiftUI
@@ -20,10 +21,14 @@ struct UserProfileView: View {
             List {
                 if case let .signIn(state) = store.state.login {
                     HStack {
-                        Image(systemName: "person.fill")
-                            .resizable()
-                            .frame(width: 45, height: 45)
-                            .padding(8)
+                        ImageURL(
+                            url: state.imageUrl,
+                            placeHolder: UIImage(systemName: "person.fill")
+                        )
+                        .clipShape(Circle())
+                        .frame(width: 45, height: 45)
+                        .padding(8)
+
                         VStack(alignment: .leading, spacing: 8) {
                             Text(state.name)
                             Text(state.email)
@@ -43,17 +48,18 @@ struct UserProfileView: View {
 
                 Section {
                     Text("Privacy")
+                        .onTapGesture { print("limit::Privacy") }
                     Text("Notification")
+                        .onTapGesture { print("limit::Notification") }
                 }
                 Section {
                     Text("Help")
+                        .onTapGesture { print("limit::Help") }
                     Text("Share the app")
-                        .onTapGesture {
-                            print("limit::\(#function)")
-                        }
+                        .onTapGesture { print("limit::Share the app") }
                 }
                 Section {
-                    if case .signIn = store.state.login {
+                    if store.state.login.isSignIn {
                         Button("Sign Out") { store.dispatch(.login(.signOut)) }
                             .foregroundColor(Color.red)
                     }
@@ -61,7 +67,7 @@ struct UserProfileView: View {
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
-            if case .signOut = store.state.login {
+            if store.state.login.isSignOut {
                 GoogleSignInButton { store.dispatch(.login(.signIn)) }
                     .cornerRadius(8)
                     .shadow(radius: 0)
@@ -84,14 +90,14 @@ struct UserProfileView_Previews: PreviewProvider {
 
         let state = FinderLost.StateBuilderFake()
             .set(\.login, .signOut)
-            .set(\.login, .signIn(signIn))
             .set(\.login, .loading)
+            .set(\.login, .signIn(signIn))
             .entity
 
         let store = FinderLost.storeBuilderFake(
             initialState: state
         )
-
+        
         UserProfileView(store: store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
