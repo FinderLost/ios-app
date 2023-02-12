@@ -22,22 +22,29 @@ struct TabBarView: View {
 
     var body: some View {
         TabView {
-            HomeView(store: store)
-                .tabItem {
-                    Image(systemName: "house")
-                    Text("Home")
-                }
-            SearchView(store: store)
+            NavigationView {
+                HomeView(store: store)
+            }
+            .tabItem {
+                Image(systemName: "house")
+                Text("Home")
+            }
+            NavigationView {
+                SearchView(store: store)
+            }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
-            UserProfileView(store: store)
+            NavigationView {
+                UserProfileView(store: store)
+            }
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
-        }.onAppear {
+        }
+        .onAppear {
             store.dispatch(.login(.getUserSession))
         }
     }
@@ -45,7 +52,8 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        TabBarView(store: storeMock)
+        let store = FinderLost.storeBuilderFake()
+        TabBarView(store: store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }
