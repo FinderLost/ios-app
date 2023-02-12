@@ -21,7 +21,6 @@ struct FinderLostApp: App {
     var body: some Scene {
         WindowGroup {
             TabBarView(store: store)
-                .edgesIgnoringSafeArea(.all)
         }
     }
 }

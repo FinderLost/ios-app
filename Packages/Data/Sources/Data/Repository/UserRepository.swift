@@ -10,9 +10,6 @@ import Domain
 import Combine
 import Factory
 
-import Firebase
-import GoogleSignIn
-
 public final class UserRepositoryImpl: UserRepository {
     @Injected(Container.userSessionUserDefault)
     private var userSessionUserDefault: UserSessionUserDefault
@@ -43,9 +40,16 @@ public final class UserRepositoryImpl: UserRepository {
     }
 
     public func signIn() -> AnyPublisher<UserSession, Error> {
-        signInWithGoogle()
+        googleAuthProvider.signIn()
+            .map(googleAuthProvider.getCredential)
+            .flatMap(firebaseAuthProvider.signIn)
+            .eraseToAnyPublisher()
             .flatMap(saveSession)
             .eraseToAnyPublisher()
+    }
+
+    public func getInfo() -> AnyPublisher<UserInfo, Error> {
+        googleAuthProvider.getInfo()
     }
 
     private func saveSession(_ userSession: UserSession) -> AnyPublisher<UserSession, Error> {
@@ -54,12 +58,5 @@ public final class UserRepositoryImpl: UserRepository {
             self.userSessionUserDefault.save(userSession: userSession)
             promise(.success(userSession))
         }.eraseToAnyPublisher()
-    }
-
-    private func signInWithGoogle() -> AnyPublisher<UserSession, Error> {
-        googleAuthProvider.signIn()
-            .map(googleAuthProvider.getCredential)
-            .flatMap(firebaseAuthProvider.signIn)
-            .eraseToAnyPublisher()
     }
 }

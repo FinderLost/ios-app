@@ -9,7 +9,7 @@ import Redux
 
 enum FinderLost {
     struct State {
-        var login: Login.State = .init()
+        var login: Login.State = .idle
     }
 
     enum Action: ReduxAction {
