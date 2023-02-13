@@ -37,6 +37,7 @@ enum Login {
             if case .signOut = self { return true }
             return false
         }
+        // TODO: - Pending to improve
         var lastSignIn: SignIn? {
             guard case let .signIn(state) = self else { return nil }
             return state
