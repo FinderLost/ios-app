@@ -17,8 +17,9 @@ import GoogleSignIn
 
 // TODO: - Improve the protocol name
 protocol GoogleAuthProviderI {
-    func getCredential(userSession: UserSession) -> AuthCredential
-    func signIn() -> AnyPublisher<UserSession, Error>
+    func restorePreviousSignIn() -> AnyPublisher<AuthCredential, Error>
+    func signIn() -> AnyPublisher<AuthCredential, Error>
+    func signOut() -> AnyPublisher<Void, Error>
     func getInfo() -> AnyPublisher<Domain.UserInfo, Error>
 }
 
@@ -28,46 +29,26 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
     @Injected(Container.googleSignIn)
     private var googleSignIn: GIDSignIn
 
-    func signIn() -> AnyPublisher<UserSession, Error> {
+    func signIn() -> AnyPublisher<AuthCredential, Error> {
         Future { [weak self] promise in
             guard
-                let self,
-                let clientID = self.firebaseApp?.options.clientID
+                let googleSignIn = self?.googleSignIn,
+                let clientID = self?.firebaseApp?.options.clientID
             else {
                 promise(.failure(CustomError.isEmpty))
                 return
             }
 
-            // Create Google Sign In configuration object.
             let config = GIDConfiguration(clientID: clientID)
-            self.googleSignIn.configuration = config
+            googleSignIn.configuration = config
 
-            // Start the sign in flow!
-            self.googleSignIn.signIn(
+            googleSignIn.signIn(
                 withPresenting: UIApplication.shared.firstRootViewController ?? .init()
             ) { result, error in
-                if let error {
-                    promise(.failure(error))
-                }
-
-                if
-                    let user = result?.user,
-                    let userId = user.idToken?.tokenString {
-                    let userSession = UserSessionImpl(
-                        token: user.accessToken.tokenString,
-                        userId: userId
-                    )
-                    promise(.success(userSession))
-                }
+                if let error { promise(.failure(error)) }
+                if let credential = result?.user.credential { promise(.success(credential)) }
             }
         }.eraseToAnyPublisher()
-    }
-
-    func getCredential(userSession: UserSession) -> AuthCredential {
-        GoogleAuthProvider.credential(
-            withIDToken: userSession.userId,
-            accessToken: userSession.token
-        )
     }
 
     func getInfo() -> AnyPublisher<Domain.UserInfo, Error> {
@@ -83,5 +64,31 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
             )
             promise(.success(user))
         }.eraseToAnyPublisher()
+    }
+
+    func restorePreviousSignIn() -> AnyPublisher<AuthCredential, Error> {
+        Future { promise in
+            GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+                if let error { promise(.failure(error)) }
+                if let credential = user?.credential { promise(.success(credential)) }
+            }
+        }.eraseToAnyPublisher()
+    } 
+
+    func signOut() -> AnyPublisher<Void, Error> {
+        Future { promise in
+            GIDSignIn.sharedInstance.signOut()
+            promise(.success(()))
+        }.eraseToAnyPublisher()
+    }
+}
+
+private extension GIDGoogleUser {
+    var credential: AuthCredential? {
+        guard let idToken = idToken?.tokenString else { return nil }
+        return GoogleAuthProvider.credential(
+            withIDToken: idToken,
+            accessToken: accessToken.tokenString
+        )
     }
 }

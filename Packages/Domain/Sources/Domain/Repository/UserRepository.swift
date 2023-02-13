@@ -8,7 +8,7 @@
 import Combine
 
 public protocol UserRepository {
-    func getSession() -> AnyPublisher<UserSession, Error>
+    func restorePreviousSignIn() -> AnyPublisher<UserSession, Error>
     func signIn() -> AnyPublisher<UserSession, Error>
     func signOut() -> AnyPublisher<Void, Error>
     func getInfo() -> AnyPublisher<UserInfo, Error>
