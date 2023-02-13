@@ -29,6 +29,7 @@
 		55A735B02985371F00C700B5 /* ContainerDI+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AF2985371F00C700B5 /* ContainerDI+Repository.swift */; };
 		55A735C32985496200C700B5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C22985496200C700B5 /* FirebaseAuth */; };
 		55A735C52985496800C700B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C42985496800C700B5 /* GoogleSignIn */; };
+		55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55ACBBBA299AE865008288E5 /* SwifterSwift */; };
 		55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CD2997C3D6003CC4F7 /* Domain */; };
 		55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CF2997C3E1003CC4F7 /* Redux */; };
 		55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2D12997C3EB003CC4F7 /* Utilities */; };
@@ -105,6 +106,7 @@
 				557CD4AB298991E300C3DB09 /* Factory in Frameworks */,
 				55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */,
 				552F5591297D739300E2EFBF /* FirebaseAuth in Frameworks */,
+				55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */,
 				55DBD2DE29983242003CC4F7 /* DesignSystem in Frameworks */,
 				55DBD2D429981A16003CC4F7 /* GoogleSignInSwift in Frameworks */,
 				55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */,
@@ -358,6 +360,7 @@
 				55A03E032997EFC000FE8091 /* Data */,
 				55DBD2D329981A16003CC4F7 /* GoogleSignInSwift */,
 				55DBD2DD29983242003CC4F7 /* DesignSystem */,
+				55ACBBBA299AE865008288E5 /* SwifterSwift */,
 			);
 			productName = FinderLost;
 			productReference = 55FE80D5294D066200763BE7 /* FinderLost.app */;
@@ -439,6 +442,7 @@
 				552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				557CD4A9298991E300C3DB09 /* XCRemoteSwiftPackageReference "Factory" */,
+				55ACBBB9299AE865008288E5 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
 			);
 			productRefGroup = 55FE80D6294D066200763BE7 /* Products */;
 			projectDirPath = "";
@@ -857,6 +861,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		55ACBBB9299AE865008288E5 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -888,6 +900,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignIn;
+		};
+		55ACBBBA299AE865008288E5 /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55ACBBB9299AE865008288E5 /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
 		};
 		55DBD2CD2997C3D6003CC4F7 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
