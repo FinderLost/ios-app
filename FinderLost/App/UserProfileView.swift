@@ -28,12 +28,14 @@ struct UserProfileView: View {
                         .clipShape(Circle())
                         .frame(width: 45, height: 45)
                         .padding(8)
-
+                        
                         VStack(alignment: .leading, spacing: 8) {
                             Text(state.name)
                             Text(state.email)
                         }
                     }
+                    .listRowBackground(Color.light)
+
                 } else {
                     HStack {
                         Image(systemName: "person.fill")
@@ -44,26 +46,32 @@ struct UserProfileView: View {
                             Text("Welcome to FinderLost!")
                         }
                     }
-                }
+                    .listRowBackground(Color.light)
 
+                }
+                
                 Section {
                     Text("Privacy")
                         .onTapGesture { print("limit::Privacy") }
                     Text("Notification")
                         .onTapGesture { print("limit::Notification") }
                 }
+                .listRowBackground(Color.light)
                 Section {
                     Text("Help")
                         .onTapGesture { print("limit::Help") }
                     Text("Share the app")
                         .onTapGesture { print("limit::Share the app") }
                 }
+                .listRowBackground(Color.light)
                 Section {
                     if store.state.login.isSignIn {
                         Button("Sign Out") { store.dispatch(.login(.signOut)) }
-                            .foregroundColor(Color.red)
+                            .foregroundColor(.red)
                     }
                 }
+                .listRowBackground(Color.light)
+
             }
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
@@ -89,9 +97,10 @@ struct UserProfileView_Previews: PreviewProvider {
             .entity
 
         let state = FinderLost.StateBuilderFake()
-            .set(\.login, .signOut)
             .set(\.login, .loading)
             .set(\.login, .signIn(signIn))
+            .set(\.login, .error("signIn"))
+            .set(\.login, .signOut)
             .entity
 
         let store = FinderLost.storeBuilderFake(
