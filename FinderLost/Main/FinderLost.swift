@@ -8,7 +8,7 @@
 import Redux
 
 enum FinderLost {
-    struct State {
+    struct State: ReduxState {
         var login: Login.State = .idle
     }
 

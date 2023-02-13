@@ -12,7 +12,7 @@ import Combine
 import Factory
 
 extension Login {
-    class HandlerImpl<Action: ReduxAction, State>: Handler {
+    class HandlerImpl<Action: ReduxAction, State: ReduxState>: Handler {
         @Injected(Container.userRepository)
         private var userRepository: UserRepository
 

@@ -9,14 +9,14 @@ import Redux
 import Domain
 import UIKit
 enum Login {
-    struct SignIn: Codable {
+    struct SignIn: ReduxState {
         var userId: String
         var email: String
         var name: String
         var imageUrl: URL?
     }
     // TODO: - Update the redux architecture to implement the State as Codable by default
-    enum State: Codable {
+    enum State: ReduxState {
         case idle
         case signIn(SignIn)
         case signOut
