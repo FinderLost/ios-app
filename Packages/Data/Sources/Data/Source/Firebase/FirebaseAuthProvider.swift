@@ -23,7 +23,8 @@ final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
 
     func signIn(credential: AuthCredential) -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
-            guard let self else { return }
+            guard let self else { promise(.failure(CustomError.isEmpty)); return }
+
             self.firebaseAuth.signIn(with: credential) { result, error in
                 if let error {
                     promise(.failure(error))
