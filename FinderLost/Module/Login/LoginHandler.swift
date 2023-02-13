@@ -20,7 +20,7 @@ extension Login {
             guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
             switch action {
 
-            case .signInResult(.success):
+            case .signInResult(.success), .getUserSessionResult(.success), .getInfo:
                 return userRepository.getInfo()
                     .compactMap { Login.Action.getInfoResult(.success($0)) }
                     .catch { Just(Login.Action.getInfoResult(.failure($0))) }
@@ -33,12 +33,12 @@ extension Login {
                     .eraseToAnyPublisher()
 
             case .getUserSession:
-                return userRepository.getSession()
+                return userRepository.restorePreviousSignIn()
                     .compactMap { Login.Action.getUserSessionResult(.success($0)) }
                     .catch { Just(Login.Action.getUserSessionResult(.failure($0))) }
                     .eraseToAnyPublisher()
 
-            case .signOut:
+            case .signOut, .getUserSessionResult(.failure):
                 return userRepository.signOut()
                     .compactMap { Login.Action.signOutResult(.success($0)) }
                     .catch { Just(Login.Action.signOutResult(.failure($0))) }
