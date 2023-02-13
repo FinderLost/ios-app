@@ -14,7 +14,11 @@ struct SearchView: View {
     @ObservedObject var store: Store<FinderLost>
 
     var body: some View {
-        Text("SearchView")
+        ZStack {
+            Text("SearchView")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.background)
     }
 }
 

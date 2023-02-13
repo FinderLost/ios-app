@@ -12,7 +12,11 @@ struct HomeView: View {
     @ObservedObject var store: Store<FinderLost>
 
     var body: some View {
-        Text("HomeView")
+        ZStack {
+            Text("HomeView")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.background)
     }
 }
 
