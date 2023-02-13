@@ -7,7 +7,9 @@
 
 import Redux
 import Domain
+
 import UIKit
+
 enum Login {
     struct SignIn: ReduxState {
         var userId: String
