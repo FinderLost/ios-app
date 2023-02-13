@@ -21,6 +21,7 @@ enum Login {
         case signIn(SignIn)
         case signOut
         case loading
+        case error(String)
 
         var isLoading: Bool {
             if case .loading = self { return true }
@@ -37,6 +38,10 @@ enum Login {
         var lastSignIn: SignIn? {
             guard case let .signIn(state) = self else { return nil }
             return state
+        }
+        var error: String? {
+            guard case let .error(error) = self else { return nil }
+            return error
         }
     }
     enum Action: ReduxAction {

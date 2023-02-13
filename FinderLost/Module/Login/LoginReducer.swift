@@ -16,9 +16,10 @@ extension Login: Reducer {
             newState = .loading
 
         case
-            let .getUserSessionResult(.success(value)),
-            let .signInResult(.success(value)):
-            let signIn = SignIn( // TODO: - other way to reuse the last state
+            let .signInResult(.success(value)),
+            let .getUserSessionResult(.success(value)):
+            // TODO: - other way to reuse the last state
+            let signIn = SignIn(
                 userId: value.userId,
                 email: state.lastSignIn?.email ?? "",
                 name: state.lastSignIn?.name ?? "",
@@ -28,7 +29,8 @@ extension Login: Reducer {
 
         case
             let .getInfoResult(.success(value)):
-            let signIn = SignIn( // TODO: - other way to reuse the last state
+            // TODO: - other way to reuse the last state
+            let signIn = SignIn(
                 userId: state.lastSignIn?.userId ?? "",
                 email: value.email,
                 name: value.name,
@@ -37,14 +39,17 @@ extension Login: Reducer {
 
             newState = .signIn(signIn)
 
-        case
-                .getUserSessionResult(.failure),
-                .signInResult(.failure),
-                .signOutResult(.failure),
-                .signOutResult(.success),
-                .getInfoResult(.failure):
+        case .signOutResult(.success):
             newState = .signOut
 
+        case
+                let .getUserSessionResult(.failure(error)),
+                let .signInResult(.failure(error)),
+                let .signOutResult(.failure(error)),
+                let .getInfoResult(.failure(error)):
+            newState = .error(error.localizedDescription)
+            print("limit::\(#function)\(error.localizedDescription)")
+            // TODO: - update the error on view
         }
 
         return newState
