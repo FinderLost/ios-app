@@ -6,22 +6,41 @@
 //
 
 import SwiftUI
+import Utilities
 import GoogleSignInSwift
 
-struct GoogleSignInButton: View {
-    @ObservedObject private var viewModel = GoogleSignInButtonViewModel(style: .wide)
+public struct GoogleSignInButton: View {
+    @Environment(\.colorScheme)
+    private var colorScheme
+    @ObservedObject
+    private var viewModel = GoogleSignInButtonViewModel(style: .wide)
+
     private var action: () -> Void
 
-    init(action: @escaping () -> Void) {
+    public init(action: @escaping () -> Void) {
         self.action = action
     }
 
-    var body: some View {
+    public var body: some View {
         GoogleSignInSwift.GoogleSignInButton(
             viewModel: viewModel,
             action: action
         )
         .cornerRadius(8)
         .shadow(radius: 0)
+        // TODO: - Update in real time 
+        .onAppear { viewModel.scheme = .scheme(colorScheme) }
+    }
+}
+
+private extension GoogleSignInButtonColorScheme {
+    static func scheme(_ colorScheme: ColorScheme) -> Self {
+        switch colorScheme {
+        case .dark: return .dark
+        case .light: return .light
+        @unknown default:
+            assertionDebug()
+            return .light
+        }
     }
 }
