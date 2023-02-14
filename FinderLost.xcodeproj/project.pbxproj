@@ -31,6 +31,10 @@
 		55A735C52985496800C700B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C42985496800C700B5 /* GoogleSignIn */; };
 		55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55ACBBBA299AE865008288E5 /* SwifterSwift */; };
 		55ACBBBE299AEFCC008288E5 /* LoginStateTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBBD299AEFCC008288E5 /* LoginStateTest.swift */; };
+		55ACBBC4299AF271008288E5 /* LoginReducerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC3299AF271008288E5 /* LoginReducerTest.swift */; };
+		55ACBBC7299B6EF5008288E5 /* UserSessionBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */; };
+		55ACBBC9299B7145008288E5 /* NSErrorBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */; };
+		55ACBBCB299B7838008288E5 /* UserInfoBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */; };
 		55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CD2997C3D6003CC4F7 /* Domain */; };
 		55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CF2997C3E1003CC4F7 /* Redux */; };
 		55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2D12997C3EB003CC4F7 /* Utilities */; };
@@ -86,6 +90,10 @@
 		55A03E072997F61200FE8091 /* StoreBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBuilderFake.swift; sourceTree = "<group>"; };
 		55A735AF2985371F00C700B5 /* ContainerDI+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContainerDI+Repository.swift"; sourceTree = "<group>"; };
 		55ACBBBD299AEFCC008288E5 /* LoginStateTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStateTest.swift; sourceTree = "<group>"; };
+		55ACBBC3299AF271008288E5 /* LoginReducerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginReducerTest.swift; sourceTree = "<group>"; };
+		55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionBuilderFake.swift; sourceTree = "<group>"; };
+		55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSErrorBuilderFake.swift; sourceTree = "<group>"; };
+		55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2D929982100003CC4F7 /* SignInBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2DC29982B78003CC4F7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
@@ -233,9 +241,28 @@
 		55ACBBBC299AEFA8008288E5 /* FinderLostTests */ = {
 			isa = PBXGroup;
 			children = (
-				55ACBBBD299AEFCC008288E5 /* LoginStateTest.swift */,
+				55ACBBC2299AF244008288E5 /* Login */,
 			);
 			path = FinderLostTests;
+			sourceTree = "<group>";
+		};
+		55ACBBC2299AF244008288E5 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				55ACBBBD299AEFCC008288E5 /* LoginStateTest.swift */,
+				55ACBBC3299AF271008288E5 /* LoginReducerTest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		55ACBBC5299B6EE3008288E5 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */,
+				55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */,
+				55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		55D37C4F2996ED1E00947787 /* Packages */ = {
@@ -329,6 +356,7 @@
 		55FE80DE294D066400763BE7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				55ACBBC5299B6EE3008288E5 /* Domain */,
 				55DBD2D529982028003CC4F7 /* FinderLost */,
 				55DBD2D629982053003CC4F7 /* Login */,
 				55FE80DF294D066400763BE7 /* Preview Assets.xcassets */,
@@ -505,6 +533,7 @@
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
 				55A735B02985371F00C700B5 /* ContainerDI+Repository.swift in Sources */,
 				55DBD2E42998470D003CC4F7 /* GoogleSignInButton.swift in Sources */,
+				55ACBBC7299B6EF5008288E5 /* UserSessionBuilderFake.swift in Sources */,
 				552F5586297D670200E2EFBF /* SearchView.swift in Sources */,
 				55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */,
 				557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */,
@@ -515,7 +544,9 @@
 				557CD49D298981FC00C3DB09 /* Login.swift in Sources */,
 				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
 				552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */,
+				55ACBBC9299B7145008288E5 /* NSErrorBuilderFake.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
+				55ACBBCB299B7838008288E5 /* UserInfoBuilderFake.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
 			);
@@ -525,6 +556,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55ACBBC4299AF271008288E5 /* LoginReducerTest.swift in Sources */,
 				55ACBBBE299AEFCC008288E5 /* LoginStateTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
