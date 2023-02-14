@@ -12,26 +12,18 @@ extension Login: Reducer {
         var newState = state
 
         switch action {
-        case .signIn, .signOut, .getUserSession, .getInfo:
+        case .getUserSession:
+            newState = .idle
+
+        case
+                .signIn,
+                .signOut,
+                .getInfo:
             newState = .loading
 
         case
-            let .signInResult(.success(value)),
-            let .getUserSessionResult(.success(value)):
-            // TODO: - other way to reuse the last state
-            let signIn = SignIn(
-                userId: value.userId,
-                email: state.lastSignIn?.email ?? "",
-                name: state.lastSignIn?.name ?? "",
-                imageUrl: state.lastSignIn?.imageUrl
-            )
-            newState = .signIn(signIn)
-
-        case
             let .getInfoResult(.success(value)):
-            // TODO: - other way to reuse the last state
             let signIn = SignIn(
-                userId: state.lastSignIn?.userId ?? "",
                 email: value.email,
                 name: value.name,
                 imageUrl: value.imageUrl
@@ -50,6 +42,11 @@ extension Login: Reducer {
             newState = .error(error.localizedDescription)
             print("limit::\(#function)\(error.localizedDescription)")
             // TODO: - update the error on view
+
+        case
+                .getUserSessionResult(.success),
+                .signInResult(.success):
+            break
         }
 
         return newState

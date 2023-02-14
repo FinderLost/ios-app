@@ -12,7 +12,6 @@ import UIKit
 
 enum Login {
     struct SignIn: ReduxState {
-        var userId: String
         var email: String
         var name: String
         var imageUrl: URL?
@@ -49,8 +48,10 @@ enum Login {
     }
     enum Action: ReduxAction {
         case getUserSession
+        // TODO: - Pending to save the UserSession
         case getUserSessionResult(Result<UserSession, Error>)
         case signIn
+        // TODO: - Pending to save the UserSession
         case signInResult(Result<UserSession, Error>)
         case signOut
         case signOutResult(Result<Void, Error>)

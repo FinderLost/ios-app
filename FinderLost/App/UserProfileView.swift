@@ -93,7 +93,6 @@ struct UserProfileView_Previews: PreviewProvider {
         let signIn = Login.SignInBuilderFake()
             .set(\.email, "felipe@meep.me")
             .set(\.name, "Andrés Felipe Alzate Restrepo")
-            .set(\.userId, "nil")
             .entity
 
         let state = FinderLost.StateBuilderFake()
