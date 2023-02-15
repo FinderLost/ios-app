@@ -35,6 +35,12 @@
 		55ACBBC7299B6EF5008288E5 /* UserSessionBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */; };
 		55ACBBC9299B7145008288E5 /* NSErrorBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */; };
 		55ACBBCB299B7838008288E5 /* UserInfoBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */; };
+		55C2DFAA299C27CB003F3510 /* LoginHandlerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2DFA9299C27CB003F3510 /* LoginHandlerTest.swift */; };
+		55C2DFB4299D8AAE003F3510 /* UserRepositoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2DFB3299D8AAE003F3510 /* UserRepositoryMock.swift */; };
+		55C2DFB5299D8B3A003F3510 /* UserSessionBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */; };
+		55C2DFB6299D8B40003F3510 /* UserInfoBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */; };
+		55C2DFB7299D8B43003F3510 /* NSErrorBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */; };
+		55C2DFBA299D8C42003F3510 /* Publisher+awaitPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C2DFB9299D8C42003F3510 /* Publisher+awaitPublisher.swift */; };
 		55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CD2997C3D6003CC4F7 /* Domain */; };
 		55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CF2997C3E1003CC4F7 /* Redux */; };
 		55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2D12997C3EB003CC4F7 /* Utilities */; };
@@ -94,6 +100,9 @@
 		55ACBBC6299B6EF5008288E5 /* UserSessionBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSessionBuilderFake.swift; sourceTree = "<group>"; };
 		55ACBBC8299B7145008288E5 /* NSErrorBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSErrorBuilderFake.swift; sourceTree = "<group>"; };
 		55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoBuilderFake.swift; sourceTree = "<group>"; };
+		55C2DFA9299C27CB003F3510 /* LoginHandlerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginHandlerTest.swift; sourceTree = "<group>"; };
+		55C2DFB3299D8AAE003F3510 /* UserRepositoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepositoryMock.swift; sourceTree = "<group>"; };
+		55C2DFB9299D8C42003F3510 /* Publisher+awaitPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publisher+awaitPublisher.swift"; sourceTree = "<group>"; };
 		55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2D929982100003CC4F7 /* SignInBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2DC29982B78003CC4F7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
@@ -241,6 +250,8 @@
 		55ACBBBC299AEFA8008288E5 /* FinderLostTests */ = {
 			isa = PBXGroup;
 			children = (
+				55C2DFB8299D8C28003F3510 /* Tools */,
+				55C2DFB2299D8AA3003F3510 /* Mock */,
 				55ACBBC2299AF244008288E5 /* Login */,
 			);
 			path = FinderLostTests;
@@ -251,6 +262,7 @@
 			children = (
 				55ACBBBD299AEFCC008288E5 /* LoginStateTest.swift */,
 				55ACBBC3299AF271008288E5 /* LoginReducerTest.swift */,
+				55C2DFA9299C27CB003F3510 /* LoginHandlerTest.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -263,6 +275,22 @@
 				55ACBBCA299B7838008288E5 /* UserInfoBuilderFake.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		55C2DFB2299D8AA3003F3510 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				55C2DFB3299D8AAE003F3510 /* UserRepositoryMock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		55C2DFB8299D8C28003F3510 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				55C2DFB9299D8C42003F3510 /* Publisher+awaitPublisher.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		55D37C4F2996ED1E00947787 /* Packages */ = {
@@ -556,8 +584,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C2DFB4299D8AAE003F3510 /* UserRepositoryMock.swift in Sources */,
+				55C2DFB5299D8B3A003F3510 /* UserSessionBuilderFake.swift in Sources */,
+				55C2DFB7299D8B43003F3510 /* NSErrorBuilderFake.swift in Sources */,
 				55ACBBC4299AF271008288E5 /* LoginReducerTest.swift in Sources */,
+				55C2DFB6299D8B40003F3510 /* UserInfoBuilderFake.swift in Sources */,
 				55ACBBBE299AEFCC008288E5 /* LoginStateTest.swift in Sources */,
+				55C2DFBA299D8C42003F3510 /* Publisher+awaitPublisher.swift in Sources */,
+				55C2DFAA299C27CB003F3510 /* LoginHandlerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
