@@ -11,7 +11,8 @@ import Factory
 import SwiftUI
 
 struct SearchView: View {
-    @ObservedObject var store: Store<FinderLost>
+    @EnvironmentObject
+    var store: Store<FinderLost>
 
     var body: some View {
         ZStack {
@@ -24,8 +25,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        let store = FinderLost.storeBuilderFake()
-        SearchView(store: store)
+        SearchView()
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }
