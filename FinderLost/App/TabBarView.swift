@@ -10,34 +10,27 @@ import SwiftUI
 import Factory
 
 struct TabBarView: View {
-    @Injected(Container.loginHandler)
-    private var loginHandler: HandlerOf<FinderLost>
-
-    @ObservedObject var store: Store<FinderLost>
-
-    init(store: Store<FinderLost>) {
-        self.store = store
-        self.store.use(loginHandler)
-    }
+    @EnvironmentObject
+    var store: Store<FinderLost>
 
     var body: some View {
         TabView {
             NavigationView {
-                HomeView(store: store)
+                HomeView()
             }
             .tabItem {
                 Image(systemName: "house")
                 Text("Home")
             }
             NavigationView {
-                SearchView(store: store)
+                SearchView()
             }
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                     Text("Search")
                 }
             NavigationView {
-                UserProfileView(store: store)
+                UserProfileView()
             }
                 .tabItem {
                     Image(systemName: "person.fill")
@@ -45,6 +38,7 @@ struct TabBarView: View {
                 }
         }
         .onAppear {
+            store.use(HandlerDI.login())
             store.dispatch(.login(.getUserSession))
         }
     }
@@ -52,8 +46,7 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
-        let store = FinderLost.storeBuilderFake()
-        TabBarView(store: store)
+        TabBarView()
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }
