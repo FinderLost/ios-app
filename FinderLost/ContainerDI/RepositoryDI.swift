@@ -10,6 +10,8 @@ import Domain
 
 import Factory
 
-extension Container {
-    static let userRepository = Factory<UserRepository>(scope: .singleton) { UserRepositoryImpl() }
+final class RepositoryDI: SharedContainer {
+    static let user = Factory<UserRepository>(scope: .singleton) {
+        UserRepositoryImpl()
+    }
 }
