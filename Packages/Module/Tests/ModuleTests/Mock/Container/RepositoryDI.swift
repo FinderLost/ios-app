@@ -10,7 +10,7 @@ import Domain
 import Factory
 
 final class RepositoryDI: SharedContainer {
-    static let user = Factory<UserRepository>(scope: .singleton) {
+    static let user = Factory<UserRepository>(scope: .test) {
         UserRepositoryMock()
     }
 }
