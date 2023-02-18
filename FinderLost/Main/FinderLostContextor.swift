@@ -6,6 +6,7 @@
 //
 
 import Redux
+import Module
 
 extension FinderLost: Contextor {
     static func context(_ action: Action, with state: State) -> any HandlerContext {

@@ -6,6 +6,7 @@
 //
 
 import Redux
+import Module
 
 extension FinderLost: Reducer {
     static func reduce(_ action: Action, with state: State) -> State {
