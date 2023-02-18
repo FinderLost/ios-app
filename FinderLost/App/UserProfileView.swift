@@ -14,7 +14,8 @@ import SwiftUI
 import Factory
 
 struct UserProfileView: View {
-    @ObservedObject var store: Store<FinderLost>
+    @EnvironmentObject
+    var store: Store<FinderLost>
 
     var body: some View {
         VStack {
@@ -47,7 +48,6 @@ struct UserProfileView: View {
                         }
                     }
                     .listRowBackground(Color.light)
-
                 }
                 
                 Section {
@@ -90,14 +90,8 @@ struct UserProfileView: View {
 
 struct UserProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        let signIn = Login.SignInBuilderFake()
-            .set(\.email, "felipe@meep.me")
-            .set(\.name, "Andrés Felipe Alzate Restrepo")
-            .entity
-
         let state = FinderLost.StateBuilderFake()
             .set(\.login, .loading)
-            .set(\.login, .signIn(signIn))
             .set(\.login, .error("signIn"))
             .set(\.login, .signOut)
             .entity
@@ -106,7 +100,8 @@ struct UserProfileView_Previews: PreviewProvider {
             initialState: state
         )
         
-        UserProfileView(store: store)
+        UserProfileView()
+            .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }

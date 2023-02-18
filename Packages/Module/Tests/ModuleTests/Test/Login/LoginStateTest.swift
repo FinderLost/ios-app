@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import FinderLost
+@testable import Module
 
 class LoginStateTest: XCTestCase {
     let signIn = Login.SignInBuilderFake().entity

@@ -6,6 +6,7 @@
 //
 
 import Redux
+import Module
 
 enum FinderLost {
     struct State: ReduxState {
