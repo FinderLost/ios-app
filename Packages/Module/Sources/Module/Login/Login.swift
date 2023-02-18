@@ -10,43 +10,52 @@ import Domain
 
 import UIKit
 
-enum Login {
-    struct SignIn: ReduxState {
-        var email: String
-        var name: String
-        var imageUrl: URL?
+public enum Login {
+    public struct SignIn: ReduxState {
+        public var email: String
+        public var name: String
+        public var imageUrl: URL?
+        public init(
+            email: String,
+            name: String,
+            imageUrl: URL?
+        ) {
+            self.email = email
+            self.name = name
+            self.imageUrl = imageUrl
+        }
     }
     // TODO: - Update the redux architecture to implement the State as Codable by default
-    enum State: ReduxState {
+    public enum State: ReduxState {
         case idle
         case signIn(SignIn)
         case signOut
         case loading
         case error(String)
 
-        var isLoading: Bool {
+        public var isLoading: Bool {
             if case .loading = self { return true }
             return false
         }
-        var isSignIn: Bool {
+        public var isSignIn: Bool {
             if case .signIn = self { return true }
             return false
         }
-        var isSignOut: Bool {
+        public var isSignOut: Bool {
             if case .signOut = self { return true }
             return false
         }
         // TODO: - Pending to improve
-        var lastSignIn: SignIn? {
+        public var lastSignIn: SignIn? {
             guard case let .signIn(state) = self else { return nil }
             return state
         }
-        var error: String? {
+        public var error: String? {
             guard case let .error(error) = self else { return nil }
             return error
         }
     }
-    enum Action: ReduxAction {
+    public enum Action: ReduxAction {
         case getUserSession
         // TODO: - Pending to save the UserSession
         case getUserSessionResult(Result<UserSession, Error>)

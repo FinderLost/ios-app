@@ -8,7 +8,7 @@
 import Redux
 
 extension Login: Reducer {
-    static func reduce(_ action: Action, with state: State) -> State {
+    public static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
 
         switch action {
