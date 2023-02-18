@@ -12,11 +12,14 @@ import Combine
 import Factory
 
 extension Login {
-    class HandlerImpl<Action: ReduxAction, State: ReduxState>: Handler {
-        @Injected(Container.userRepository)
-        private var userRepository: UserRepository
+    public class HandlerImpl<Action: ReduxAction, State: ReduxState>: Handler {
+        private let userRepository: UserRepository
 
-        func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
+        public init(userRepository: UserRepository) {
+            self.userRepository = userRepository
+        }
+
+        public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
             guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
             switch action {
 
@@ -50,6 +53,7 @@ extension Login {
                     .signInResult(.failure),
                     .signOutResult,
                     .getInfoResult:
+
                 return Empty().eraseToAnyPublisher()
             }
         }
