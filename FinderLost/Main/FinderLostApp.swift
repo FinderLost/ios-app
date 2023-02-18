@@ -20,7 +20,8 @@ struct FinderLostApp: App {
 
     var body: some Scene {
         WindowGroup {
-            TabBarView(store: store)
+            TabBarView()
+                .environmentObject(store)
         }
     }
 }
