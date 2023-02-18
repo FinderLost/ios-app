@@ -8,14 +8,20 @@
 import Module
 import Utilities
 
-extension FinderLost {
-    struct StateBuilderFake: Modifiable {
-        var login: Login.State = .signOut
+extension PreviewContent {
+    static var stateBuilderFake: BuilderFake.FinderLostBF.StateBuilderFake { .init() }
+}
 
-        var entity: FinderLost.State {
-            .init(
-                login: login
-            )
+extension BuilderFake {
+    enum FinderLostBF {
+        struct StateBuilderFake: Modifiable {
+            var login: Login.State = .idle
+
+            var entity: FinderLost.State {
+                .init(
+                    login: login
+                )
+            }
         }
     }
 }

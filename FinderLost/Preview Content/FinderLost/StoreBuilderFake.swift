@@ -6,13 +6,12 @@
 //
 
 import Redux
-import Utilities
 
-extension FinderLost {
+extension PreviewContent {
     static func storeBuilderFake(
         initialState: FinderLost.State = .init(),
-        reducer: @escaping Reduce<Action, State> = FinderLost.reduce,
-        context: @escaping Context<Action, State> = FinderLost.context
+        reducer: @escaping Reduce<FinderLost.Action, FinderLost.State> = FinderLost.reduce,
+        context: @escaping Context<FinderLost.Action, FinderLost.State> = FinderLost.context
     ) -> Store<FinderLost> {
         StoreImpl(
             initialState: initialState,

@@ -88,18 +88,18 @@ struct UserProfileView: View {
     }
 }
 
-struct UserProfileView_Previews: PreviewProvider {
+struct UserProfileView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
-        let state = FinderLost.StateBuilderFake()
-            .set(\.login, .loading)
+        let initialState = stateBuilderFake
             .set(\.login, .error("signIn"))
+            .set(\.login, .loading)
             .set(\.login, .signOut)
+            .set(\.login, .signIn(loginStateBuilderFake.entity))
             .entity
 
-        let store = FinderLost.storeBuilderFake(
-            initialState: state
+        let store = storeBuilderFake(
+            initialState: initialState
         )
-        
         UserProfileView()
             .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
