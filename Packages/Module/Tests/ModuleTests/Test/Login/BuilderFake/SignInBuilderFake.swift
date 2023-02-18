@@ -8,6 +8,7 @@
 import Utilities
 
 import Foundation
+@testable import Module
 
 extension Login {
     struct SignInBuilderFake: Modifiable {
