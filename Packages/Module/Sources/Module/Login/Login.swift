@@ -25,7 +25,6 @@ public enum Login {
             self.imageUrl = imageUrl
         }
     }
-    // TODO: - Update the redux architecture to implement the State as Codable by default
     public enum State: ReduxState {
         case idle
         case signIn(SignIn)
@@ -45,7 +44,6 @@ public enum Login {
             if case .signOut = self { return true }
             return false
         }
-        // TODO: - Pending to improve
         public var lastSignIn: SignIn? {
             guard case let .signIn(state) = self else { return nil }
             return state
@@ -57,10 +55,8 @@ public enum Login {
     }
     public enum Action: ReduxAction {
         case getUserSession
-        // TODO: - Pending to save the UserSession
         case getUserSessionResult(Result<UserSession, Error>)
         case signIn
-        // TODO: - Pending to save the UserSession
         case signInResult(Result<UserSession, Error>)
         case signOut
         case signOutResult(Result<Void, Error>)

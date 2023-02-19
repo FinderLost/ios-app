@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-// TODO: - Improve or think of a second round
 public struct ImageURL: View {
     @ObservedObject
     private var imageLoader = ImageLoader()

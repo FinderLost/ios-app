@@ -40,8 +40,6 @@ extension Login: Reducer {
                 let .signOutResult(.failure(error)),
                 let .getInfoResult(.failure(error)):
             newState = .error(error.localizedDescription)
-            print("limit::\(#function)\(error.localizedDescription)")
-            // TODO: - update the error on view
 
         case
                 .getUserSessionResult(.success),

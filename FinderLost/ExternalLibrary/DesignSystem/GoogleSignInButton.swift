@@ -28,7 +28,6 @@ public struct GoogleSignInButton: View {
         )
         .cornerRadius(8)
         .shadow(radius: 0)
-        // TODO: - Update in real time 
         .onAppear { viewModel.scheme = .scheme(colorScheme) }
     }
 }
