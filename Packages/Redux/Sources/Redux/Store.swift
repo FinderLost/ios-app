@@ -8,7 +8,7 @@
 import Combine
 
 public typealias Store<_Reducer: Reducer> = StoreImpl<_Reducer.Action, _Reducer.State>
-final public class StoreImpl<Action, State>: ObservableObject {
+public final class StoreImpl<Action, State>: ObservableObject {
     @Published public var state: State
     private let reduce: Reduce<Action, State>
     private let context: Context<Action, State>
