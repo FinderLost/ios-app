@@ -15,7 +15,6 @@ import Factory
 import Firebase
 import GoogleSignIn
 
-// TODO: - Improve the protocol name
 protocol GoogleAuthProviderI {
     func restorePreviousSignIn() -> AnyPublisher<AuthCredential, Error>
     func signIn() -> AnyPublisher<AuthCredential, Error>
@@ -60,7 +59,7 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
             let user = UserInfoImpl(
                 name: profile.name,
                 email: profile.email,
-                imageUrl: profile.imageURL(withDimension: 80) // TODO: - another way
+                imageUrl: profile.imageURL(withDimension: 80)
             )
             promise(.success(user))
         }.eraseToAnyPublisher()

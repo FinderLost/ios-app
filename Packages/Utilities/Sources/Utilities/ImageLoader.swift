@@ -8,7 +8,6 @@
 import Combine
 import SwiftUI
 
-// TODO: - Improve or think of a second round
 public class ImageLoader: ObservableObject {
     @Published public var image: UIImage?
 
