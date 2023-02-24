@@ -20,21 +20,18 @@ struct TabBarView: View {
             }
             .tabItem {
                 Image(systemName: "house")
-                Text("Home")
             }
             NavigationView {
                 SearchView()
             }
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
+                    Image(systemName: "square.split.2x2.fill")
                 }
             NavigationView {
                 UserProfileView()
             }
                 .tabItem {
                     Image(systemName: "person.fill")
-                    Text("Profile")
                 }
         }
         .onAppear {
@@ -44,9 +41,14 @@ struct TabBarView: View {
     }
 }
 
-struct TabBarView_Previews: PreviewProvider {
+struct TabBarView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
+        let store = storeBuilderFake(
+            initialState: .init()
+        )
+
         TabBarView()
+            .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")
     }
