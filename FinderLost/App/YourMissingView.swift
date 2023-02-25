@@ -6,6 +6,7 @@
 //
 
 import Redux
+import DesignSystem
 
 import Factory
 import SwiftUI
@@ -15,7 +16,7 @@ struct YourMissingView: View {
     var store: Store<FinderLost>
 
     var body: some View {
-        NavigationView {
+        ZStack {
             if let privateList = store.state.missing.hasData?.privateList {
                 List(privateList, id: \.self) { item in
                     Text(item)
@@ -26,20 +27,22 @@ struct YourMissingView: View {
                 }
             }
         }
-        .isLoading(store.state.missing.isLoading)
-        .navigationBarTitle("Your missing")
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarItems(trailing: Button(action: { }) { Image(systemName: "plus") } )
+        .isLoading(store.state.missing.isLoading)
+        .isError(store.state.missing.hasError)
         .background(Color.background)
+        .navigationBarTitle("Your missing")
     }
 }
 
-struct SearchView_Previews: PreviewProvider, PreviewContent {
+struct YourMissingView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
-            .set(\.missing, .loading)
             .set(\.missing, .idle)
-            .set(\.missing, .failed("error"))
             .set(\.missing, .success(missingStateBuilderFake.entity))
+            .set(\.missing, .loading)
+            .set(\.missing, .failed("error"))
             .entity
 
         let store = storeBuilderFake(
@@ -52,6 +55,6 @@ struct SearchView_Previews: PreviewProvider, PreviewContent {
         }
         .environmentObject(store)
         .previewLayout(PreviewLayout.sizeThatFits)
-        .previewDisplayName("Default preview")
+        .previewDisplayName("YourMissingView")
     }
 }

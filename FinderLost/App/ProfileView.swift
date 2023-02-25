@@ -1,5 +1,5 @@
 //
-//  UserProfileView.swift
+//  ProfileView.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 22/1/23.
@@ -13,7 +13,7 @@ import SwiftUI
 
 import Factory
 
-struct UserProfileView: View {
+struct ProfileView: View {
     @EnvironmentObject
     var store: Store<FinderLost>
 
@@ -83,19 +83,20 @@ struct UserProfileView: View {
             }
         }
         .isLoading(store.state.login.isLoading)
+        .isError(store.state.missing.hasError)
         .background(Color.background)
         .navigationTitle("User profile")
     }
 }
 
-struct UserProfileView_Previews: PreviewProvider, PreviewContent {
+struct ProfileView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
-            .set(\.login, .failed("signIn"))
             .set(\.login, .loading)
             .set(\.login, .signOut)
             .set(\.login, .signIn(loginStateBuilderFake.entity))
             .set(\.login, .idle)
+            .set(\.login, .failed("signIn"))
             .entity
 
         let store = storeBuilderFake(
@@ -103,11 +104,11 @@ struct UserProfileView_Previews: PreviewProvider, PreviewContent {
         )
 
         TabView {
-            NavigationView { UserProfileView() }
+            NavigationView { ProfileView() }
                 .tabItem { Image(systemName: "square.split.2x2.fill") }
         }
             .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Default preview")
+            .previewDisplayName("ProfileView")
     }
 }

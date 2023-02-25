@@ -9,11 +9,11 @@ import SwiftUI
 
 extension View {
     public func isLoading(_ loading: Bool) -> some View {
-        modifier(Loader(isLoading: loading))
+        modifier(LoadingModifier(isLoading: loading))
     }
 }
 
-private struct Loader: ViewModifier {
+private struct LoadingModifier: ViewModifier {
     var isLoading: Bool
 
     func body(content: Content) -> some View {
@@ -26,5 +26,14 @@ private struct Loader: ViewModifier {
         } else {
             content
         }
+    }
+}
+
+struct LoadingView_Previews: PreviewProvider {
+    static var previews: some View {
+        ZStack {
+            Text("Loading view")
+        }
+        .isLoading(true)
     }
 }

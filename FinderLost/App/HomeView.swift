@@ -14,10 +14,11 @@ struct HomeView: View {
 
     var body: some View {
         ZStack {
-            Text("HomeView")
+            Text("Missing near")
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.background)
+        .navigationTitle("Missing near")
     }
 }
 

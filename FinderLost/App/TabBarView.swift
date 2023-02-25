@@ -28,7 +28,7 @@ struct TabBarView: View {
                     Image(systemName: "square.split.2x2.fill")
                 }
             NavigationView {
-                UserProfileView()
+                ProfileView()
             }
                 .tabItem {
                     Image(systemName: "person.fill")
