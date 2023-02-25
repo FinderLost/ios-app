@@ -44,8 +44,7 @@ extension Login {
                     .eraseToAnyPublisher()
 
             case .signOut, .getUserSessionResult(.failure):
-//                return userRepository.signOut()
-                return Just(()).setFailureType(to: CustomError.self).eraseToAnyPublisher()
+                return userRepository.signOut()
                     .map { Login.Action.signOutResult(.success($0)) }
                     .catch { Just(Login.Action.signOutResult(.failure($0))) }
                     .eraseToAnyPublisher()
