@@ -17,8 +17,8 @@ class LoginStateTest: XCTestCase {
         XCTAssertFalse(state.isLoading)
         XCTAssertFalse(state.isSignIn)
         XCTAssertFalse(state.isSignOut)
-        XCTAssertTrue(state.lastSignIn.isNil)
-        XCTAssertTrue(state.error.isNil)
+        XCTAssertTrue(state.hasData.isNil)
+        XCTAssertTrue(state.hasError.isNil)
     }
 
     func testIsLoading() {
@@ -38,11 +38,11 @@ class LoginStateTest: XCTestCase {
 
     func testLastSignIn() {
         let state = Login.State.signIn(signIn)
-        XCTAssertEqual(state.lastSignIn, signIn)
+        XCTAssertEqual(state.hasData, signIn)
     }
 
     func testError() {
-        let state = Login.State.error("Test Error")
-        XCTAssertEqual(state.error, "Test Error")
+        let state = Login.State.failed("Test Error")
+        XCTAssertEqual(state.hasError, "Test Error")
     }
 }
