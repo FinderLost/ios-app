@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5583297D66F200E2EFBF /* UserProfileView.swift */; };
+		552F5584297D66F200E2EFBF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5583297D66F200E2EFBF /* ProfileView.swift */; };
 		552F5586297D670200E2EFBF /* YourMissingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5585297D670200E2EFBF /* YourMissingView.swift */; };
 		552F5588297D671400E2EFBF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5587297D671400E2EFBF /* HomeView.swift */; };
 		552F558A297D672900E2EFBF /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 552F5589297D672900E2EFBF /* TabBarView.swift */; };
@@ -65,7 +65,7 @@
 
 /* Begin PBXFileReference section */
 		552E8DF12997CD7700570F78 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Packages/Data; sourceTree = "<group>"; };
-		552F5583297D66F200E2EFBF /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		552F5583297D66F200E2EFBF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		552F5585297D670200E2EFBF /* YourMissingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourMissingView.swift; sourceTree = "<group>"; };
 		552F5587297D671400E2EFBF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		552F5589297D672900E2EFBF /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				552F5587297D671400E2EFBF /* HomeView.swift */,
 				552F5585297D670200E2EFBF /* YourMissingView.swift */,
 				552F5589297D672900E2EFBF /* TabBarView.swift */,
-				552F5583297D66F200E2EFBF /* UserProfileView.swift */,
+				552F5583297D66F200E2EFBF /* ProfileView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -507,7 +507,7 @@
 				552F5588297D671400E2EFBF /* HomeView.swift in Sources */,
 				55A9D06729A0EB4800B9CD28 /* BuilderFake.swift in Sources */,
 				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
-				552F5584297D66F200E2EFBF /* UserProfileView.swift in Sources */,
+				552F5584297D66F200E2EFBF /* ProfileView.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
 				55724E4E29AA19BE00D9F45D /* MissingStateBuilderFake.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
