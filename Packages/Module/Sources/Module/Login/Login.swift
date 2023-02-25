@@ -11,7 +11,7 @@ import Domain
 import UIKit
 
 public enum Login {
-    public struct SignIn: ReduxState {
+    public struct Data: ReduxState {
         public var email: String
         public var name: String
         public var imageUrl: URL?
@@ -27,7 +27,7 @@ public enum Login {
     }
     public enum State: ReduxState {
         case idle
-        case signIn(SignIn)
+        case signIn(Data)
         case signOut
         case loading
         case error(String)
@@ -44,11 +44,11 @@ public enum Login {
             if case .signOut = self { return true }
             return false
         }
-        public var lastSignIn: SignIn? {
+        public var hasData: Data? {
             guard case let .signIn(state) = self else { return nil }
             return state
         }
-        public var error: String? {
+        public var hasError: String? {
             guard case let .error(error) = self else { return nil }
             return error
         }

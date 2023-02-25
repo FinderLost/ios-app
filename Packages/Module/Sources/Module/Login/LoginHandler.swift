@@ -39,13 +39,14 @@ extension Login {
 
             case .getUserSession:
                 return userRepository.restorePreviousSignIn()
-                    .compactMap { Login.Action.getUserSessionResult(.success($0)) }
+                    .map { Login.Action.getUserSessionResult(.success($0)) }
                     .catch { Just(Login.Action.getUserSessionResult(.failure($0))) }
                     .eraseToAnyPublisher()
 
             case .signOut, .getUserSessionResult(.failure):
-                return userRepository.signOut()
-                    .compactMap { Login.Action.signOutResult(.success($0)) }
+//                return userRepository.signOut()
+                return Just(()).setFailureType(to: CustomError.self).eraseToAnyPublisher()
+                    .map { Login.Action.signOutResult(.success($0)) }
                     .catch { Just(Login.Action.signOutResult(.failure($0))) }
                     .eraseToAnyPublisher()
 
@@ -53,7 +54,6 @@ extension Login {
                     .signInResult(.failure),
                     .signOutResult,
                     .getInfoResult:
-
                 return Empty().eraseToAnyPublisher()
             }
         }
