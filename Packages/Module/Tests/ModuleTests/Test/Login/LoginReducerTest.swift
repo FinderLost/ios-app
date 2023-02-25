@@ -74,22 +74,22 @@ extension LoginReducerTests {
     func testReduceGetUserSessionResultFailureAction() {
         let action = Login.Action.getUserSessionResult(.failure(error))
         let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, .error(error.localizedDescription))
+        XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testSignInResultFailureAction() {
         let action = Login.Action.signInResult(.failure(error))
         let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.error(error.localizedDescription))
+        XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testSignOutResultFailureAction() {
         let action = Login.Action.signOutResult(.failure(error))
         let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.error(error.localizedDescription))
+        XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testGetInfoResultFailureAction() {
         let action = Login.Action.getInfoResult(.failure(error))
         let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.error(error.localizedDescription))
+        XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
 }
 

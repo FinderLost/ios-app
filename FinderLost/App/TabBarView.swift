@@ -23,19 +23,19 @@ struct TabBarView: View {
             }
             NavigationView {
                 YourMissingView()
-                    .onAppear { store.use(HandlerDI.missing()) }
             }
                 .tabItem {
                     Image(systemName: "square.split.2x2.fill")
                 }
             NavigationView {
                 UserProfileView()
-                    .onAppear { store.use(HandlerDI.login()) }
             }
                 .tabItem {
                     Image(systemName: "person.fill")
                 }
         }
+        .onAppear { store.use(HandlerDI.login()) }
+        .onAppear { store.use(HandlerDI.missing()) }
         .onAppear { store.dispatch(.login(.getUserSession)) }
     }
 }
