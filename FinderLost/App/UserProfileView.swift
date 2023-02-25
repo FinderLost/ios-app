@@ -100,7 +100,11 @@ struct UserProfileView_Previews: PreviewProvider, PreviewContent {
         let store = storeBuilderFake(
             initialState: initialState
         )
-        UserProfileView()
+
+        TabView {
+            NavigationView { UserProfileView() }
+                .tabItem { Image(systemName: "square.split.2x2.fill") }
+        }
             .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
             .previewDisplayName("Default preview")

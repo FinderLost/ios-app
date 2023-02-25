@@ -22,22 +22,21 @@ struct TabBarView: View {
                 Image(systemName: "house")
             }
             NavigationView {
-                SearchView()
+                YourMissingView()
+                    .onAppear { store.use(HandlerDI.missing()) }
             }
                 .tabItem {
                     Image(systemName: "square.split.2x2.fill")
                 }
             NavigationView {
                 UserProfileView()
+                    .onAppear { store.use(HandlerDI.login()) }
             }
                 .tabItem {
                     Image(systemName: "person.fill")
                 }
         }
-        .onAppear {
-            store.use(HandlerDI.login())
-            store.dispatch(.login(.getUserSession))
-        }
+        .onAppear { store.dispatch(.login(.getUserSession)) }
     }
 }
 
