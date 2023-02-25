@@ -23,7 +23,7 @@ extension Login: Reducer {
 
         case
             let .getInfoResult(.success(value)):
-            let signIn = SignIn(
+            let signIn = Login.Data(
                 email: value.email,
                 name: value.name,
                 imageUrl: value.imageUrl
