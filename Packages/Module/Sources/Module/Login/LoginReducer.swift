@@ -39,7 +39,7 @@ extension Login: Reducer {
                 let .signInResult(.failure(error)),
                 let .signOutResult(.failure(error)),
                 let .getInfoResult(.failure(error)):
-            newState = .error(error.localizedDescription)
+            newState = .failed(error.localizedDescription)
 
         case
                 .getUserSessionResult(.success),

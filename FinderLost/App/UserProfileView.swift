@@ -20,10 +20,10 @@ struct UserProfileView: View {
     var body: some View {
         VStack {
             List {
-                if case let .signIn(state) = store.state.login {
+                if let userInfo = store.state.login.hasData {
                     HStack {
                         ImageURL(
-                            url: state.imageUrl,
+                            url: userInfo.imageUrl,
                             placeHolder: UIImage(systemName: "person.fill")
                         )
                         .clipShape(Circle())
@@ -31,8 +31,8 @@ struct UserProfileView: View {
                         .padding(8)
                         
                         VStack(alignment: .leading, spacing: 8) {
-                            Text(state.name)
-                            Text(state.email)
+                            Text(userInfo.name)
+                            Text(userInfo.email)
                         }
                     }
                     .listRowBackground(Color.light)
@@ -91,10 +91,11 @@ struct UserProfileView: View {
 struct UserProfileView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
-            .set(\.login, .error("signIn"))
+            .set(\.login, .failed("signIn"))
             .set(\.login, .loading)
             .set(\.login, .signOut)
             .set(\.login, .signIn(loginStateBuilderFake.entity))
+            .set(\.login, .idle)
             .entity
 
         let store = storeBuilderFake(

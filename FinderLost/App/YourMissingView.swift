@@ -35,8 +35,15 @@ struct YourMissingView: View {
 
 struct SearchView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
+        let initialState = stateBuilderFake
+            .set(\.missing, .loading)
+            .set(\.missing, .idle)
+            .set(\.missing, .failed("error"))
+            .set(\.missing, .success(missingStateBuilderFake.entity))
+            .entity
+
         let store = storeBuilderFake(
-            initialState: .init()
+            initialState: initialState
         )
 
         TabView {

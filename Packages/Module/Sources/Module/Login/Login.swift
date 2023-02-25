@@ -30,7 +30,7 @@ public enum Login {
         case signIn(Data)
         case signOut
         case loading
-        case error(String)
+        case failed(String)
 
         public var isLoading: Bool {
             if case .loading = self { return true }
@@ -49,7 +49,7 @@ public enum Login {
             return state
         }
         public var hasError: String? {
-            guard case let .error(error) = self else { return nil }
+            guard case let .failed(error) = self else { return nil }
             return error
         }
     }
