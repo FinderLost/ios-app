@@ -13,6 +13,8 @@ extension FinderLost: Contextor {
         switch action {
         case let .login(action):
             return HandlerContextImpl(action: action, state: state.login, next: Action.login)
+        case let .missing(action):
+            return HandlerContextImpl(action: action, state: state.missing, next: Action.missing)
         }
     }
 }

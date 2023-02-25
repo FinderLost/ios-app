@@ -16,4 +16,7 @@ class HandlerDI: SharedContainer {
             userRepository: RepositoryDI.user()
         )
     }
+    static let missing = Factory<HandlerOf<FinderLost>>(scope: .singleton) {
+        Missing.HandlerImpl()
+    }
 }
