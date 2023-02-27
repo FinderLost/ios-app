@@ -16,7 +16,7 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             NavigationView {
-                HomeView()
+                MissingView()
             }
             .tabItem {
                 Image(systemName: "house")
@@ -42,9 +42,7 @@ struct TabBarView: View {
 
 struct TabBarView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
-        let store = storeBuilderFake(
-            initialState: .init()
-        )
+        let store = storeBuilderFake()
 
         TabBarView()
             .environmentObject(store)
