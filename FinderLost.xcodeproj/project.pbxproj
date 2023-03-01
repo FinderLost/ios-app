@@ -40,6 +40,7 @@
 		55DBD2DE29983242003CC4F7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2DD29983242003CC4F7 /* DesignSystem */; };
 		55DBD2E0299832B1003CC4F7 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55DBD2DF299832B1003CC4F7 /* Colors.xcassets */; };
 		55DBD2E42998470D003CC4F7 /* GoogleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55DBD2E32998470D003CC4F7 /* GoogleSignInButton.swift */; };
+		55E5D3F329AEAA67003A31C0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E5D3F229AEAA67003A31C0 /* Launch Screen.storyboard */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
 		55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F3294D066400763BE7 /* FinderLostUITests.swift */; };
@@ -91,6 +92,7 @@
 		55DBD2DC29982B78003CC4F7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
 		55DBD2DF299832B1003CC4F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55DBD2E32998470D003CC4F7 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
+		55E5D3F229AEAA67003A31C0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			children = (
 				55DBD2DF299832B1003CC4F7 /* Colors.xcassets */,
 				552F5598297D786800E2EFBF /* Assets.xcassets */,
+				55E5D3F229AEAA67003A31C0 /* Launch Screen.storyboard */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */,
 				55DBD2E0299832B1003CC4F7 /* Colors.xcassets in Resources */,
 				552F5599297D786800E2EFBF /* Assets.xcassets in Resources */,
+				55E5D3F329AEAA67003A31C0 /* Launch Screen.storyboard in Resources */,
 				552F5595297D75A000E2EFBF /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
