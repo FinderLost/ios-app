@@ -6,29 +6,41 @@
 //  
 //
 
+import Domain
+
 import Redux
 
-extension Missing: Reducer {
+extension MissingTCA: Reducer {
     public static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
 
         switch action {
-        case .getAction:
+        case .getMissingList:
             newState = .loading
 
-        case
-            let .setAction(.success(value)):
-            let data = Missing.Data(
-                privateList: ["variableA"],
-                publicList: ["variableB"]
-            )
-            newState = .success(data)
+        case let .setMissingList(.success(value)):
+            newState = .success(MissingTCA.Data(missingList: value))
 
-        case let .setAction(.failure(error)):
+        case let .setMissingList(.failure(error)):
             newState = .failed(error.localizedDescription)
-
         }
 
         return newState
+    }
+}
+
+extension MissingTCA.Data {
+    init(missingList: [Missing]) {
+        self.init(
+            publicList: missingList.map(MissingTCA.DataItem.init)
+        )
+    }
+}
+
+extension MissingTCA.DataItem {
+    init(missing: Missing) {
+        self.init(
+            name: missing.name
+        )
     }
 }
