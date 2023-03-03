@@ -12,29 +12,27 @@ import Domain
 import Combine
 import Factory
 
-extension Missing {
+extension MissingTCA {
     public class HandlerImpl<Action: ReduxAction, State: ReduxState>: Handler {
-//        private let exampleRepository: ExampleRepository
-//
-//        public init(exampleRepository: ExampleRepository) {
-//            self.exampleRepository = exampleRepository
-//        }
-        public init() { }
+        private let missingRepository: MissingRepository
+
+        public init(missingRepository: MissingRepository) {
+            self.missingRepository = missingRepository
+        }
 
         public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
-            guard let action = context.action as? Missing.Action
+            guard let action = context.action as? MissingTCA.Action
             else { return Empty().eraseToAnyPublisher() }
 
             switch action {
 
-            case .getAction:
-//                return exampleRepository.getData()
-                return Just(()).setFailureType(to: CustomError.self).eraseToAnyPublisher()
-                    .map { Missing.Action.setAction(.success($0)) }
-                    .catch { Just(Missing.Action.setAction(.failure($0))) }
+            case .getMissingList:
+                return missingRepository.getMissingList()
+                    .map { MissingTCA.Action.setMissingList(.success($0)) }
+                    .catch { Just(MissingTCA.Action.setMissingList(.failure($0))) }
                     .eraseToAnyPublisher()
 
-            case .setAction:
+            case .setMissingList:
                 return Empty().eraseToAnyPublisher()
             }
         }

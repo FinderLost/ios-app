@@ -1,24 +1,21 @@
 //
-//  Missing.swift
+//  MissingTCA.swift
 //  
 //
 //  Created by Andres Felipe Alzate Restrepo on 25/2/23.
 //  
 //
 
+import Domain
+
 import Redux
 
-public enum Missing {
+public enum MissingTCA {
+    public struct DataItem: ReduxState {
+        public var name: String
+    }
     public struct Data: ReduxState {
-        public var privateList: [String]
-        public var publicList: [String]
-        public init(
-            privateList: [String],
-            publicList: [String]
-        ) {
-            self.privateList = privateList
-            self.publicList = publicList
-        }
+        public var publicList: [DataItem]
     }
     public enum State: ReduxState {
         case idle
@@ -40,7 +37,7 @@ public enum Missing {
         }
     }
     public enum Action: ReduxAction {
-        case getAction
-        case setAction(Result<Void, Error>)
+        case getMissingList
+        case setMissingList(Result<[Missing], Error>)
     }
 }
