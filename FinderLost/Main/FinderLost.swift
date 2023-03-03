@@ -11,11 +11,11 @@ import Module
 enum FinderLost {
     struct State: ReduxState {
         var login: Login.State = .idle
-        var missing: Missing.State = .idle
+        var missing: MissingTCA.State = .idle
     }
 
     enum Action: ReduxAction {
         case login(Login.Action)
-        case missing(Missing.Action)
+        case missing(MissingTCA.Action)
     }
 }

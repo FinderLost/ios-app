@@ -16,7 +16,7 @@ extension BuilderFake {
     enum FinderLostBF {
         struct StateBuilderFake: Modifiable {
             var login: Login.State = .idle
-            var missing: Missing.State = .idle
+            var missing: MissingTCA.State = .idle
 
             var entity: FinderLost.State {
                 .init(
