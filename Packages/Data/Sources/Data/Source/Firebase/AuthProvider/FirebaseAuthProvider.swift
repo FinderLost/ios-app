@@ -18,8 +18,8 @@ protocol FirebaseAuthProvider {
 }
 
 final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
-    @Injected(Container.firebaseAuth)
-    private var firebaseAuth: Auth
+    @Injected(FirebaseDI.firebaseAuth)
+    private var firebaseAuth: Firebase.Auth
 
     func signIn(credential: AuthCredential) -> AnyPublisher<UserSession, Error> {
         Future { [weak self] promise in
@@ -39,4 +39,8 @@ final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
             }
         }.eraseToAnyPublisher()
     } 
+}
+
+enum CustomError: Error {
+case isEmpty
 }

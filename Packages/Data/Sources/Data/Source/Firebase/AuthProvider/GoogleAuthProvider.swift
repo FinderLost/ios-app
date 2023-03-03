@@ -23,9 +23,9 @@ protocol GoogleAuthProviderI {
 }
 
 final class GoogleAuthProviderImpl: GoogleAuthProviderI {
-    @Injected(Container.firebaseApp)
+    @Injected(FirebaseDI.firebaseApp)
     private var firebaseApp: FirebaseApp?
-    @Injected(Container.googleSignIn)
+    @Injected(FirebaseDI.googleSignIn)
     private var googleSignIn: GIDSignIn
 
     func signIn() -> AnyPublisher<AuthCredential, Error> {
