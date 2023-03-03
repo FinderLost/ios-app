@@ -17,14 +17,8 @@ struct YourMissingView: View {
 
     var body: some View {
         ZStack {
-            if let privateList = store.state.missing.hasData?.privateList {
-                List(privateList, id: \.self) { item in
-                    Text(item)
-                }
-            } else {
-                ZStack {
-                    Text("no missing yet")
-                }
+            ZStack {
+                Text("no missing yet")
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
