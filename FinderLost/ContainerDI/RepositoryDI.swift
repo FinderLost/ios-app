@@ -14,4 +14,7 @@ final class RepositoryDI: SharedContainer {
     static let user = Factory<UserRepository>(scope: .singleton) {
         UserRepositoryImpl()
     }
+    static let missing = Factory<MissingRepository>(scope: .singleton) {
+        MissingRepositoryImpl()
+    }
 }
