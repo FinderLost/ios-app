@@ -15,28 +15,18 @@ struct TabBarView: View {
 
     var body: some View {
         TabView {
-            NavigationView {
-                MissingView()
-            }
-            .tabItem {
-                Image(systemName: "house")
-            }
-            NavigationView {
-                YourMissingView()
-            }
-                .tabItem {
-                    Image(systemName: "square.split.2x2.fill")
-                }
-            NavigationView {
-                ProfileView()
-            }
-                .tabItem {
-                    Image(systemName: "person.fill")
-                }
+            NavigationView { MissingView() }
+                .tabItem { Image(systemName: "house") }
+            NavigationView { YourMissingView() }
+                .tabItem { Image(systemName: "square.split.2x2.fill") }
+            NavigationView { ProfileView() }
+                .tabItem { Image(systemName: "person.fill") }
         }
         .onAppear { store.use(HandlerDI.login()) }
         .onAppear { store.use(HandlerDI.missing()) }
         .onAppear { store.dispatch(.login(.getUserSession)) }
+        .onAppear { store.dispatch(.missing(.getMissingList)) }
+        .refreshable { store.dispatch(.missing(.getMissingList)) }
     }
 }
 
