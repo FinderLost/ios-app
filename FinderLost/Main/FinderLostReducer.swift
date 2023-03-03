@@ -13,7 +13,7 @@ extension FinderLost: Reducer {
         var newState = state
         switch action {
         case let .login(action): newState.login = Login.reduce(action, with: state.login)
-        case let .missing(action): newState.missing = Missing.reduce(action, with: state.missing)
+        case let .missing(action): newState.missing = MissingTCA.reduce(action, with: state.missing)
         }
         return newState
     }

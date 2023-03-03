@@ -11,18 +11,16 @@ import Utilities
 import Foundation
 
 extension PreviewContent {
-    static var missingStateBuilderFake: BuilderFake.MissingBuiderFake.Data { .init() }
+    static var missingStateBuilderFake: BuilderFake.MissingTCABuiderFake.Data { .init() }
 }
 
 extension BuilderFake {
-    enum MissingBuiderFake {
+    enum MissingTCABuiderFake {
         struct Data: Modifiable {
-            var privateList: [String] = ["privateList"]
             var publicList: [String] = ["publicList"]
 
-            var entity: Missing.Data {
+            var entity: MissingTCA.Data {
                 .init(
-                    privateList: privateList,
                     publicList: publicList
                 )
             }
