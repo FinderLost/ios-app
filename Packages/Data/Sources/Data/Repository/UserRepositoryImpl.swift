@@ -13,9 +13,9 @@ import Factory
 import Utilities
 
 public final class UserRepositoryImpl: UserRepository {
-    @Injected(Container.firebaseAuthProvider)
+    @Injected(AuthProviderDI.firebase)
     private var firebaseAuthProvider: FirebaseAuthProvider
-    @Injected(Container.googleAuthProvider)
+    @Injected(AuthProviderDI.google)
     private var googleAuthProvider: GoogleAuthProviderI
 
     public init() { }

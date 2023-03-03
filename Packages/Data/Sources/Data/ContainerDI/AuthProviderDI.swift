@@ -7,11 +7,11 @@
 
 import Factory
 
-extension Container {
-    static let firebaseAuthProvider = Factory<FirebaseAuthProvider>(scope: .singleton) {
+final class AuthProviderDI: SharedContainer {
+    static let firebase = Factory<FirebaseAuthProvider>(scope: .singleton) {
         FirebaseAuthProviderImpl()
     }
-    static let googleAuthProvider = Factory<GoogleAuthProviderI>(scope: .singleton) {
+    static let google = Factory<GoogleAuthProviderI>(scope: .singleton) {
         GoogleAuthProviderImpl()
     }
 }
