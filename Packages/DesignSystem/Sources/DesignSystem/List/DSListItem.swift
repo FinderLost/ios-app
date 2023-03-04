@@ -13,6 +13,5 @@ public struct DSListItem: ViewModifier {
         content
             .listRowSeparator(.hidden)
             .listRowBackground(Color.clear)
-            .background(Color.specific(.surface))
     }
 }
