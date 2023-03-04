@@ -14,9 +14,9 @@ struct MissingView: View {
 
     var body: some View {
         ZStack {
-            if let privateList = store.state.missing.hasData?.publicList {
-                List(privateList, id: \.self) { item in
-                    Text(item)
+            if let publicList = store.state.missing.hasData?.publicList {
+                List(publicList) { item in
+                    Text(item.name)
                 }
             } else {
                 ZStack {

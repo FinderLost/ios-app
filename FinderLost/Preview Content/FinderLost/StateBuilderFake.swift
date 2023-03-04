@@ -9,21 +9,18 @@ import Module
 import Utilities
 
 extension PreviewContent {
-    static var stateBuilderFake: BuilderFake.FinderLostBF.StateBuilderFake { .init() }
+    static var stateBuilderFake: StateBuilderFake { .init() }
 }
 
-extension BuilderFake {
-    enum FinderLostBF {
-        struct StateBuilderFake: Modifiable {
-            var login: Login.State = .idle
-            var missing: MissingTCA.State = .idle
-
-            var entity: FinderLost.State {
-                .init(
-                    login: login,
-                    missing: missing
-                )
-            }
-        }
+struct StateBuilderFake: Modifiable {
+    var login: Login.State = .idle
+    var missing: MissingTCA.State = .idle
+    fileprivate init() { }
+    
+    var entity: FinderLost.State {
+        .init(
+            login: login,
+            missing: missing
+        )
     }
 }
