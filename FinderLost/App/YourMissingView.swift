@@ -21,9 +21,9 @@ struct YourMissingView: View {
                 Text("no missing yet")
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.specific(.background))
         .navigationTitle("Your missing")
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarItems(trailing: Button(action: { }) { Image(systemName: "plus") } )
     }
 }

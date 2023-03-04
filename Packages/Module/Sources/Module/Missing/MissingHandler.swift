@@ -20,9 +20,8 @@ extension MissingTCA {
             self.missingRepository = missingRepository
         }
 
-        public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
-            guard let action = context.action as? MissingTCA.Action
-            else { return Empty().eraseToAnyPublisher() }
+        public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never>? {
+            guard let action = context.action as? MissingTCA.Action else { return nil }
 
             switch action {
 

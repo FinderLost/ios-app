@@ -30,7 +30,7 @@ public final class StoreImpl<Action, State>: ObservableObject {
         
         let context = context(action, state)
         handlers.forEach { handler in
-            handler.handle(context)
+            handler.handle(context)?
                 .map(context.nextAction)
                 .mapCast(Action.self)
                 .sink(receiveValue: dispatch)

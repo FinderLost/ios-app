@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum DSAppereance {
+public enum DSAppereance {
     public static func setAppearance() {
         UIView.setAppearance()
     }
