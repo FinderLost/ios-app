@@ -15,6 +15,7 @@ public enum MissingTCA {
     public struct DataItem: ReduxState, Identifiable {
         public var id: UUID = UUID()
         public let name: String
+        public let description: String
     }
     public struct Data: ReduxState {
         public let publicList: [DataItem]

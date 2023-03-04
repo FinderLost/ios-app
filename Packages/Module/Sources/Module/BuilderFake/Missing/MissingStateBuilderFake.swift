@@ -10,15 +10,18 @@ import Utilities
 extension BuilderFake {
     public enum MissingTCA {
         public struct DataItem: Modifiable {
-            var name: String = "name"
+            public var name: String = "name"
+            public var description: String = "description"
+            public init() {}
             public var entity: Module.MissingTCA.DataItem {
                 .init(
-                    name: name
+                    name: name,
+                    description: description
                 )
             }
         }
         public struct Data: Modifiable {
-            var publicList: [Module.MissingTCA.DataItem] = []
+            public var publicList: [Module.MissingTCA.DataItem] = []
             public init() {}
             public var entity: Module.MissingTCA.Data {
                 .init(
