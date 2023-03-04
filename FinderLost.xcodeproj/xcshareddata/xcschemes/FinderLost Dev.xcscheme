@@ -20,6 +20,34 @@
                ReferencedContainer = "container:FinderLost.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DataTests"
+               BuildableName = "DataTests"
+               BlueprintName = "DataTests"
+               ReferencedContainer = "container:Packages/Data">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "NO"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "55FE80EE294D066400763BE7"
+               BuildableName = "FinderLostUITests.xctest"
+               BlueprintName = "FinderLostUITests"
+               ReferencedContainer = "container:FinderLost.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -47,17 +75,6 @@
                BlueprintIdentifier = "55FE80E4294D066400763BE7"
                BuildableName = "FinderLostTests.xctest"
                BlueprintName = "FinderLostTests"
-               ReferencedContainer = "container:FinderLost.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "YES"
-            parallelizable = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55FE80EE294D066400763BE7"
-               BuildableName = "FinderLostUITests.xctest"
-               BlueprintName = "FinderLostUITests"
                ReferencedContainer = "container:FinderLost.xcodeproj">
             </BuildableReference>
          </TestableReference>
