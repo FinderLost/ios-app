@@ -40,7 +40,8 @@ extension MissingTCA.Data {
 extension MissingTCA.DataItem {
     init(missing: Missing) {
         self.init(
-            name: missing.name
+            name: missing.name,
+            description: missing.description
         )
     }
 }

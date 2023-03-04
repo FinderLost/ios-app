@@ -21,12 +21,13 @@ struct YourMissingView: View {
                 Text("no missing yet")
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .navigationBarItems(trailing: Button(action: { }) { Image(systemName: "plus") } )
+        .background(Color.specific(.background))
+        .navigationTitle("Your missing")
         .isLoading(store.state.missing.isLoading)
         .isError(store.state.missing.hasError)
-        .background(Color.background)
-        .navigationBarTitle("Your missing")
+        .refreshable { store.dispatch(.missing(.getMissingList)) }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .navigationBarItems(trailing: Button(action: { }) { Image(systemName: "plus") } )
     }
 }
 
