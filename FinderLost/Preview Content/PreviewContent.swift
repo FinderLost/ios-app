@@ -6,12 +6,19 @@
 //
 
 import Redux
+import Module
 
+// MARK: - Store BF
 protocol PreviewContent {
-    static var stateBuilderFake: BuilderFake.FinderLostBF.StateBuilderFake { get }
     static func storeBuilderFake(
         initialState: FinderLost.State,
         reducer: @escaping Reduce<FinderLost.Action, FinderLost.State>,
         context: @escaping Context<FinderLost.Action, FinderLost.State>
     ) -> Store<FinderLost>
+}
+
+// MARK: - Module state BF
+extension PreviewContent {
+    static var loginStateBuilderFake: BuilderFake.Login.Data { .init() }
+    static var missingStateBuilderFake: BuilderFake.MissingTCA.Data { .init() }
 }
