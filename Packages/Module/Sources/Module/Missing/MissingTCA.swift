@@ -6,16 +6,18 @@
 //  
 //
 
+import Redux
 import Domain
 
-import Redux
+import Foundation
 
 public enum MissingTCA {
-    public struct DataItem: ReduxState {
-        public var name: String
+    public struct DataItem: ReduxState, Identifiable {
+        public var id: UUID = UUID()
+        public let name: String
     }
     public struct Data: ReduxState {
-        public var publicList: [DataItem]
+        public let publicList: [DataItem]
     }
     public enum State: ReduxState {
         case idle
