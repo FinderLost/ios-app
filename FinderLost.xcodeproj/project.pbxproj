@@ -29,6 +29,7 @@
 		55A9D06329A03D2600B9CD28 /* HandlerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06229A03D2600B9CD28 /* HandlerDI.swift */; };
 		55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */; };
 		55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55ACBBBA299AE865008288E5 /* SwifterSwift */; };
+		55AD011E29B3983800D32A77 /* MissingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD011D29B3983800D32A77 /* MissingItemView.swift */; };
 		55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CD2997C3D6003CC4F7 /* Domain */; };
 		55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CF2997C3E1003CC4F7 /* Redux */; };
 		55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2D12997C3EB003CC4F7 /* Utilities */; };
@@ -82,6 +83,7 @@
 		55A9D05B299ECF3C00B9CD28 /* Module */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Module; path = Packages/Module; sourceTree = "<group>"; };
 		55A9D06229A03D2600B9CD28 /* HandlerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerDI.swift; sourceTree = "<group>"; };
 		55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContent.swift; sourceTree = "<group>"; };
+		55AD011D29B3983800D32A77 /* MissingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingItemView.swift; sourceTree = "<group>"; };
 		55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2DC29982B78003CC4F7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
 		55DBD2DF299832B1003CC4F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -137,10 +139,12 @@
 		552F5582297D66E000E2EFBF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
+				55AD011D29B3983800D32A77 /* MissingItemView.swift */,
 				552F5587297D671400E2EFBF /* MissingView.swift */,
-				552F5585297D670200E2EFBF /* YourMissingView.swift */,
-				552F5589297D672900E2EFBF /* TabBarView.swift */,
 				552F5583297D66F200E2EFBF /* ProfileView.swift */,
+				552F5589297D672900E2EFBF /* TabBarView.swift */,
+				552F5585297D670200E2EFBF /* YourMissingView.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -195,7 +199,6 @@
 			children = (
 				552F559A297D791E00E2EFBF /* AppDelegate.swift */,
 				557CD494298980E700C3DB09 /* FinderLost.swift */,
-				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
 				557CD4992989813700C3DB09 /* FinderLostContextor.swift */,
 				557CD4972989811000C3DB09 /* FinderLostReducer.swift */,
 			);
@@ -469,6 +472,7 @@
 				55A9D06329A03D2600B9CD28 /* HandlerDI.swift in Sources */,
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
 				55A735B02985371F00C700B5 /* RepositoryDI.swift in Sources */,
+				55AD011E29B3983800D32A77 /* MissingItemView.swift in Sources */,
 				55DBD2E42998470D003CC4F7 /* GoogleSignInButton.swift in Sources */,
 				55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */,
 				552F5586297D670200E2EFBF /* YourMissingView.swift in Sources */,
