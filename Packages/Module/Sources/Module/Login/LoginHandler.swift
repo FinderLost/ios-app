@@ -19,11 +19,11 @@ extension Login {
             self.userRepository = userRepository
         }
 
-        public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never> {
-            guard let action = context.action as? Login.Action else { return Empty().eraseToAnyPublisher() }
+        public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never>? {
+            guard let action = context.action as? Login.Action else { return nil }
             switch action {
 
-            case .signInResult(.success),
+             case .signInResult(.success),
                     .getUserSessionResult(.success),
                     .getInfo:
                 return userRepository.getInfo()

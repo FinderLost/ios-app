@@ -31,12 +31,12 @@ struct MissingView: View {
                 }
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.specific(.background))
         .navigationTitle("Missing near")
         .isLoading(store.state.missing.isLoading)
         .isError(store.state.missing.hasError)
         .refreshable { store.dispatch(.missing(.getMissingList)) }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarItems(
             trailing:
                 HStack {

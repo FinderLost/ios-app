@@ -79,12 +79,12 @@ struct ProfileView: View {
                     .padding(16)
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.specific(.background))
         .navigationTitle("User profile")
         .isLoading(store.state.login.isLoading)
         .isError(store.state.login.hasError)
         .refreshable { store.dispatch(.login(.getInfo)) }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
