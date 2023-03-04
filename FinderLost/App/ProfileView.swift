@@ -35,7 +35,6 @@ struct ProfileView: View {
                             Text(userInfo.email)
                         }
                     }
-                    .listRowBackground(Color.light)
 
                 } else {
                     HStack {
@@ -47,7 +46,6 @@ struct ProfileView: View {
                             Text("Welcome to FinderLost!")
                         }
                     }
-                    .listRowBackground(Color.light)
                 }
                 
                 Section {
@@ -56,21 +54,20 @@ struct ProfileView: View {
                     Text("Notification")
                         .onTapGesture { print("limit::Notification") }
                 }
-                .listRowBackground(Color.light)
+
                 Section {
                     Text("Help")
                         .onTapGesture { print("limit::Help") }
                     Text("Share the app")
                         .onTapGesture { print("limit::Share the app") }
                 }
-                .listRowBackground(Color.light)
+
                 Section {
                     if store.state.login.isSignIn {
                         Button("Sign Out") { store.dispatch(.login(.signOut)) }
                             .foregroundColor(.red)
                     }
                 }
-                .listRowBackground(Color.light)
 
             }
             .scrollContentBackground(.hidden)
@@ -82,10 +79,12 @@ struct ProfileView: View {
                     .padding(16)
             }
         }
-        .isLoading(store.state.login.isLoading)
-        .isError(store.state.missing.hasError)
-        .background(Color.background)
+        .background(Color.specific(.background))
         .navigationTitle("User profile")
+        .isLoading(store.state.login.isLoading)
+        .isError(store.state.login.hasError)
+        .refreshable { store.dispatch(.login(.getInfo)) }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

@@ -21,4 +21,5 @@ protocol PreviewContent {
 extension PreviewContent {
     static var loginStateBuilderFake: BuilderFake.Login.Data { .init() }
     static var missingStateBuilderFake: BuilderFake.MissingTCA.Data { .init() }
+    static var missingItemBuilderFake: BuilderFake.MissingTCA.DataItem { .init() }
 }

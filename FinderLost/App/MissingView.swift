@@ -6,6 +6,8 @@
 //
 
 import Redux
+import DesignSystem
+
 import SwiftUI
 
 struct MissingView: View {
@@ -16,14 +18,24 @@ struct MissingView: View {
         ZStack {
             if let publicList = store.state.missing.hasData?.publicList {
                 List(publicList) { item in
-                    Text(item.name)
+                    MissingItemView(
+                        headline: item.name,
+                        subheadline: item.description
+                    )
+                    .modifier(DSListItem())
                 }
+                .modifier(DSList())
             } else {
                 ZStack {
                     Text("no missing yet")
                 }
             }
         }
+        .background(Color.specific(.background))
+        .navigationTitle("Missing near")
+        .isLoading(store.state.missing.isLoading)
+        .isError(store.state.missing.hasError)
+        .refreshable { store.dispatch(.missing(.getMissingList)) }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .navigationBarItems(
             trailing:
@@ -32,16 +44,28 @@ struct MissingView: View {
                     Button(action: {}, label: { Image(systemName: "plus") })
                 }
         )
-        .isLoading(store.state.missing.isLoading)
-        .isError(store.state.missing.hasError)
-        .background(Color.background)
-        .navigationTitle("Missing near")
     }
 }
 
 struct MissingView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
-        let store = storeBuilderFake()
+        let item = missingItemBuilderFake
+            .entity
+
+        let missingState = missingStateBuilderFake
+            .set(\.publicList, [item, item, item, item])
+            .entity
+
+        let state = stateBuilderFake
+            .set(\.missing, .loading)
+            .set(\.missing, .failed("error"))
+            .set(\.missing, .idle)
+            .set(\.missing, .success(missingState))
+            .entity
+
+        let store = storeBuilderFake(
+            initialState: state
+        )
 
         TabView {
             NavigationView { MissingView() }
@@ -49,6 +73,6 @@ struct MissingView_Previews: PreviewProvider, PreviewContent {
         }
             .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Default preview")
+            .previewDisplayName("MissingView")
     }
 }
