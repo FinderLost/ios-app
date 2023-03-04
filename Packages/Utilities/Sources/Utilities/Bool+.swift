@@ -6,5 +6,9 @@
 //
 
 extension Bool {
+    ///
+    /// Returns the logical negation of the boolean value.
+    ///
+    /// - Returns: The inverse boolean value.
     public var not: Bool { !self }
 }

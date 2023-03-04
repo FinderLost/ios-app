@@ -5,6 +5,8 @@
 //  Created by Andres Felipe Alzate Restrepo on 4/3/23.
 //
 
+import Utilities
+
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -17,7 +19,7 @@ extension QueryDocumentSnapshot {
         do {
             return try data(as: Decode.self)
         } catch {
-            assertionFailure("\n\nFile: \(#file)\n\nError: \(error.localizedDescription)")
+            assertionDebug("\n\nFile: \(#file)\n\nError: \(error.localizedDescription)")
             return nil
         }
     }
