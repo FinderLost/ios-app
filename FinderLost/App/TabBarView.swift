@@ -22,11 +22,8 @@ struct TabBarView: View {
             NavigationView { ProfileView() }
                 .tabItem { Image(systemName: "person.fill") }
         }
-        .onAppear { store.use(HandlerDI.login()) }
-        .onAppear { store.use(HandlerDI.missing()) }
         .onAppear { store.dispatch(.login(.getUserSession)) }
         .onAppear { store.dispatch(.missing(.getMissingList)) }
-        .refreshable { store.dispatch(.missing(.getMissingList)) }
     }
 }
 
@@ -37,6 +34,6 @@ struct TabBarView_Previews: PreviewProvider, PreviewContent {
         TabBarView()
             .environmentObject(store)
             .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("Default preview")
+            .previewDisplayName("TabBarView")
     }
 }
