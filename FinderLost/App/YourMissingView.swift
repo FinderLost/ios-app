@@ -24,7 +24,9 @@ struct YourMissingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.specific(.background))
         .navigationTitle("Your missing")
-        .navigationBarItems(trailing: Button(action: { }) { Image(systemName: "plus") } )
+        .navigationBarItems(
+            trailing: NavigationLink(destination: MissingAddView()) { Image(systemName: "plus") }
+        )
     }
 }
 
