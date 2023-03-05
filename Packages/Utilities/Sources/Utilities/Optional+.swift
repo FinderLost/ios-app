@@ -11,6 +11,8 @@ protocol AnyOptional {
 }
 
 extension Optional: AnyOptional {
+    /// A Boolean value indicating whether the optional value is nil.
     public var isNil: Bool { self == nil }
+    /// A Boolean value indicating whether the optional value is not nil.
     public var isNotNil: Bool { self != nil }
 }
