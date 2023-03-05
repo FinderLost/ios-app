@@ -49,15 +49,12 @@ struct ProfileView: View {
                 }
                 
                 Section {
-                    Text("Privacy")
-                        .onTapGesture { print("limit::Privacy") }
-                    Text("Notification")
-                        .onTapGesture { print("limit::Notification") }
+                    NavigationLink("Privacy", destination: PrivacyView())
+                    NavigationLink("Notification", destination: NotificationView())
                 }
 
                 Section {
-                    Text("Help")
-                        .onTapGesture { print("limit::Help") }
+                    NavigationLink("Help", destination: HelpView())
                     Text("Share the app")
                         .onTapGesture { print("limit::Share the app") }
                 }

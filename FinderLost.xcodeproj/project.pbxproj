@@ -20,6 +20,12 @@
 		557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4992989813700C3DB09 /* FinderLostContextor.swift */; };
 		557CD4AB298991E300C3DB09 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 557CD4AA298991E300C3DB09 /* Factory */; };
 		5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5591F661297F2341007F7A1C /* GoogleSignIn */; };
+		559E604529B403C100168337 /* MissingAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604429B403C100168337 /* MissingAddView.swift */; };
+		559E604729B408D200168337 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604629B408D200168337 /* FilterView.swift */; };
+		559E604929B409B600168337 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604829B409B600168337 /* PrivacyView.swift */; };
+		559E604B29B40B0B00168337 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604A29B40B0B00168337 /* NotificationView.swift */; };
+		559E604D29B40B3D00168337 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604C29B40B3D00168337 /* HelpView.swift */; };
+		559E604F29B40BDE00168337 /* MissingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604E29B40BDE00168337 /* MissingDetail.swift */; };
 		55A03E042997EFC000FE8091 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55A03E032997EFC000FE8091 /* Data */; };
 		55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A03E072997F61200FE8091 /* StoreBuilderFake.swift */; };
 		55A735B02985371F00C700B5 /* RepositoryDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AF2985371F00C700B5 /* RepositoryDI.swift */; };
@@ -78,6 +84,12 @@
 		557CD4972989811000C3DB09 /* FinderLostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostReducer.swift; sourceTree = "<group>"; };
 		557CD4992989813700C3DB09 /* FinderLostContextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostContextor.swift; sourceTree = "<group>"; };
 		5591F667297F2EC9007F7A1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		559E604429B403C100168337 /* MissingAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingAddView.swift; sourceTree = "<group>"; };
+		559E604629B408D200168337 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		559E604829B409B600168337 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		559E604A29B40B0B00168337 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		559E604C29B40B3D00168337 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		559E604E29B40BDE00168337 /* MissingDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingDetail.swift; sourceTree = "<group>"; };
 		55A03E072997F61200FE8091 /* StoreBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreBuilderFake.swift; sourceTree = "<group>"; };
 		55A735AF2985371F00C700B5 /* RepositoryDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryDI.swift; sourceTree = "<group>"; };
 		55A9D05B299ECF3C00B9CD28 /* Module */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Module; path = Packages/Module; sourceTree = "<group>"; };
@@ -139,9 +151,15 @@
 		552F5582297D66E000E2EFBF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				559E604629B408D200168337 /* FilterView.swift */,
 				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
+				559E604C29B40B3D00168337 /* HelpView.swift */,
+				559E604429B403C100168337 /* MissingAddView.swift */,
+				559E604E29B40BDE00168337 /* MissingDetail.swift */,
 				55AD011D29B3983800D32A77 /* MissingItemView.swift */,
 				552F5587297D671400E2EFBF /* MissingView.swift */,
+				559E604A29B40B0B00168337 /* NotificationView.swift */,
+				559E604829B409B600168337 /* PrivacyView.swift */,
 				552F5583297D66F200E2EFBF /* ProfileView.swift */,
 				552F5589297D672900E2EFBF /* TabBarView.swift */,
 				552F5585297D670200E2EFBF /* YourMissingView.swift */,
@@ -471,19 +489,25 @@
 				55DBD2D829982063003CC4F7 /* StateBuilderFake.swift in Sources */,
 				55A9D06329A03D2600B9CD28 /* HandlerDI.swift in Sources */,
 				552F558A297D672900E2EFBF /* TabBarView.swift in Sources */,
+				559E604F29B40BDE00168337 /* MissingDetail.swift in Sources */,
 				55A735B02985371F00C700B5 /* RepositoryDI.swift in Sources */,
+				559E604729B408D200168337 /* FilterView.swift in Sources */,
 				55AD011E29B3983800D32A77 /* MissingItemView.swift in Sources */,
 				55DBD2E42998470D003CC4F7 /* GoogleSignInButton.swift in Sources */,
 				55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */,
 				552F5586297D670200E2EFBF /* YourMissingView.swift in Sources */,
+				559E604529B403C100168337 /* MissingAddView.swift in Sources */,
+				559E604D29B40B3D00168337 /* HelpView.swift in Sources */,
 				55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */,
 				557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */,
 				552F5588297D671400E2EFBF /* MissingView.swift in Sources */,
 				557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */,
 				552F5584297D66F200E2EFBF /* ProfileView.swift in Sources */,
+				559E604929B409B600168337 /* PrivacyView.swift in Sources */,
 				557CD495298980E700C3DB09 /* FinderLost.swift in Sources */,
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
+				559E604B29B40B0B00168337 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

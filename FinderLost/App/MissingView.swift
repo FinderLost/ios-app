@@ -18,10 +18,12 @@ struct MissingView: View {
         ZStack {
             if let publicList = store.state.missing.hasData?.publicList {
                 List(publicList) { item in
-                    MissingItemView(
-                        headline: item.name,
-                        subheadline: item.description
-                    )
+                    NavigationLink(destination: MissingDetailView()) {
+                        MissingItemView(
+                            headline: item.name,
+                            subheadline: item.description
+                        )
+                    }
                     .modifier(DSListItem())
                 }
                 .modifier(DSList())
@@ -40,8 +42,10 @@ struct MissingView: View {
         .navigationBarItems(
             trailing:
                 HStack {
-                    Button(action: {}, label: { Image(systemName: "line.3.horizontal.decrease.circle") })
-                    Button(action: {}, label: { Image(systemName: "plus") })
+                    NavigationLink(destination: FilterView()) {
+                        Image(systemName: "line.3.horizontal.decrease.circle")
+                    }
+                    NavigationLink(destination: MissingAddView()) { Image(systemName: "plus") }
                 }
         )
     }
