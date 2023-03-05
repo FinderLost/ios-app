@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-extension UIView {
-    static func setAppearance() {
-        let view = UIView.appearance()
-        view.tintColor = UIColor(Color.dsPrimary)
+extension DSAppereance {
+    enum UIView {
+        static func setAppearance() {
+            let view = UIKit.UIView.appearance()
+            view.tintColor = UIColor(Color.dsPrimary)
+        }
     }
 }
