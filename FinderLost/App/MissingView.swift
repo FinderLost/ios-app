@@ -18,7 +18,7 @@ struct MissingView: View {
         ZStack {
             if let publicList = store.state.missing.hasData?.publicList {
                 List(publicList) { item in
-                    NavigationLink(destination: MissingDetailView()) {
+                    DSNavigationLink(destination: MissingDetailView()) {
                         MissingItemView(
                             headline: item.name,
                             subheadline: item.description
