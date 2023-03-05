@@ -12,7 +12,7 @@ import Domain
 import Foundation
 
 public enum MissingTCA {
-    public struct DataItem: ReduxState, Identifiable {
+    public struct DataItem: ReduxState, Identifiable, Hashable {
         public var id: UUID = UUID()
         public let name: String
         public let description: String

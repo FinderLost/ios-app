@@ -16,11 +16,11 @@ struct TabBarView: View {
     var body: some View {
         TabView {
             NavigationView { MissingView() }
-                .tabItem { Image(systemName: "house") }
+                .tabItem { Label("", systemImage: "house") }
             NavigationView { YourMissingView() }
-                .tabItem { Image(systemName: "square.split.2x2.fill") }
+                .tabItem { Label("", systemImage: "square.split.2x2.fill") }
             NavigationView { ProfileView() }
-                .tabItem { Image(systemName: "person.fill") }
+                .tabItem { Label("", systemImage: "person.fill") }
         }
         .onAppear { store.dispatch(.login(.getUserSession)) }
         .onAppear { store.dispatch(.missing(.getMissingList)) }
