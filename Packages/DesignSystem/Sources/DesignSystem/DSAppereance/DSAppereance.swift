@@ -10,5 +10,6 @@ import UIKit
 public enum DSAppereance {
     public static func setAppearance() {
         UIView.setAppearance()
+        UITabBar.setAppearance()
     }
 }
