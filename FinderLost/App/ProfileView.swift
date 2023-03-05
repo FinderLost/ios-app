@@ -35,6 +35,7 @@ struct ProfileView: View {
                             Text(userInfo.email)
                         }
                     }
+                    .listRowBackground(Color.specific(.surface))
 
                 } else {
                     HStack {
@@ -46,18 +47,21 @@ struct ProfileView: View {
                             Text("Welcome to FinderLost!")
                         }
                     }
+                    .listRowBackground(Color.specific(.surface))
                 }
                 
                 Section {
                     NavigationLink("Privacy", destination: PrivacyView())
                     NavigationLink("Notification", destination: NotificationView())
                 }
+                .listRowBackground(Color.specific(.surface))
 
                 Section {
                     NavigationLink("Help", destination: HelpView())
                     Text("Share the app")
                         .onTapGesture { print("limit::Share the app") }
                 }
+                .listRowBackground(Color.specific(.surface))
 
                 Section {
                     if store.state.login.isSignIn {
@@ -65,6 +69,7 @@ struct ProfileView: View {
                             .foregroundColor(.red)
                     }
                 }
+                .listRowBackground(Color.specific(.surface))
 
             }
             .scrollContentBackground(.hidden)
@@ -74,6 +79,7 @@ struct ProfileView: View {
                     .cornerRadius(8)
                     .shadow(radius: 0)
                     .padding(16)
+                    .listRowBackground(Color.specific(.surface))
             }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -103,8 +109,8 @@ struct ProfileView_Previews: PreviewProvider, PreviewContent {
             NavigationView { ProfileView() }
                 .tabItem { Image(systemName: "square.split.2x2.fill") }
         }
-            .environmentObject(store)
-            .previewLayout(PreviewLayout.sizeThatFits)
-            .previewDisplayName("ProfileView")
+        .environmentObject(store)
+        .previewLayout(PreviewLayout.sizeThatFits)
+        .previewDisplayName("ProfileView")
     }
 }
