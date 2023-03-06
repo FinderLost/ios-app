@@ -40,7 +40,3 @@ final class FirebaseAuthProviderImpl: FirebaseAuthProvider {
         }.eraseToAnyPublisher()
     } 
 }
-
-enum CustomError: Error {
-case isEmpty
-}

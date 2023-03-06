@@ -29,7 +29,7 @@ extension MissingTCA: Reducer {
     }
 }
 
-extension MissingTCA.Data {
+private extension MissingTCA.Data {
     init(missingList: [Missing]) {
         self.init(
             publicList: missingList.map(MissingTCA.DataItem.init)
@@ -37,7 +37,7 @@ extension MissingTCA.Data {
     }
 }
 
-extension MissingTCA.DataItem {
+private extension MissingTCA.DataItem {
     init(missing: Missing) {
         self.init(
             name: missing.name,
