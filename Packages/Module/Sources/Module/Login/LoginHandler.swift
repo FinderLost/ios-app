@@ -23,7 +23,7 @@ extension LoginTCA {
             guard let action = context.action as? LoginTCA.Action else { return nil }
             switch action {
 
-             case .setSignIn(.success),
+            case .setSignIn(.success),
                     .setUserSession(.success),
                     .getInfo:
                 return userRepository.getInfo()
