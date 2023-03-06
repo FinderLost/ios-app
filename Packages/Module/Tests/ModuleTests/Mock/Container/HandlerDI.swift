@@ -11,8 +11,8 @@ import Module
 import Factory
 
 class HandlerDI: SharedContainer {
-    static let login = Factory<HandlerOf<Login>>(scope: .test) {
-        Login.HandlerImpl(
+    static let login = Factory<HandlerOf<LoginTCA>>(scope: .test) {
+        LoginTCA.HandlerImpl(
             userRepository: RepositoryDI.user()
         )
     }
