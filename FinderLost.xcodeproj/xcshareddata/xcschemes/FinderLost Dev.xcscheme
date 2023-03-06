@@ -51,17 +51,25 @@
             BlueprintName = "FinderLost"
             ReferencedContainer = "container:FinderLost.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Module"
+            BuildableName = "Module"
+            BlueprintName = "Module"
+            ReferencedContainer = "container:Packages/Module">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
             skipped = "NO"
-            parallelizable = "YES">
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "55FE80E4294D066400763BE7"
-               BuildableName = "FinderLostTests.xctest"
-               BlueprintName = "FinderLostTests"
-               ReferencedContainer = "container:FinderLost.xcodeproj">
+               BlueprintIdentifier = "ModuleTests"
+               BuildableName = "ModuleTests"
+               BlueprintName = "ModuleTests"
+               ReferencedContainer = "container:Packages/Module">
             </BuildableReference>
          </TestableReference>
       </Testables>
