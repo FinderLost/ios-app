@@ -12,7 +12,7 @@ extension FinderLost: Reducer {
     static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
         switch action {
-        case let .login(action): newState.login = Login.reduce(action, with: state.login)
+        case let .login(action): newState.login = LoginTCA.reduce(action, with: state.login)
         case let .missing(action): newState.missing = MissingTCA.reduce(action, with: state.missing)
         }
         return newState

@@ -7,7 +7,7 @@
 
 import Redux
 
-extension Login: Reducer {
+extension LoginTCA: Reducer {
     public static func reduce(_ action: Action, with state: State) -> State {
         var newState = state
 
@@ -16,14 +16,14 @@ extension Login: Reducer {
             newState = .idle
 
         case
-                .signIn,
-                .signOut,
+                .getSignIn,
+                .getSignOut,
                 .getInfo:
             newState = .loading
 
         case
-            let .getInfoResult(.success(value)):
-            let signIn = Login.Data(
+            let .setInfo(.success(value)):
+            let signIn = LoginTCA.Data(
                 email: value.email,
                 name: value.name,
                 imageUrl: value.imageUrl
@@ -31,19 +31,19 @@ extension Login: Reducer {
 
             newState = .signIn(signIn)
 
-        case .signOutResult(.success):
+        case .setSignOut(.success):
             newState = .signOut
 
         case
-                let .getUserSessionResult(.failure(error)),
-                let .signInResult(.failure(error)),
-                let .signOutResult(.failure(error)),
-                let .getInfoResult(.failure(error)):
+                let .setUserSession(.failure(error)),
+                let .setSignIn(.failure(error)),
+                let .setSignOut(.failure(error)),
+                let .setInfo(.failure(error)):
             newState = .failed(error.localizedDescription)
 
         case
-                .getUserSessionResult(.success),
-                .signInResult(.success):
+                .setUserSession(.success),
+                .setSignIn(.success):
             break
         }
 

@@ -11,7 +11,7 @@ import Domain
 import Combine
 import Factory
 
-extension Login {
+extension LoginTCA {
     public class HandlerImpl<Action: ReduxAction, State: ReduxState>: Handler {
         private let userRepository: UserRepository
 
@@ -20,39 +20,39 @@ extension Login {
         }
 
         public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never>? {
-            guard let action = context.action as? Login.Action else { return nil }
+            guard let action = context.action as? LoginTCA.Action else { return nil }
             switch action {
 
-             case .signInResult(.success),
-                    .getUserSessionResult(.success),
+             case .setSignIn(.success),
+                    .setUserSession(.success),
                     .getInfo:
                 return userRepository.getInfo()
-                    .compactMap { Login.Action.getInfoResult(.success($0)) }
-                    .catch { Just(Login.Action.getInfoResult(.failure($0))) }
+                    .compactMap { LoginTCA.Action.setInfo(.success($0)) }
+                    .catch { Just(LoginTCA.Action.setInfo(.failure($0))) }
                     .eraseToAnyPublisher()
 
-            case .signIn:
+            case .getSignIn:
                 return userRepository.signIn()
-                    .compactMap { Login.Action.signInResult(.success($0)) }
-                    .catch { Just(Login.Action.signInResult(.failure($0))) }
+                    .compactMap { LoginTCA.Action.setSignIn(.success($0)) }
+                    .catch { Just(LoginTCA.Action.setSignIn(.failure($0))) }
                     .eraseToAnyPublisher()
 
             case .getUserSession:
                 return userRepository.restorePreviousSignIn()
-                    .map { Login.Action.getUserSessionResult(.success($0)) }
-                    .catch { Just(Login.Action.getUserSessionResult(.failure($0))) }
+                    .map { LoginTCA.Action.setUserSession(.success($0)) }
+                    .catch { Just(LoginTCA.Action.setUserSession(.failure($0))) }
                     .eraseToAnyPublisher()
 
-            case .signOut, .getUserSessionResult(.failure):
+            case .getSignOut, .setUserSession(.failure):
                 return userRepository.signOut()
-                    .map { Login.Action.signOutResult(.success($0)) }
-                    .catch { Just(Login.Action.signOutResult(.failure($0))) }
+                    .map { LoginTCA.Action.setSignOut(.success($0)) }
+                    .catch { Just(LoginTCA.Action.setSignOut(.failure($0))) }
                     .eraseToAnyPublisher()
 
             case
-                    .signInResult(.failure),
-                    .signOutResult,
-                    .getInfoResult:
+                    .setSignIn(.failure),
+                    .setSignOut,
+                    .setInfo:
                 return Empty().eraseToAnyPublisher()
             }
         }

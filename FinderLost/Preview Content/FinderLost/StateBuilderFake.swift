@@ -13,7 +13,7 @@ extension PreviewContent {
 }
 
 struct StateBuilderFake: Modifiable {
-    var login: Login.State = .idle
+    var login: LoginTCA.State = .idle
     var missing: MissingTCA.State = .idle
     fileprivate init() { }
     

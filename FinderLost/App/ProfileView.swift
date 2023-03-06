@@ -65,7 +65,7 @@ struct ProfileView: View {
 
                 Section {
                     if store.state.login.isSignIn {
-                        Button("Sign Out") { store.dispatch(.login(.signOut)) }
+                        Button("Sign Out") { store.dispatch(.login(.getSignOut)) }
                             .foregroundColor(.red)
                     }
                 }
@@ -75,7 +75,7 @@ struct ProfileView: View {
             .scrollContentBackground(.hidden)
             .listStyle(.insetGrouped)
             if store.state.login.isSignOut {
-                GoogleSignInButton { store.dispatch(.login(.signIn)) }
+                GoogleSignInButton { store.dispatch(.login(.getSignIn)) }
                     .cornerRadius(8)
                     .shadow(radius: 0)
                     .padding(16)

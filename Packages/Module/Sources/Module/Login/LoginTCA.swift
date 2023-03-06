@@ -1,5 +1,5 @@
 //
-//  Login.swift
+//  LoginTCA.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
@@ -10,7 +10,7 @@ import Domain
 
 import UIKit
 
-public enum Login {
+public enum LoginTCA {
     public struct Data: ReduxState {
         public var email: String
         public var name: String
@@ -55,12 +55,12 @@ public enum Login {
     }
     public enum Action: ReduxAction {
         case getUserSession
-        case getUserSessionResult(Result<UserSession, Error>)
-        case signIn
-        case signInResult(Result<UserSession, Error>)
-        case signOut
-        case signOutResult(Result<Void, Error>)
+        case setUserSession(Result<UserSession, Error>)
+        case getSignIn
+        case setSignIn(Result<UserSession, Error>)
+        case getSignOut
+        case setSignOut(Result<Void, Error>)
         case getInfo
-        case getInfoResult(Result<UserInfo, Error>)
+        case setInfo(Result<UserInfo, Error>)
     }
 }
