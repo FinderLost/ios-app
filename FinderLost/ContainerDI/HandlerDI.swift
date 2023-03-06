@@ -12,7 +12,7 @@ import Factory
 
 class HandlerDI: SharedContainer {
     static let login = Factory<HandlerOf<FinderLost>>(scope: .singleton) {
-        Login.HandlerImpl(
+        LoginTCA.HandlerImpl(
             userRepository: RepositoryDI.user()
         )
     }

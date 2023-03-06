@@ -10,12 +10,12 @@ import Module
 
 enum FinderLost {
     struct State: ReduxState {
-        var login: Login.State = .idle
+        var login: LoginTCA.State = .idle
         var missing: MissingTCA.State = .idle
     }
 
     enum Action: ReduxAction {
-        case login(Login.Action)
+        case login(LoginTCA.Action)
         case missing(MissingTCA.Action)
     }
 }
