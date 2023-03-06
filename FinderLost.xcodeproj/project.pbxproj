@@ -29,8 +29,6 @@
 		55A03E042997EFC000FE8091 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55A03E032997EFC000FE8091 /* Data */; };
 		55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A03E072997F61200FE8091 /* StoreBuilderFake.swift */; };
 		55A735B02985371F00C700B5 /* RepositoryDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AF2985371F00C700B5 /* RepositoryDI.swift */; };
-		55A735C32985496200C700B5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C22985496200C700B5 /* FirebaseAuth */; };
-		55A735C52985496800C700B5 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 55A735C42985496800C700B5 /* GoogleSignIn */; };
 		55A9D061299FFFE400B9CD28 /* Module in Frameworks */ = {isa = PBXBuildFile; productRef = 55A9D060299FFFE400B9CD28 /* Module */; };
 		55A9D06329A03D2600B9CD28 /* HandlerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06229A03D2600B9CD28 /* HandlerDI.swift */; };
 		55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */; };
@@ -47,26 +45,7 @@
 		55E5D3F329AEAA67003A31C0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55E5D3F229AEAA67003A31C0 /* Launch Screen.storyboard */; };
 		55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80D8294D066200763BE7 /* FinderLostApp.swift */; };
 		55FE80E0294D066400763BE7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55FE80DF294D066400763BE7 /* Preview Assets.xcassets */; };
-		55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F3294D066400763BE7 /* FinderLostUITests.swift */; };
-		55FE80F6294D066400763BE7 /* FinderLostUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55FE80F5294D066400763BE7 /* FinderLostUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		550F602E2985670300BFF1B0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55FE80CD294D066200763BE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55FE80D4294D066200763BE7;
-			remoteInfo = FinderLost;
-		};
-		55FE80F0294D066400763BE7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 55FE80CD294D066200763BE7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 55FE80D4294D066200763BE7;
-			remoteInfo = FinderLost;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		552E8DF12997CD7700570F78 /* Data */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Data; path = Packages/Data; sourceTree = "<group>"; };
@@ -104,10 +83,6 @@
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		55FE80E5294D066400763BE7 /* FinderLostTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderLostTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55FE80EF294D066400763BE7 /* FinderLostUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderLostUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		55FE80F3294D066400763BE7 /* FinderLostUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostUITests.swift; sourceTree = "<group>"; };
-		55FE80F5294D066400763BE7 /* FinderLostUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,22 +101,6 @@
 				55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */,
 				5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */,
 				55A03E042997EFC000FE8091 /* Data in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55FE80E2294D066400763BE7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55A735C52985496800C700B5 /* GoogleSignIn in Frameworks */,
-				55A735C32985496200C700B5 /* FirebaseAuth in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55FE80EC294D066400763BE7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,7 +239,6 @@
 			isa = PBXGroup;
 			children = (
 				55FE80D7294D066200763BE7 /* FinderLost */,
-				55FE80F2294D066400763BE7 /* FinderLostUITests */,
 				55EDCE6A2996F255002A52BD /* Frameworks */,
 				55D37C4F2996ED1E00947787 /* Packages */,
 				55FE80D6294D066200763BE7 /* Products */,
@@ -291,8 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				55FE80D5294D066200763BE7 /* FinderLost.app */,
-				55FE80E5294D066400763BE7 /* FinderLostTests.xctest */,
-				55FE80EF294D066400763BE7 /* FinderLostUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -318,15 +274,6 @@
 				55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		55FE80F2294D066400763BE7 /* FinderLostUITests */ = {
-			isa = PBXGroup;
-			children = (
-				55FE80F3294D066400763BE7 /* FinderLostUITests.swift */,
-				55FE80F5294D066400763BE7 /* FinderLostUITestsLaunchTests.swift */,
-			);
-			path = FinderLostUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,46 +309,6 @@
 			productReference = 55FE80D5294D066200763BE7 /* FinderLost.app */;
 			productType = "com.apple.product-type.application";
 		};
-		55FE80E4294D066400763BE7 /* FinderLostTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55FE80FC294D066400763BE7 /* Build configuration list for PBXNativeTarget "FinderLostTests" */;
-			buildPhases = (
-				55FE80E1294D066400763BE7 /* Sources */,
-				55FE80E2294D066400763BE7 /* Frameworks */,
-				55FE80E3294D066400763BE7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				550F602F2985670300BFF1B0 /* PBXTargetDependency */,
-			);
-			name = FinderLostTests;
-			packageProductDependencies = (
-				55A735C22985496200C700B5 /* FirebaseAuth */,
-				55A735C42985496800C700B5 /* GoogleSignIn */,
-			);
-			productName = FinderLostTests;
-			productReference = 55FE80E5294D066400763BE7 /* FinderLostTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		55FE80EE294D066400763BE7 /* FinderLostUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 55FE80FF294D066400763BE7 /* Build configuration list for PBXNativeTarget "FinderLostUITests" */;
-			buildPhases = (
-				55FE80EB294D066400763BE7 /* Sources */,
-				55FE80EC294D066400763BE7 /* Frameworks */,
-				55FE80ED294D066400763BE7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				55FE80F1294D066400763BE7 /* PBXTargetDependency */,
-			);
-			name = FinderLostUITests;
-			productName = FinderLostUITests;
-			productReference = 55FE80EF294D066400763BE7 /* FinderLostUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -409,20 +316,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1410;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
 					55FE80D4294D066200763BE7 = {
 						CreatedOnToolsVersion = 14.1;
-					};
-					55FE80E4294D066400763BE7 = {
-						CreatedOnToolsVersion = 14.1;
-						LastSwiftMigration = 1420;
-						TestTargetID = 55FE80D4294D066200763BE7;
-					};
-					55FE80EE294D066400763BE7 = {
-						CreatedOnToolsVersion = 14.1;
-						TestTargetID = 55FE80D4294D066200763BE7;
 					};
 				};
 			};
@@ -446,8 +344,6 @@
 			projectRoot = "";
 			targets = (
 				55FE80D4294D066200763BE7 /* FinderLost */,
-				55FE80E4294D066400763BE7 /* FinderLostTests */,
-				55FE80EE294D066400763BE7 /* FinderLostUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -462,20 +358,6 @@
 				552F5599297D786800E2EFBF /* Assets.xcassets in Resources */,
 				55E5D3F329AEAA67003A31C0 /* Launch Screen.storyboard in Resources */,
 				552F5595297D75A000E2EFBF /* GoogleService-Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55FE80E3294D066400763BE7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55FE80ED294D066400763BE7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,36 +393,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		55FE80E1294D066400763BE7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		55FE80EB294D066400763BE7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55FE80F6294D066400763BE7 /* FinderLostUITestsLaunchTests.swift in Sources */,
-				55FE80F4294D066400763BE7 /* FinderLostUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		550F602F2985670300BFF1B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55FE80D4294D066200763BE7 /* FinderLost */;
-			targetProxy = 550F602E2985670300BFF1B0 /* PBXContainerItemProxy */;
-		};
-		55FE80F1294D066400763BE7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 55FE80D4294D066200763BE7 /* FinderLost */;
-			targetProxy = 55FE80F0294D066400763BE7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		55FE80F7294D066400763BE7 /* Debug */ = {
@@ -721,99 +574,6 @@
 			};
 			name = Release;
 		};
-		55FE80FD294D066400763BE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.FinderLostTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderLost.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinderLost";
-				TVOS_DEPLOYMENT_TARGET = 16.0;
-			};
-			name = Debug;
-		};
-		55FE80FE294D066400763BE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.FinderLostTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FinderLost.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/FinderLost";
-				TVOS_DEPLOYMENT_TARGET = 16.0;
-			};
-			name = Release;
-		};
-		55FE8100294D066400763BE7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3Y8G83BS5M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.FinderLostUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FinderLost;
-			};
-			name = Debug;
-		};
-		55FE8101294D066400763BE7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3Y8G83BS5M;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.FinderLostUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = FinderLost;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -831,24 +591,6 @@
 			buildConfigurations = (
 				55FE80FA294D066400763BE7 /* Debug */,
 				55FE80FB294D066400763BE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55FE80FC294D066400763BE7 /* Build configuration list for PBXNativeTarget "FinderLostTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55FE80FD294D066400763BE7 /* Debug */,
-				55FE80FE294D066400763BE7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		55FE80FF294D066400763BE7 /* Build configuration list for PBXNativeTarget "FinderLostUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				55FE8100294D066400763BE7 /* Debug */,
-				55FE8101294D066400763BE7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -909,16 +651,6 @@
 		55A03E032997EFC000FE8091 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
-		};
-		55A735C22985496200C700B5 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		55A735C42985496800C700B5 /* GoogleSignIn */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
-			productName = GoogleSignIn;
 		};
 		55A9D060299FFFE400B9CD28 /* Module */ = {
 			isa = XCSwiftPackageProductDependency;
