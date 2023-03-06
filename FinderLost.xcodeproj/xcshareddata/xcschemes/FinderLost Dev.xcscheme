@@ -58,6 +58,20 @@
             BlueprintName = "Module"
             ReferencedContainer = "container:Packages/Module">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Data"
+            BuildableName = "Data"
+            BlueprintName = "Data"
+            ReferencedContainer = "container:Packages/Data">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Domain"
+            BuildableName = "Domain"
+            BlueprintName = "Domain"
+            ReferencedContainer = "container:Packages/Domain">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -70,6 +84,30 @@
                BuildableName = "ModuleTests"
                BlueprintName = "ModuleTests"
                ReferencedContainer = "container:Packages/Module">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DataTests"
+               BuildableName = "DataTests"
+               BlueprintName = "DataTests"
+               ReferencedContainer = "container:Packages/Data">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DomainTests"
+               BuildableName = "DomainTests"
+               BlueprintName = "DomainTests"
+               ReferencedContainer = "container:Packages/Domain">
             </BuildableReference>
          </TestableReference>
       </Testables>
