@@ -9,101 +9,101 @@ import XCTest
 
 @testable import Module
 
-class LoginReducerTests: XCTestCase {
-    let signIn = Login.SignInBuilderFake().entity
+class LoginReducerTest: XCTestCase {
+    let signIn = LoginTCA.DataBuilderFake().entity
     let userSession = UserSessionBuilderFake().entity
     let error = NSErrorBuilderFake().entity
     let userInfo = UserInfoBuilderFake().entity
-    let initialState = Login.State.idle
+    let initialState = LoginTCA.State.idle
 }
 
 // MARK: - Idle State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testReduceGetUserSession() {
-        let action = Login.Action.getUserSession
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.getUserSession
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .idle)
     }
 }
 
 // MARK: - Loading State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testReduceSignInAction() {
-        let action = Login.Action.signIn
-        let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.loading)
+        let action = LoginTCA.Action.getSignIn
+        let newState = LoginTCA.reduce(action, with: initialState)
+        XCTAssertEqual(newState, LoginTCA.State.loading)
     }
     func testReduceSignOutAction() {
-        let action = Login.Action.signOut
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.getSignOut
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .loading)
     }
     func testReduceGetInfoAction() {
-        let action = Login.Action.getInfo
-        let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.loading)
+        let action = LoginTCA.Action.getInfo
+        let newState = LoginTCA.reduce(action, with: initialState)
+        XCTAssertEqual(newState, LoginTCA.State.loading)
     }
 }
 
 // MARK: - SignIn State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testGetInfoResultSuccessAction() {
-        let action = Login.Action.getInfoResult(.success(userInfo))
-        let signIn = Login.SignInBuilderFake()
+        let action = LoginTCA.Action.setInfo(.success(userInfo))
+        let signIn = LoginTCA.DataBuilderFake()
             .set(\.name, userInfo.name)
             .set(\.email, userInfo.email)
             .set(\.imageUrl, userInfo.imageUrl)
             .entity
 
-        let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.signIn(signIn))
+        let newState = LoginTCA.reduce(action, with: initialState)
+        XCTAssertEqual(newState, LoginTCA.State.signIn(signIn))
     }
 }
 
 // MARK: - SignOut State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testSignOutResultSuccessAction() {
-        let action = Login.Action.signOutResult(.success(()))
-        let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.signOut)
+        let action = LoginTCA.Action.setSignOut(.success(()))
+        let newState = LoginTCA.reduce(action, with: initialState)
+        XCTAssertEqual(newState, LoginTCA.State.signOut)
     }
 }
 
 // MARK: - Error State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testReduceGetUserSessionResultFailureAction() {
-        let action = Login.Action.getUserSessionResult(.failure(error))
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.setUserSession(.failure(error))
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testSignInResultFailureAction() {
-        let action = Login.Action.signInResult(.failure(error))
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.setSignIn(.failure(error))
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testSignOutResultFailureAction() {
-        let action = Login.Action.signOutResult(.failure(error))
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.setSignOut(.failure(error))
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
     func testGetInfoResultFailureAction() {
-        let action = Login.Action.getInfoResult(.failure(error))
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.setInfo(.failure(error))
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
 }
 
 // MARK: - Break State
-extension LoginReducerTests {
+extension LoginReducerTest {
     func testReduceGetUserSessionResultSuccessAction() {
-        let action = Login.Action.getUserSessionResult(.success(userSession))
-        let newState = Login.reduce(action, with: initialState)
+        let action = LoginTCA.Action.setUserSession(.success(userSession))
+        let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .idle)
     }
 
     func testSignInResultSuccessAction() {
-        let action = Login.Action.signInResult(.success(userSession))
-        let newState = Login.reduce(action, with: initialState)
-        XCTAssertEqual(newState, Login.State.idle)
+        let action = LoginTCA.Action.setSignIn(.success(userSession))
+        let newState = LoginTCA.reduce(action, with: initialState)
+        XCTAssertEqual(newState, LoginTCA.State.idle)
     }
 }

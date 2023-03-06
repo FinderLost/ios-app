@@ -1,5 +1,5 @@
 //
-//  LoginStateTest.swift
+//  LoginTCAStateTest.swift
 //  FinderLostTests
 //
 //  Created by Andres Felipe Alzate Restrepo on 13/2/23.
@@ -9,11 +9,11 @@ import XCTest
 
 @testable import Module
 
-class LoginStateTest: XCTestCase {
-    let signIn = Login.SignInBuilderFake().entity
+class LoginTCAStateTest: XCTestCase {
+    let signIn = LoginTCA.DataBuilderFake().entity
 
     func testIdle() {
-        let state = Login.State.idle
+        let state = LoginTCA.State.idle
         XCTAssertFalse(state.isLoading)
         XCTAssertFalse(state.isSignIn)
         XCTAssertFalse(state.isSignOut)
@@ -22,27 +22,27 @@ class LoginStateTest: XCTestCase {
     }
 
     func testIsLoading() {
-        let state = Login.State.loading
+        let state = LoginTCA.State.loading
         XCTAssertTrue(state.isLoading)
     }
 
     func testIsSignIn() {
-        let state = Login.State.signIn(signIn)
+        let state = LoginTCA.State.signIn(signIn)
         XCTAssertTrue(state.isSignIn)
     }
 
     func testIsSignOut() {
-        let state = Login.State.signOut
+        let state = LoginTCA.State.signOut
         XCTAssertTrue(state.isSignOut)
     }
 
     func testLastSignIn() {
-        let state = Login.State.signIn(signIn)
+        let state = LoginTCA.State.signIn(signIn)
         XCTAssertEqual(state.hasData, signIn)
     }
 
     func testError() {
-        let state = Login.State.failed("Test Error")
+        let state = LoginTCA.State.failed("Test Error")
         XCTAssertEqual(state.hasError, "Test Error")
     }
 }
