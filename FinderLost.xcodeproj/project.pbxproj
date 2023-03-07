@@ -57,13 +57,13 @@
 		552F5598297D786800E2EFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552F559A297D791E00E2EFBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5532FF5D29B699E0007960D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		554A7EE929B72E570072E535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5566D73E2997BF6F005A3A93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
 		5566D7412997C04D005A3A93 /* Redux */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Redux; path = Packages/Redux; sourceTree = "<group>"; };
 		5566D7482997C177005A3A93 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
 		557CD494298980E700C3DB09 /* FinderLost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLost.swift; sourceTree = "<group>"; };
 		557CD4972989811000C3DB09 /* FinderLostReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostReducer.swift; sourceTree = "<group>"; };
 		557CD4992989813700C3DB09 /* FinderLostContextor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostContextor.swift; sourceTree = "<group>"; };
-		5591F667297F2EC9007F7A1C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		559E604429B403C100168337 /* MissingAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingAddView.swift; sourceTree = "<group>"; };
 		559E604629B408D200168337 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
 		559E604829B409B600168337 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		5591F663297F2C24007F7A1C /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				5591F667297F2EC9007F7A1C /* Info.plist */,
+				554A7EE929B72E570072E535 /* Info.plist */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -572,6 +572,8 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "i386 x86_64";
 				GENERATE_INFOPLIST_FILE = NO;
+				GOOGLE_CLIENT_ID = "968782545174-d3nc68cm5i8cehhftsompgli23uge6ms.apps.googleusercontent.com";
+				GOOGLE_CLIENT_ID_URL_SCHEME = "com.googleusercontent.apps.968782545174-d3nc68cm5i8cehhftsompgli23uge6ms";
 				INFOPLIST_FILE = FinderLost/Configuration/LostThings/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -605,6 +607,8 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "i386 x86_64";
 				GENERATE_INFOPLIST_FILE = NO;
+				GOOGLE_CLIENT_ID = "968782545174-shld6qv8nmp4csm3bo3678eutr7i3qlv.apps.googleusercontent.com";
+				GOOGLE_CLIENT_ID_URL_SCHEME = "com.googleusercontent.apps.968782545174-shld6qv8nmp4csm3bo3678eutr7i3qlv";
 				INFOPLIST_FILE = FinderLost/Configuration/LostThings/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
