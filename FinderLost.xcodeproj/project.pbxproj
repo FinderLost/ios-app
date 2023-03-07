@@ -56,6 +56,7 @@
 		552F5594297D75A000E2EFBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		552F5598297D786800E2EFBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		552F559A297D791E00E2EFBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5532FF5D29B699E0007960D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5566D73E2997BF6F005A3A93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
 		5566D7412997C04D005A3A93 /* Redux */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Redux; path = Packages/Redux; sourceTree = "<group>"; };
 		5566D7482997C177005A3A93 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
@@ -110,6 +111,7 @@
 		552F5582297D66E000E2EFBF /* App */ = {
 			isa = PBXGroup;
 			children = (
+				5532FF5F29B72B49007960D2 /* Temporal */,
 				559E604629B408D200168337 /* FilterView.swift */,
 				55FE80D8294D066200763BE7 /* FinderLostApp.swift */,
 				559E604C29B40B3D00168337 /* HelpView.swift */,
@@ -139,7 +141,8 @@
 		552F5593297D757A00E2EFBF /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				552F5594297D75A000E2EFBF /* GoogleService-Info.plist */,
+				5532FF5C29B6999E007960D2 /* PRO */,
+				5532FF5B29B69997007960D2 /* DEV */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -182,6 +185,30 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		5532FF5B29B69997007960D2 /* DEV */ = {
+			isa = PBXGroup;
+			children = (
+				5532FF5D29B699E0007960D2 /* GoogleService-Info.plist */,
+			);
+			path = DEV;
+			sourceTree = "<group>";
+		};
+		5532FF5C29B6999E007960D2 /* PRO */ = {
+			isa = PBXGroup;
+			children = (
+				552F5594297D75A000E2EFBF /* GoogleService-Info.plist */,
+			);
+			path = PRO;
+			sourceTree = "<group>";
+		};
+		5532FF5F29B72B49007960D2 /* Temporal */ = {
+			isa = PBXGroup;
+			children = (
+				55DBD2D529982028003CC4F7 /* FinderLost */,
+			);
+			path = Temporal;
+			sourceTree = "<group>";
+		};
 		5591F663297F2C24007F7A1C /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +233,7 @@
 		55DBD2D529982028003CC4F7 /* FinderLost */ = {
 			isa = PBXGroup;
 			children = (
+				55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */,
 				55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */,
 				55A03E072997F61200FE8091 /* StoreBuilderFake.swift */,
 			);
@@ -269,9 +297,7 @@
 		55FE80DE294D066400763BE7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				55DBD2D529982028003CC4F7 /* FinderLost */,
 				55FE80DF294D066400763BE7 /* Preview Assets.xcassets */,
-				55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -286,6 +312,7 @@
 				55FE80D1294D066200763BE7 /* Sources */,
 				55FE80D2294D066200763BE7 /* Frameworks */,
 				55FE80D3294D066200763BE7 /* Resources */,
+				5532FF5E29B69A30007960D2 /* GoogleService-Info */,
 			);
 			buildRules = (
 			);
@@ -362,6 +389,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5532FF5E29B69A30007960D2 /* GoogleService-Info */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "GoogleService-Info";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nPATH_TO_GOOGLE_PLIST_DEV=\"${PROJECT_DIR}/FinderLost/Configuration/LostThings/Firebase/DEV\"\nPATH_TO_GOOGLE_PLIST=\"${PROJECT_DIR}/FinderLost/Configuration/LostThings/Firebase/PRO\"\n\ncase \"${CONFIGURATION}\" in\n\n   \"Release\")\n        cp -r \"$PATH_TO_GOOGLE_PLIST/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n   \"Debug\")\n        cp -r \"$PATH_TO_GOOGLE_PLIST_DEV/GoogleService-Info.plist\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/GoogleService-Info.plist\" ;;\n\n    *)\n        ;;\nesac\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55FE80D1294D066200763BE7 /* Sources */ = {
