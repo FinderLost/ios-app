@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>968782545174-d3nc68cm5i8cehhftsompgli23uge6ms.apps.googleusercontent.com</string>
+	<string>968782545174-sb1jqt6a39ltvdck2teen66h7ght9o0n.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.968782545174-d3nc68cm5i8cehhftsompgli23uge6ms</string>
+	<string>com.googleusercontent.apps.968782545174-sb1jqt6a39ltvdck2teen66h7ght9o0n</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCPKraAm9vZOsfmOY5YEX8A24O4nN-S38A</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.finderlost.app.dev</string>
+	<string>com.finderlost.dev</string>
 	<key>PROJECT_ID</key>
 	<string>finderlost-65f3e</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:968782545174:ios:7c9f828eca7a7d859e5037</string>
+	<string>1:968782545174:ios:1af7e52a9ff0bee49e5037</string>
 </dict>
 </plist>
