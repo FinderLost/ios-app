@@ -59,7 +59,7 @@ final class GoogleAuthProviderImpl: GoogleAuthProviderI {
             let user = UserInfoImpl(
                 name: profile.name,
                 email: profile.email,
-                imageUrl: profile.imageURL(withDimension: 80)
+                imageUrl: profile.imageURL(withDimension: 120)
             )
             promise(.success(user))
         }.eraseToAnyPublisher()
