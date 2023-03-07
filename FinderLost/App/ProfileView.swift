@@ -36,8 +36,8 @@ struct ProfileView: View {
                                 Text(userInfo.email)
                             }
                         }
-                        .background(Color.specific(.surface))
                     }
+                    .listRowBackground(Color.specific(.surface))
 
                 } else {
                     HStack {

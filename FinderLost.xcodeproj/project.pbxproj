@@ -576,8 +576,8 @@
 				ENABLE_PREVIEWS = YES;
 				EXCLUDED_ARCHS = "i386 x86_64";
 				GENERATE_INFOPLIST_FILE = NO;
-				GOOGLE_CLIENT_ID = "968782545174-d3nc68cm5i8cehhftsompgli23uge6ms.apps.googleusercontent.com";
-				GOOGLE_CLIENT_ID_URL_SCHEME = "com.googleusercontent.apps.968782545174-d3nc68cm5i8cehhftsompgli23uge6ms";
+				GOOGLE_CLIENT_ID = "968782545174-sb1jqt6a39ltvdck2teen66h7ght9o0n.apps.googleusercontent.com";
+				GOOGLE_CLIENT_ID_URL_SCHEME = "com.googleusercontent.apps.968782545174-sb1jqt6a39ltvdck2teen66h7ght9o0n";
 				INFOPLIST_FILE = FinderLost/Configuration/LostThings/Info/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -589,10 +589,10 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.app.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "com.finderlost.app.dev Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "53347QZ87F.com.finderlost.dev Development";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
