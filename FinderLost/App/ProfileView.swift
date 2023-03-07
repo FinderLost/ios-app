@@ -21,21 +21,23 @@ struct ProfileView: View {
         VStack {
             List {
                 if let userInfo = store.state.login.hasData {
-                    HStack {
-                        ImageURL(
-                            url: userInfo.imageUrl,
-                            placeHolder: UIImage(systemName: "person.fill")
-                        )
-                        .clipShape(Circle())
-                        .frame(width: 45, height: 45)
-                        .padding(8)
-                        
-                        VStack(alignment: .leading, spacing: 8) {
-                            Text(userInfo.name)
-                            Text(userInfo.email)
+                    DSNavigationLink(destination: ProfileDetailView()) {
+                        HStack {
+                            ImageURL(
+                                url: userInfo.imageUrl,
+                                placeHolder: UIImage(systemName: "person.fill")
+                            )
+                            .clipShape(Circle())
+                            .frame(width: 45, height: 45)
+                            .padding(8)
+
+                            VStack(alignment: .leading, spacing: 8) {
+                                Text(userInfo.name)
+                                Text(userInfo.email)
+                            }
                         }
+                        .background(Color.specific(.surface))
                     }
-                    .listRowBackground(Color.specific(.surface))
 
                 } else {
                     HStack {
@@ -86,7 +88,7 @@ struct ProfileView: View {
         .background(Color.specific(.background))
         .navigationTitle("User profile")
         .isLoading(store.state.login.isLoading)
-        .isError(store.state.login.hasError)
+        .isError(store.state.login.hasError) { store.dispatch(.login(.getSignOut)) }
         .refreshable { store.dispatch(.login(.getInfo)) }
     }
 }

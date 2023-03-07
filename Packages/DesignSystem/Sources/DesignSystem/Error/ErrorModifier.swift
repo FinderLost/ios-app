@@ -8,13 +8,14 @@
 import SwiftUI
 
 extension View {
-    public func isError(_ error: String?) -> some View {
-        modifier(ErrorModifier(error: error))
+    public func isError(_ error: String?, action: (() -> Void)? = nil) -> some View {
+        modifier(ErrorModifier(error: error, action: action))
     }
 }
 
 private struct ErrorModifier: ViewModifier {
     let error: String?
+    let action: (() -> Void)?
 
     func body(content: Content) -> some View {
         if let error {
@@ -22,6 +23,7 @@ private struct ErrorModifier: ViewModifier {
                 .blur(radius: 3)
                 .overlay {
                     ErrorView(error: error)
+                        .onTapGesture { action?() }
                 }
         } else {
             content
@@ -36,18 +38,20 @@ private struct ErrorView: View {
         VStack {
             Spacer()
             HStack {
-                Image(systemName: "info.circle")
-                    .padding(.leading, 16)
+                Spacer()
                 Text(error)
                     .font(.headline)
+                    .padding(.leading, 16)
+                    .foregroundColor(Color.text(.inverse))
+                Image(systemName: "xmark.circle")
                     .padding(.leading, 8)
                     .padding(.trailing, 16)
-                Spacer()
+                    .foregroundColor(Color.content(.inverse))
             }
             .frame(maxWidth: .infinity)
             .foregroundColor(.white)
             .padding(.vertical, 16)
-            .background(Color.red)
+            .background(Color.status(.error))
             .cornerRadius(10)
         }
         .padding(16)
