@@ -64,9 +64,9 @@ struct ProfileDetailView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.specific(.background))
-        .navigationTitle("Profile")
         .isLoading(store.state.login.isLoading)
         .isError(store.state.login.hasError)
+        .navigationTitle("Profile")
     }
 }
 
