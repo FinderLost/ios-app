@@ -19,7 +19,6 @@
 		557CD495298980E700C3DB09 /* FinderLost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD494298980E700C3DB09 /* FinderLost.swift */; };
 		557CD4982989811000C3DB09 /* FinderLostReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4972989811000C3DB09 /* FinderLostReducer.swift */; };
 		557CD49A2989813700C3DB09 /* FinderLostContextor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557CD4992989813700C3DB09 /* FinderLostContextor.swift */; };
-		557CD4AB298991E300C3DB09 /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 557CD4AA298991E300C3DB09 /* Factory */; };
 		5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 5591F661297F2341007F7A1C /* GoogleSignIn */; };
 		559E604529B403C100168337 /* MissingAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604429B403C100168337 /* MissingAddView.swift */; };
 		559E604729B408D200168337 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604629B408D200168337 /* FilterView.swift */; };
@@ -29,6 +28,7 @@
 		559E604F29B40BDE00168337 /* MissingDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559E604E29B40BDE00168337 /* MissingDetail.swift */; };
 		55A03E042997EFC000FE8091 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = 55A03E032997EFC000FE8091 /* Data */; };
 		55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A03E072997F61200FE8091 /* StoreBuilderFake.swift */; };
+		55A2862C29B8D87100DCCC6F /* Factory in Frameworks */ = {isa = PBXBuildFile; productRef = 55A2862B29B8D87100DCCC6F /* Factory */; };
 		55A735B02985371F00C700B5 /* RepositoryDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A735AF2985371F00C700B5 /* RepositoryDI.swift */; };
 		55A9D061299FFFE400B9CD28 /* Module in Frameworks */ = {isa = PBXBuildFile; productRef = 55A9D060299FFFE400B9CD28 /* Module */; };
 		55A9D06329A03D2600B9CD28 /* HandlerDI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06229A03D2600B9CD28 /* HandlerDI.swift */; };
@@ -94,7 +94,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				55A9D061299FFFE400B9CD28 /* Module in Frameworks */,
-				557CD4AB298991E300C3DB09 /* Factory in Frameworks */,
 				55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */,
 				552F5591297D739300E2EFBF /* FirebaseAuth in Frameworks */,
 				55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */,
@@ -104,6 +103,7 @@
 				55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */,
 				5591F662297F2341007F7A1C /* GoogleSignIn in Frameworks */,
 				55A03E042997EFC000FE8091 /* Data in Frameworks */,
+				55A2862C29B8D87100DCCC6F /* Factory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,7 +325,6 @@
 			packageProductDependencies = (
 				552F5590297D739300E2EFBF /* FirebaseAuth */,
 				5591F661297F2341007F7A1C /* GoogleSignIn */,
-				557CD4AA298991E300C3DB09 /* Factory */,
 				55DBD2CD2997C3D6003CC4F7 /* Domain */,
 				55DBD2CF2997C3E1003CC4F7 /* Redux */,
 				55DBD2D12997C3EB003CC4F7 /* Utilities */,
@@ -334,6 +333,7 @@
 				55DBD2DD29983242003CC4F7 /* DesignSystem */,
 				55ACBBBA299AE865008288E5 /* SwifterSwift */,
 				55A9D060299FFFE400B9CD28 /* Module */,
+				55A2862B29B8D87100DCCC6F /* Factory */,
 			);
 			productName = FinderLost;
 			productReference = 55FE80D5294D066200763BE7 /* FinderLost.app */;
@@ -366,8 +366,8 @@
 			packageReferences = (
 				552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
-				557CD4A9298991E300C3DB09 /* XCRemoteSwiftPackageReference "Factory" */,
 				55ACBBB9299AE865008288E5 /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				55A2862A29B8D71E00DCCC6F /* XCRemoteSwiftPackageReference "Factory" */,
 			);
 			productRefGroup = 55FE80D6294D066200763BE7 /* Products */;
 			projectDirPath = "";
@@ -665,20 +665,20 @@
 				minimumVersion = 9.0.0;
 			};
 		};
-		557CD4A9298991E300C3DB09 /* XCRemoteSwiftPackageReference "Factory" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:hmlongco/Factory.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
 		5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 7.0.0;
+			};
+		};
+		55A2862A29B8D71E00DCCC6F /* XCRemoteSwiftPackageReference "Factory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hmlongco/Factory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		55ACBBB9299AE865008288E5 /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
@@ -697,11 +697,6 @@
 			package = 552F558F297D739300E2EFBF /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		557CD4AA298991E300C3DB09 /* Factory */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 557CD4A9298991E300C3DB09 /* XCRemoteSwiftPackageReference "Factory" */;
-			productName = Factory;
-		};
 		5591F661297F2341007F7A1C /* GoogleSignIn */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5591F660297F2341007F7A1C /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
@@ -710,6 +705,11 @@
 		55A03E032997EFC000FE8091 /* Data */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Data;
+		};
+		55A2862B29B8D87100DCCC6F /* Factory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55A2862A29B8D71E00DCCC6F /* XCRemoteSwiftPackageReference "Factory" */;
+			productName = Factory;
 		};
 		55A9D060299FFFE400B9CD28 /* Module */ = {
 			isa = XCSwiftPackageProductDependency;

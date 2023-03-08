@@ -16,7 +16,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(name: "DesignSystem", path: "../DesignSystem"),
         .package(name: "Domain", path: "../Domain"),
-        .package(url: "git@github.com:hmlongco/Factory.git", from: "1.0.0"),
+        .package(url: "https://github.com/hmlongco/Factory.git", from: "1.0.0"),
         .package(name: "Redux", path: "../Redux"),
         .package(name: "Utilities", path: "../Utilities"),
     ],
