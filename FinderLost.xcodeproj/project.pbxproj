@@ -592,7 +592,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "53347QZ87F.com.finderlost.dev Development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = 53347QZ87F.com.finderlost.dev_development;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
