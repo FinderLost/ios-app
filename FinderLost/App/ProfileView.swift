@@ -29,9 +29,9 @@ struct ProfileView: View {
                             )
                             .clipShape(Circle())
                             .frame(width: 45, height: 45)
-                            .padding(8)
+                            .padding(.spacingXS)
 
-                            VStack(alignment: .leading, spacing: 8) {
+                            VStack(alignment: .leading, spacing: .spacingXS) {
                                 Text(userInfo.name)
                                 Text(userInfo.email)
                             }
@@ -44,8 +44,8 @@ struct ProfileView: View {
                         Image(systemName: "person.fill")
                             .resizable()
                             .frame(width: 45, height: 45)
-                            .padding(8)
-                        VStack(alignment: .leading, spacing: 8) {
+                            .padding(.spacingXS)
+                        VStack(alignment: .leading, spacing: .spacingXS) {
                             Text("Welcome to FinderLost!")
                         }
                     }
@@ -78,9 +78,9 @@ struct ProfileView: View {
             .listStyle(.insetGrouped)
             if store.state.login.isSignOut {
                 GoogleSignInButton { store.dispatch(.login(.getSignIn)) }
-                    .cornerRadius(8)
-                    .shadow(radius: 0)
-                    .padding(16)
+                    .cornerRadius(.cornerRadiusM)
+                    .shadow(radius: .cornerRadiusN)
+                    .padding(.spacingS)
                     .listRowBackground(Color.specific(.surface))
             }
         }
@@ -97,10 +97,10 @@ struct ProfileView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
             .set(\.login, .loading)
-            .set(\.login, .signOut)
             .set(\.login, .signIn(loginStateBuilderFake.entity))
             .set(\.login, .idle)
             .set(\.login, .failed("signIn"))
+            .set(\.login, .signOut)
             .entity
 
         let store = storeBuilderFake(

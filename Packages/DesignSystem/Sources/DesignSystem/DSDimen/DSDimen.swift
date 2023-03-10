@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  DSDimen.swift
 //  
 //
 //  Created by Andres Felipe Alzate Restrepo on 9/3/23.
@@ -7,8 +7,48 @@
 
 import UIKit
 
+// MARK: - Corner Radius size
+extension CGFloat {
+    /// $corner_radius_none  opx
+    public static let cornerRadiusN: CGFloat = DSDimen.cornerRadiusN
+    /// $corner_radius_extra_small  2px
+    public static let cornerRadiusXS: CGFloat = DSDimen.cornerRadiusXS
+    /// $corner_radius_small  4px
+    public static let cornerRadiusS: CGFloat = DSDimen.cornerRadiusS
+    /// $corner_radius_medium  8px
+    public static let cornerRadiusM: CGFloat = DSDimen.cornerRadiusM
+    /// $corner_radius_large  16px
+    public static let cornerRadiusL: CGFloat = DSDimen.cornerRadiusL
+    /// $corner_radius_full  100%
+    public static func cornerRadiusFull(for height: CGFloat) -> CGFloat { height / 2 }
+}
+
+// MARK: - CGFloat - Spacing size
+extension CGFloat {
+    /// $spacing_XXXS 2px
+    public static let spacingXXXS: CGFloat = DSDimen.spacingXXXS
+    /// $spacing_XXS 4px
+    public static let spacingXXS: CGFloat = DSDimen.spacingXXS
+    /// $spacing_XS 8px
+    public static let spacingXS: CGFloat = DSDimen.spacingXS
+    /// $spacing_S 16px
+    public static let spacingS: CGFloat = DSDimen.spacingS
+    /// $spacing_M 24px
+    public static let spacingM: CGFloat = DSDimen.spacingM
+    /// $spacing_L 32px
+    public static let spacingL: CGFloat = DSDimen.spacingL
+    /// $spacing_LL 40px
+    public static let spacingLL: CGFloat = DSDimen.spacingLL
+    /// $spacing_XL 48px
+    public static let spacingXL: CGFloat = DSDimen.spacingXL
+    /// $spacing_XXL 64px
+    public static let spacingXXL: CGFloat = DSDimen.spacingXXL
+    /// $spacing_XXXL 80px
+    public static let spacingXXXL: CGFloat = DSDimen.spacingXXXL
+}
+
 // MARK: - Don't Remove private
-private enum MDimen {
+private enum DSDimen {
     // MARK: - Spacing size
     /// $spacing_XXXS 2px
     static let spacingXXXS: CGFloat = 2

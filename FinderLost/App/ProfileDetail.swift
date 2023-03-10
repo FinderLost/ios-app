@@ -17,46 +17,46 @@ struct ProfileDetailView: View {
     var body: some View {
         ZStack {
             if let userInfo = store.state.login.hasData {
-                VStack(spacing: 16) {
+                VStack(spacing: .spacingS) {
                     ZStack {
                         ImageURL(
                             url: userInfo.imageUrl,
                             placeHolder: UIImage(systemName: "person.fill")
                         )
                         .frame(width: 100, height: 100)
-                        .cornerRadius(16)
-                        .padding(16)
+                        .cornerRadius(.cornerRadiusL)
+                        .padding(.spacingS)
                     }
                     .background(Color.specific(.surface))
-                    .cornerRadius(16)
+                    .cornerRadius(.cornerRadiusL)
 
                     ZStack {
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: .spacingXS) {
                             Text("Name")
                                 .font(.headline)
                             Text(userInfo.name)
                                 .font(.subheadline)
                         }
-                        .padding(16)
+                        .padding(.spacingS)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.specific(.surface))
-                    .cornerRadius(16)
-                    .padding(.horizontal, 16)
+                    .cornerRadius(.cornerRadiusL)
+                    .padding(.horizontal, .spacingS)
 
                     ZStack {
-                        VStack(alignment: .leading, spacing: 8) {
+                        VStack(alignment: .leading, spacing: .spacingXS) {
                             Text("Email")
                                 .font(.headline)
                             Text(userInfo.email)
                                 .font(.subheadline)
                         }
-                        .padding(16)
+                        .padding(.spacingS)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .background(Color.specific(.surface))
-                    .cornerRadius(16)
-                    .padding(.horizontal, 16)
+                    .cornerRadius(.cornerRadiusL)
+                    .padding(.horizontal, .spacingS)
 
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
