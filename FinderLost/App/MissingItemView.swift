@@ -13,17 +13,17 @@ struct MissingItemView: View {
 
     var body: some View {
         ZStack {
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: .spacingXS) {
                 Text(headline)
                     .font(.headline)
                 Text(subheadline)
                     .font(.subheadline)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(16)
+            .padding(.spacingS)
         }
         .background(Color.specific(.surface))
-        .cornerRadius(16)
+        .cornerRadius(.cornerRadiusL)
     }
 }
 
