@@ -83,6 +83,7 @@
 		55DBD2DF299832B1003CC4F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		55DBD2E32998470D003CC4F7 /* GoogleSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInButton.swift; sourceTree = "<group>"; };
 		55E5D3F229AEAA67003A31C0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		55EDE69D29BB36FE002BD45C /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		55FE80D5294D066200763BE7 /* FinderLost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderLost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55FE80D8294D066200763BE7 /* FinderLostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinderLostApp.swift; sourceTree = "<group>"; };
 		55FE80DF294D066400763BE7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
+				55EDE69D29BB36FE002BD45C /* CHANGELOG.md */,
 				55FE80D7294D066200763BE7 /* FinderLost */,
 				55EDCE6A2996F255002A52BD /* Frameworks */,
 				55D37C4F2996ED1E00947787 /* Packages */,
