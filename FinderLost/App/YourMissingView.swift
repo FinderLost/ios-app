@@ -30,6 +30,7 @@ struct YourMissingView: View {
     }
 }
 
+#if DEBUG
 struct YourMissingView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
@@ -52,3 +53,4 @@ struct YourMissingView_Previews: PreviewProvider, PreviewContent {
         .previewDisplayName("YourMissingView")
     }
 }
+#endif

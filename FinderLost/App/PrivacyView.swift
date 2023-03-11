@@ -18,6 +18,7 @@ struct PrivacyView: View {
     }
 }
 
+#if DEBUG
 struct PrivacyView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
@@ -28,3 +29,4 @@ struct PrivacyView_Previews: PreviewProvider {
             .previewDisplayName("PrivacyView")
     }
 }
+#endif

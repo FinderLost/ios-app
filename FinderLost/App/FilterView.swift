@@ -18,6 +18,7 @@ struct FilterView: View {
     }
 }
 
+#if DEBUG
 struct FilterView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
@@ -28,3 +29,4 @@ struct FilterView_Previews: PreviewProvider {
             .previewDisplayName("FilterView")
     }
 }
+#endif
