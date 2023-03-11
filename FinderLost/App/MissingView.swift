@@ -51,6 +51,7 @@ struct MissingView: View {
     }
 }
 
+#if DEBUG
 struct MissingView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let item = missingItemBuilderFake
@@ -80,3 +81,4 @@ struct MissingView_Previews: PreviewProvider, PreviewContent {
             .previewDisplayName("MissingView")
     }
 }
+#endif

@@ -18,6 +18,7 @@ struct HelpView: View {
     }
 }
 
+#if DEBUG
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
@@ -28,3 +29,4 @@ struct HelpView_Previews: PreviewProvider {
             .previewDisplayName("HelpView")
     }
 }
+#endif

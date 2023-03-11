@@ -18,6 +18,7 @@ struct MissingAddView: View {
     }
 }
 
+#if DEBUG
 struct MissingAdd_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
@@ -28,3 +29,4 @@ struct MissingAdd_Previews: PreviewProvider {
             .previewDisplayName("MissingAddView")
     }
 }
+#endif

@@ -18,6 +18,7 @@ struct NotificationView: View {
     }
 }
 
+#if DEBUG
 struct NotificationView_Previews: PreviewProvider {
     static var previews: some View {
         TabView {
@@ -28,3 +29,4 @@ struct NotificationView_Previews: PreviewProvider {
             .previewDisplayName("NotificationView")
     }
 }
+#endif

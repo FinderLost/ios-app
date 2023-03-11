@@ -27,6 +27,7 @@ struct TabBarView: View {
     }
 }
 
+#if DEBUG
 struct TabBarView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let store = storeBuilderFake()
@@ -37,3 +38,4 @@ struct TabBarView_Previews: PreviewProvider, PreviewContent {
             .previewDisplayName("TabBarView")
     }
 }
+#endif

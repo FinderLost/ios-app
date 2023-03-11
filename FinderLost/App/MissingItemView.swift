@@ -27,6 +27,7 @@ struct MissingItemView: View {
     }
 }
 
+#if DEBUG
 struct MissingItemView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         MissingItemView(headline: "headline", subheadline: "subheadline")
@@ -34,3 +35,4 @@ struct MissingItemView_Previews: PreviewProvider, PreviewContent {
             .previewDisplayName("MissingItemView")
     }
 }
+#endif

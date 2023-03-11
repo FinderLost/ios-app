@@ -93,6 +93,7 @@ struct ProfileView: View {
     }
 }
 
+#if DEBUG
 struct ProfileView_Previews: PreviewProvider, PreviewContent {
     static var previews: some View {
         let initialState = stateBuilderFake
@@ -116,3 +117,4 @@ struct ProfileView_Previews: PreviewProvider, PreviewContent {
         .previewDisplayName("ProfileView")
     }
 }
+#endif
