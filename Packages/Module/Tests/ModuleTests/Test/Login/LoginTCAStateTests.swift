@@ -1,5 +1,5 @@
 //
-//  LoginTCAStateTest.swift
+//  LoginTCAStateTests.swift
 //  FinderLostTests
 //
 //  Created by Andres Felipe Alzate Restrepo on 13/2/23.
@@ -9,7 +9,7 @@ import XCTest
 
 @testable import Module
 
-class LoginTCAStateTest: XCTestCase {
+class LoginTCAStateTests: XCTestCase {
     let signIn = LoginTCA.DataBuilderFake().entity
 
     func testIdle() {

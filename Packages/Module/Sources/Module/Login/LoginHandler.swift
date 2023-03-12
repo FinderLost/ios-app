@@ -53,7 +53,7 @@ extension LoginTCA {
                     .setSignIn(.failure),
                     .setSignOut,
                     .setInfo:
-                return Empty().eraseToAnyPublisher()
+                return nil
             }
         }
     }

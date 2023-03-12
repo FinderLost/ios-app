@@ -1,5 +1,5 @@
 //
-//  LoginTCAHandlerTest.swift
+//  LoginTCAHandleTests.swift
 //  FinderLostTests
 //
 //  Created by Andres Felipe Alzate Restrepo on 14/2/23.
@@ -14,10 +14,10 @@ import Combine
 import Redux
 @testable import Module
 
-class LoginHandlerImplTests: XCTestCase { }
+class LoginTCAHandleTests: XCTestCase { }
 
 // MARK: - SignIn
-extension LoginHandlerImplTests {
+extension LoginTCAHandleTests {
     func testHandleSignInActionSuccess() {
         let userRepositoryMock = UserRepositoryMock()
             .set(\.underlyingSignIn, .success(UserSessionBuilderFake().entity))
