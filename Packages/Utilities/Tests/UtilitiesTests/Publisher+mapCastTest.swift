@@ -39,16 +39,19 @@ final class PublisherMapCastTest: XCTestCase {
         var receivedElements = [TypeToTest]()
         typeToTest.append(TypeC())
 
-        typeToTest.publisher
-            .mapCast(TypeToTest.self)
-            .sink(receiveCompletion: { completion in
-                switch completion {
-                case .finished:
-                    XCTAssertEqual(receivedElements.count, self.typeToTest.count - 1)
-                case let .failure(error):
-                    XCTFail("Unexpected error: \(error)")
-                }
-            }, receiveValue: { receivedElements.append($0) })
-            .store(in: &cancellables)
+        expectAssertionFailure(expectedMessage: "Failed to cast element to specified type") { [weak self] in
+            guard let self else { return }
+            self.typeToTest.publisher
+                .mapCast(TypeToTest.self)
+                .sink(receiveCompletion: { completion in
+                    switch completion {
+                    case .finished:
+                        XCTAssertEqual(receivedElements.count, self.typeToTest.count - 1)
+                    case let .failure(error):
+                        XCTFail("Unexpected error: \(error)")
+                    }
+                }, receiveValue: { receivedElements.append($0) })
+                .store(in: &self.cancellables)
+        }
     }
 }

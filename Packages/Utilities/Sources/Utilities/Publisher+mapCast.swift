@@ -15,7 +15,7 @@ extension Publisher {
     public func mapCast<T>(_ type: T.Type) -> AnyPublisher<T, Self.Failure> {
         compactMap {
             guard let newType = $0 as? T else {
-                assertionDebug("Failed to cast element to specified type")
+                triggerAssertionFailure("Failed to cast element to specified type")
                 return nil
             }
             return newType

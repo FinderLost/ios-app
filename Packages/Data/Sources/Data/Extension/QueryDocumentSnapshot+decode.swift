@@ -19,7 +19,7 @@ extension QueryDocumentSnapshot {
         do {
             return try data(as: Decode.self)
         } catch {
-            assertionDebug("\n\nFile: \(#file)\n\nError: \(error.localizedDescription)")
+            triggerAssertionFailure("\n\nFile: \(#file)\n\nError: \(error.localizedDescription)")
             return nil
         }
     }

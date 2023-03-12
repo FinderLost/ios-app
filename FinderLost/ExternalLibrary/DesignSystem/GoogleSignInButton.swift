@@ -38,7 +38,7 @@ private extension GoogleSignInButtonColorScheme {
         case .dark: return .dark
         case .light: return .light
         @unknown default:
-            assertionDebug()
+            triggerAssertionFailure("ColorScheme not found")
             return .light
         }
     }
