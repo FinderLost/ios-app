@@ -49,9 +49,10 @@ final class HandlerContextImplTests: XCTestCase {
             next: next
         )
 
-        let nextAction = ExampleActionFail(text: "not an action")
-        let result = context.nextAction(nextAction)
-
-        XCTAssertNil(result, "The next action should return nil if it fails to unwrap")
+        expectAssertionFailure(expectedMessage: "Fails to unwrap the next action") {
+            let nextAction = ExampleActionFail(text: "not an action")
+            let result = context.nextAction(nextAction)
+            XCTAssertNil(result, "The next action should return nil if it fails to unwrap")
+        }
     }
 }

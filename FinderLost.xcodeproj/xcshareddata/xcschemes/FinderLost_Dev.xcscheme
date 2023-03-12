@@ -32,13 +32,6 @@
       <CodeCoverageTargets>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "55FE80D4294D066200763BE7"
-            BuildableName = "FinderLost.app"
-            BlueprintName = "FinderLost"
-            ReferencedContainer = "container:FinderLost.xcodeproj">
-         </BuildableReference>
-         <BuildableReference
-            BuildableIdentifier = "primary"
             BlueprintIdentifier = "Module"
             BuildableName = "Module"
             BlueprintName = "Module"
@@ -53,16 +46,22 @@
          </BuildableReference>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "Domain"
-            BuildableName = "Domain"
-            BlueprintName = "Domain"
-            ReferencedContainer = "container:Packages/Domain">
+            BlueprintIdentifier = "Redux"
+            BuildableName = "Redux"
+            BlueprintName = "Redux"
+            ReferencedContainer = "container:Packages/Redux">
+         </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "Utilities"
+            BuildableName = "Utilities"
+            BlueprintName = "Utilities"
+            ReferencedContainer = "container:Packages/Utilities">
          </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "ModuleTests"
@@ -72,8 +71,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DataTests"
@@ -83,14 +81,23 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DomainTests"
-               BuildableName = "DomainTests"
-               BlueprintName = "DomainTests"
-               ReferencedContainer = "container:Packages/Domain">
+               BlueprintIdentifier = "ReduxTests"
+               BuildableName = "ReduxTests"
+               BlueprintName = "ReduxTests"
+               ReferencedContainer = "container:Packages/Redux">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "UtilitiesTests"
+               BuildableName = "UtilitiesTests"
+               BlueprintName = "UtilitiesTests"
+               ReferencedContainer = "container:Packages/Utilities">
             </BuildableReference>
          </TestableReference>
       </Testables>
