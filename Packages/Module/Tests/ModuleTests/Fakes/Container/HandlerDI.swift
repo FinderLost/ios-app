@@ -16,4 +16,9 @@ class HandlerDI: SharedContainer {
             userRepository: RepositoryDI.user()
         )
     }
+    static let missing = Factory<HandlerOf<MissingTCA>>(scope: .test) {
+        MissingTCA.HandlerImpl(
+            missingRepository: RepositoryDI.missing()
+        )
+    }
 }
