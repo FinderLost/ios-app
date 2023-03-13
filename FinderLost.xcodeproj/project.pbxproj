@@ -250,6 +250,7 @@
 		55DBD2D529982028003CC4F7 /* FinderLost */ = {
 			isa = PBXGroup;
 			children = (
+				55D10A7629BEAA09005FC2E1 /* BuilderFake.swift */,
 				55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */,
 				55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */,
 				55A03E072997F61200FE8091 /* StoreBuilderFake.swift */,
@@ -315,7 +316,6 @@
 		55FE80DE294D066400763BE7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				55D10A7629BEAA09005FC2E1 /* BuilderFake.swift */,
 				55DBD2D529982028003CC4F7 /* FinderLost */,
 				55D10A7429BEA9FE005FC2E1 /* Login */,
 				55D10A7829BEAA10005FC2E1 /* Missing */,
