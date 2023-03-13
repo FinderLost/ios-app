@@ -10,7 +10,7 @@ import XCTest
 @testable import Module
 
 class LoginTCAStateTests: XCTestCase {
-    let signIn = LoginTCA.DataBuilderFake().entity
+    let data = LoginTCA.DataBuilderFake().entity
 
     func testIdle() {
         let state = LoginTCA.State.idle
@@ -22,7 +22,7 @@ class LoginTCAStateTests: XCTestCase {
     }
 
     func testIsSignIn() {
-        let state = LoginTCA.State.signIn(signIn)
+        let state = LoginTCA.State.signIn(data)
         XCTAssertTrue(state.isSignIn)
     }
 
@@ -32,8 +32,8 @@ class LoginTCAStateTests: XCTestCase {
     }
 
     func testHasData() {
-        let state = LoginTCA.State.signIn(signIn)
-        XCTAssertEqual(state.hasData, signIn)
+        let state = LoginTCA.State.signIn(data)
+        XCTAssertEqual(state.hasData, data)
     }
 
     func testHasError() {
