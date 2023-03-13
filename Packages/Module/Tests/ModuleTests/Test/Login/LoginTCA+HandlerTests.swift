@@ -9,16 +9,14 @@ import XCTest
 
 import Factory
 
-import Combine
-
-import Redux
 @testable import Module
 
-class LoginTCAHandlerTests: XCTestCase {
-    func testHandleLoginActionNotFound() {
+final class LoginTCAHandlerTests: XCTestCase {
+    func testHandleLoginTCAActionNotFound() {
+        let action = ReduxActionMock()
         let result = HandlerDI.login().perform(
             on: self,
-            for: ReduxActionMock(),
+            for: action,
             with: LoginTCA.State.idle
         )
 
@@ -30,86 +28,97 @@ class LoginTCAHandlerTests: XCTestCase {
     }
 }
 
-// MARK: - Info
+// MARK: - Call getInfo
 extension LoginTCAHandlerTests {
-    func testHandleGetInfoActionSuccess() {
+    func testHandleGetInfoSuccess() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingGetInfo, .success(UserInfoBuilderFake().entity))
         }
-
-        let result = performHandle(on: LoginTCA.Action.getInfo)
+        let action = LoginTCA.Action.getInfo
+        let result = performHandle(on: action)
         guard case let .setInfo(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.success)
     }
 
-    func testHandleGetInfoActionFailure() {
+    func testHandleGetInfoFailure() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingGetInfo, .failure())
         }
-        let result = performHandle(on: LoginTCA.Action.getInfo)
+        let action = LoginTCA.Action.getInfo
+        let result = performHandle(on: action)
         guard case let .setInfo(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.failure)
     }
 }
 
-// MARK: - SignIn
+// MARK: - Call signIn
 extension LoginTCAHandlerTests {
-    func testHandleGetSignInActionSuccess() {
+    func testHandleGetSignInSuccess() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingSignIn, .success(UserSessionBuilderFake().entity))
         }
-        let result = performHandle(on: LoginTCA.Action.getSignIn)
+        let action = LoginTCA.Action.getSignIn
+        let result = performHandle(on: action)
         guard case let .setSignIn(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.success)
     }
 
-    func testHandleGetSignInActionFailure() {
+    func testHandleGetSignInFailure() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingSignIn, .failure())
         }
-        let result = performHandle(on: LoginTCA.Action.getSignIn)
+        let action = LoginTCA.Action.getSignIn
+        let result = performHandle(on: action)
         guard case let .setSignIn(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.failure)
     }
 }
 
-// MARK: - UserSession
+// MARK: - Call restorePreviousSignIn
 extension LoginTCAHandlerTests {
-    func testHandleGetUserSessionActionSuccess() {
+    func testHandleGetUserSessionSuccess() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingRestorePreviousSignIn, .success(UserSessionBuilderFake().entity))
         }
-        let result = performHandle(on: LoginTCA.Action.getUserSession)
+
+        let action = LoginTCA.Action.getUserSession
+        let result = performHandle(on: action)
         guard case let .setUserSession(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.success)
     }
 
-    func testHandleGetUserSessionActionFailure() {
+    func testHandleGetUserSessionFailure() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingRestorePreviousSignIn, .failure())
         }
-        let result = performHandle(on: LoginTCA.Action.getUserSession)
+
+        let action = LoginTCA.Action.getUserSession
+        let result = performHandle(on: action)
         guard case let .setUserSession(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.failure)
     }
 }
 
-// MARK: - SignOut
+// MARK: - Call signOut
 extension LoginTCAHandlerTests {
-    func testHandleGetSignOutActionSuccess() {
+    func testHandleGetSignOutSuccess() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingSignOut, .success(()))
         }
-        let result = performHandle(on: LoginTCA.Action.getSignOut)
+
+        let action = LoginTCA.Action.getSignOut
+        let result = performHandle(on: action)
         guard case let .setSignOut(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.success)
     }
 
-    func testHandleGetSignOutActionFailure() {
+    func testHandleGetSignOutFailure() {
         RepositoryDI.user.register {
             UserRepositoryMock().set(\.underlyingSignOut, .failure())
         }
-        let result = performHandle(on: LoginTCA.Action.getSignOut)
+
+        let action = LoginTCA.Action.getSignOut
+        let result = performHandle(on: action)
         guard case let .setSignOut(value) = result else { XCTFail("Action not called"); return }
         XCTAssertNotNil(value.failure)
     }
@@ -117,14 +126,16 @@ extension LoginTCAHandlerTests {
 
 // MARK: - Trigger getInfo
 extension LoginTCAHandlerTests {
-    func testHandleSetSignInSuccessAction() {
-        let result = performHandle(on: LoginTCA.Action.setSignIn(.success(UserSessionBuilderFake().entity)))
+    func testHandleSetSignInSuccess() {
+        let action = LoginTCA.Action.setSignIn(.success(UserSessionBuilderFake().entity))
+        let result = performHandle(on: action)
         guard case .getInfo = result else { XCTFail("Action not called"); return }
         XCTAssertTrue(true)
     }
 
-    func testHandleSetUserSessionSuccessAction() {
-        let result = performHandle(on: LoginTCA.Action.setUserSession(.success(UserSessionBuilderFake().entity)))
+    func testHandleSetUserSessionSuccess() {
+        let action = LoginTCA.Action.setUserSession(.success(UserSessionBuilderFake().entity))
+        let result = performHandle(on: action)
         guard case .getInfo = result else { XCTFail("Action not called"); return }
         XCTAssertTrue(true)
     }
@@ -132,8 +143,9 @@ extension LoginTCAHandlerTests {
 
 // MARK: - Trigger getSignOut
 extension LoginTCAHandlerTests {
-    func testHandleSetUserSessionFailureAction() {
-        let result = performHandle(on: LoginTCA.Action.setUserSession(.failure(NSErrorBuilderFake().entity)))
+    func testHandleSetUserSessionFailure() {
+        let action = LoginTCA.Action.setUserSession(.failure(NSErrorBuilderFake().entity))
+        let result = performHandle(on: action)
         guard case .getSignOut = result else { XCTFail("Action not called"); return }
         XCTAssertTrue(true)
     }
@@ -141,24 +153,29 @@ extension LoginTCAHandlerTests {
 
 // MARK: - Return nil
 extension LoginTCAHandlerTests {
-    func testHandleSetSignInFailureAction() {
-        let result = performHandle(on: LoginTCA.Action.setSignIn(.failure(NSErrorBuilderFake().entity)))
+    func testHandleSetSignInFailure() {
+        let action = LoginTCA.Action.setSignIn(.failure(NSErrorBuilderFake().entity))
+        let result = performHandle(on: action)
         XCTAssertNil(result)
     }
-    func testHandleSetSignOutSuccessAction() {
-        let result = performHandle(on: LoginTCA.Action.setSignOut(.success(())))
+    func testHandleSetSignOutSuccess() {
+        let action = LoginTCA.Action.setSignOut(.success(()))
+        let result = performHandle(on: action)
         XCTAssertNil(result)
     }
-    func testHandleSetSignOutFailureAction() {
-        let result = performHandle(on: LoginTCA.Action.setSignOut(.failure(NSErrorBuilderFake().entity)))
+    func testHandleSetSignOutFailure() {
+        let action = LoginTCA.Action.setSignOut(.failure(NSErrorBuilderFake().entity))
+        let result = performHandle(on: action)
         XCTAssertNil(result)
     }
-    func testHandleSetInfoSuccessAction() {
-        let result = performHandle(on: LoginTCA.Action.setInfo(.success(UserInfoBuilderFake().entity)))
+    func testHandleSetInfoSuccess() {
+        let action = LoginTCA.Action.setInfo(.success(UserInfoBuilderFake().entity))
+        let result = performHandle(on: action)
         XCTAssertNil(result)
     }
-    func testHandleSetInfoFailureAction() {
-        let result = performHandle(on: LoginTCA.Action.setInfo(.failure(NSErrorBuilderFake().entity)))
+    func testHandleSetInfoFailure() {
+        let action = LoginTCA.Action.setInfo(.failure(NSErrorBuilderFake().entity))
+        let result = performHandle(on: action)
         XCTAssertNil(result)
     }
 }

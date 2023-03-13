@@ -9,7 +9,7 @@ import XCTest
 
 @testable import Module
 
-class LoginTCAReducerTests: XCTestCase {
+final class LoginTCAReducerTests: XCTestCase {
     let signIn = LoginTCA.DataBuilderFake().entity
     let userSession = UserSessionBuilderFake().entity
     let error = NSErrorBuilderFake().entity
@@ -17,7 +17,7 @@ class LoginTCAReducerTests: XCTestCase {
     let initialState = LoginTCA.State.idle
 }
 
-// MARK: - Idle State
+// MARK: - idle
 extension LoginTCAReducerTests {
     func testReduceGetUserSession() {
         let action = LoginTCA.Action.getUserSession
@@ -26,28 +26,28 @@ extension LoginTCAReducerTests {
     }
 }
 
-// MARK: - Loading State
+// MARK: - loading
 extension LoginTCAReducerTests {
-    func testReduceSignInAction() {
+    func testReduceGetSignIn() {
         let action = LoginTCA.Action.getSignIn
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, LoginTCA.State.loading)
     }
-    func testReduceSignOutAction() {
+    func testReduceGetSignOut() {
         let action = LoginTCA.Action.getSignOut
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .loading)
     }
-    func testReduceGetInfoAction() {
+    func testReduceGetInfo() {
         let action = LoginTCA.Action.getInfo
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, LoginTCA.State.loading)
     }
 }
 
-// MARK: - SignIn State
+// MARK: - signIn
 extension LoginTCAReducerTests {
-    func testGetInfoResultSuccessAction() {
+    func testReduceSetInfoSuccess() {
         let action = LoginTCA.Action.setInfo(.success(userInfo))
         let signIn = LoginTCA.DataBuilderFake()
             .set(\.name, userInfo.name)
@@ -60,48 +60,48 @@ extension LoginTCAReducerTests {
     }
 }
 
-// MARK: - SignOut State
+// MARK: - signOut
 extension LoginTCAReducerTests {
-    func testSignOutResultSuccessAction() {
+    func testReduceSetSignOutSuccess() {
         let action = LoginTCA.Action.setSignOut(.success(()))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, LoginTCA.State.signOut)
     }
 }
 
-// MARK: - Error State
+// MARK: - failed
 extension LoginTCAReducerTests {
-    func testReduceGetUserSessionResultFailureAction() {
+    func testReduceSetUserSessionFailure() {
         let action = LoginTCA.Action.setUserSession(.failure(error))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
-    func testSignInResultFailureAction() {
+    func testReduceSetSignInFailure() {
         let action = LoginTCA.Action.setSignIn(.failure(error))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
-    func testSignOutResultFailureAction() {
+    func testReduceSetSignOutFailure() {
         let action = LoginTCA.Action.setSignOut(.failure(error))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
-    func testGetInfoResultFailureAction() {
+    func testReduceSetInfoFailure() {
         let action = LoginTCA.Action.setInfo(.failure(error))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .failed(error.localizedDescription))
     }
 }
 
-// MARK: - Break State
+// MARK: - break
 extension LoginTCAReducerTests {
-    func testReduceGetUserSessionResultSuccessAction() {
+    func testReduceSetUserSessionSuccess() {
         let action = LoginTCA.Action.setUserSession(.success(userSession))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, .idle)
     }
 
-    func testSignInResultSuccessAction() {
+    func testReduceSetSignInSuccess() {
         let action = LoginTCA.Action.setSignIn(.success(userSession))
         let newState = LoginTCA.reduce(action, with: initialState)
         XCTAssertEqual(newState, LoginTCA.State.idle)

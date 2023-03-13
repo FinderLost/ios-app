@@ -21,11 +21,6 @@ class LoginTCAStateTests: XCTestCase {
         XCTAssertTrue(state.hasError.isNil)
     }
 
-    func testIsLoading() {
-        let state = LoginTCA.State.loading
-        XCTAssertTrue(state.isLoading)
-    }
-
     func testIsSignIn() {
         let state = LoginTCA.State.signIn(signIn)
         XCTAssertTrue(state.isSignIn)
@@ -36,13 +31,18 @@ class LoginTCAStateTests: XCTestCase {
         XCTAssertTrue(state.isSignOut)
     }
 
-    func testLastSignIn() {
+    func testHasData() {
         let state = LoginTCA.State.signIn(signIn)
         XCTAssertEqual(state.hasData, signIn)
     }
 
-    func testError() {
+    func testHasError() {
         let state = LoginTCA.State.failed("Test Error")
         XCTAssertEqual(state.hasError, "Test Error")
+    }
+
+    func testIsLoading() {
+        let state = LoginTCA.State.loading
+        XCTAssertTrue(state.isLoading)
     }
 }
