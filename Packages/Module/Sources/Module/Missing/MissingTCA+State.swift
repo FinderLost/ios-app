@@ -1,5 +1,5 @@
 //
-//  MissingTCA.swift
+//  MissingTCA+State.swift
 //  
 //
 //  Created by Andres Felipe Alzate Restrepo on 25/2/23.
@@ -33,10 +33,10 @@ public enum MissingTCA {
         }
     }
     public enum State: ReduxState {
-        case idle
         case success(Data)
-        case loading
         case failed(String)
+        case loading
+        case idle
 
         public var isLoading: Bool {
             if case .loading = self { return true }
@@ -50,9 +50,5 @@ public enum MissingTCA {
             guard case let .failed(error) = self else { return nil }
             return error
         }
-    }
-    public enum Action: ReduxAction {
-        case getMissingList
-        case setMissingList(Result<[Missing], Error>)
     }
 }

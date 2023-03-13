@@ -26,11 +26,11 @@ public enum LoginTCA {
         }
     }
     public enum State: ReduxState {
-        case idle
         case signIn(Data)
         case signOut
-        case loading
         case failed(String)
+        case loading
+        case idle
 
         public var isLoading: Bool {
             if case .loading = self { return true }

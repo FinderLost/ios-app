@@ -1,5 +1,5 @@
 //
-//  Missing.swift
+//  MissingTCA+Handler.swift
 //  
 //
 //  Created by Andres Felipe Alzate Restrepo on 25/2/23.
@@ -32,7 +32,7 @@ extension MissingTCA {
                     .eraseToAnyPublisher()
 
             case .setMissingList:
-                return Empty().eraseToAnyPublisher()
+                return nil
             }
         }
     }
