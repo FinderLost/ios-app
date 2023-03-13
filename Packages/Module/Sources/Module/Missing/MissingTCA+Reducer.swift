@@ -15,33 +15,22 @@ extension MissingTCA: Reducer {
         var newState = state
 
         switch action {
+            // MARK: - idle
+            // MARK: - loading
         case .getMissingList:
             newState = .loading
 
+            // MARK: - success
         case let .setMissingList(.success(value)):
             newState = .success(MissingTCA.Data(missingList: value))
 
+            // MARK: - failed
         case let .setMissingList(.failure(error)):
             newState = .failed(error.localizedDescription)
+
+            // MARK: - break
         }
 
         return newState
-    }
-}
-
-private extension MissingTCA.Data {
-    init(missingList: [Missing]) {
-        self.init(
-            publicList: missingList.map(MissingTCA.DataItem.init)
-        )
-    }
-}
-
-private extension MissingTCA.DataItem {
-    init(missing: Missing) {
-        self.init(
-            name: missing.name,
-            description: missing.description
-        )
     }
 }
