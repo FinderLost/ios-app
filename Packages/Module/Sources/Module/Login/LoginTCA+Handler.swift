@@ -22,28 +22,28 @@ extension LoginTCA {
         public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never>? {
             guard let action = context.action as? LoginTCA.Action else { return nil }
             switch action {
-                // MARK: - Info
+                // MARK: - Call getInfo
             case .getInfo:
                 return userRepository.getInfo()
                     .map { LoginTCA.Action.setInfo(.success($0)) }
                     .catch { Just(LoginTCA.Action.setInfo(.failure($0))) }
                     .eraseToAnyPublisher()
 
-                // MARK: - SignIn
+                // MARK: - Call signIn
             case .getSignIn:
                 return userRepository.signIn()
                     .map { LoginTCA.Action.setSignIn(.success($0)) }
                     .catch { Just(LoginTCA.Action.setSignIn(.failure($0))) }
                     .eraseToAnyPublisher()
 
-                // MARK: - UserSession
+                // MARK: - Call restorePreviousSignIn
             case .getUserSession:
                 return userRepository.restorePreviousSignIn()
                     .map { LoginTCA.Action.setUserSession(.success($0)) }
                     .catch { Just(LoginTCA.Action.setUserSession(.failure($0))) }
                     .eraseToAnyPublisher()
 
-                // MARK: - SignOut
+                // MARK: - Call signOut
             case .getSignOut:
                 return userRepository.signOut()
                     .map { LoginTCA.Action.setSignOut(.success($0)) }

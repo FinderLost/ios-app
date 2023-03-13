@@ -12,15 +12,18 @@ extension LoginTCA: Reducer {
         var newState = state
 
         switch action {
+            // MARK: - idle
         case .getUserSession:
             newState = .idle
 
+            // MARK: - loading
         case
                 .getSignIn,
                 .getSignOut,
                 .getInfo:
             newState = .loading
 
+            // MARK: - signIn
         case
             let .setInfo(.success(value)):
             let signIn = LoginTCA.Data(
@@ -31,9 +34,11 @@ extension LoginTCA: Reducer {
 
             newState = .signIn(signIn)
 
+            // MARK: - signOut
         case .setSignOut(.success):
             newState = .signOut
 
+            // MARK: - failed
         case
                 let .setUserSession(.failure(error)),
                 let .setSignIn(.failure(error)),
@@ -41,6 +46,7 @@ extension LoginTCA: Reducer {
                 let .setInfo(.failure(error)):
             newState = .failed(error.localizedDescription)
 
+            // MARK: - break
         case
                 .setUserSession(.success),
                 .setSignIn(.success):
