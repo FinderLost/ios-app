@@ -19,7 +19,7 @@ protocol PreviewContent {
 
 // MARK: - Module state BF
 extension PreviewContent {
-    static var loginStateBuilderFake: BuilderFake.Login.Data { .init() }
+    static var loginStateBuilderFake: BuilderFake.LoginTCA.Data { .init() }
     static var missingStateBuilderFake: BuilderFake.MissingTCA.Data { .init() }
     static var missingItemBuilderFake: BuilderFake.MissingTCA.DataItem { .init() }
 }

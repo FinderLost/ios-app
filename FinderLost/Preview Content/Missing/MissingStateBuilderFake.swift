@@ -5,6 +5,7 @@
 //  Created by Andres Felipe Alzate Restrepo on 25/2/23.
 //
 
+import Module
 import Utilities
 
 extension BuilderFake {

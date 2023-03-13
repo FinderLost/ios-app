@@ -35,6 +35,9 @@
 		55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */; };
 		55ACBBBB299AE865008288E5 /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 55ACBBBA299AE865008288E5 /* SwifterSwift */; };
 		55AD011E29B3983800D32A77 /* MissingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AD011D29B3983800D32A77 /* MissingItemView.swift */; };
+		55D10A7729BEAA09005FC2E1 /* BuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D10A7629BEAA09005FC2E1 /* BuilderFake.swift */; };
+		55D10A7A29BEAB20005FC2E1 /* LoginStateBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D10A7529BEA9FE005FC2E1 /* LoginStateBuilderFake.swift */; };
+		55D10A7B29BEAB24005FC2E1 /* MissingStateBuilderFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D10A7929BEAA10005FC2E1 /* MissingStateBuilderFake.swift */; };
 		55DBD2CE2997C3D6003CC4F7 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CD2997C3D6003CC4F7 /* Domain */; };
 		55DBD2D02997C3E1003CC4F7 /* Redux in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2CF2997C3E1003CC4F7 /* Redux */; };
 		55DBD2D22997C3EB003CC4F7 /* Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 55DBD2D12997C3EB003CC4F7 /* Utilities */; };
@@ -78,6 +81,9 @@
 		55A9D06229A03D2600B9CD28 /* HandlerDI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandlerDI.swift; sourceTree = "<group>"; };
 		55A9D06429A0EB0600B9CD28 /* PreviewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContent.swift; sourceTree = "<group>"; };
 		55AD011D29B3983800D32A77 /* MissingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingItemView.swift; sourceTree = "<group>"; };
+		55D10A7529BEA9FE005FC2E1 /* LoginStateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStateBuilderFake.swift; sourceTree = "<group>"; };
+		55D10A7629BEAA09005FC2E1 /* BuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuilderFake.swift; sourceTree = "<group>"; };
+		55D10A7929BEAA10005FC2E1 /* MissingStateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissingStateBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2D729982063003CC4F7 /* StateBuilderFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateBuilderFake.swift; sourceTree = "<group>"; };
 		55DBD2DC29982B78003CC4F7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = Packages/DesignSystem; sourceTree = "<group>"; };
 		55DBD2DF299832B1003CC4F7 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -212,6 +218,22 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		55D10A7429BEA9FE005FC2E1 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				55D10A7529BEA9FE005FC2E1 /* LoginStateBuilderFake.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		55D10A7829BEAA10005FC2E1 /* Missing */ = {
+			isa = PBXGroup;
+			children = (
+				55D10A7929BEAA10005FC2E1 /* MissingStateBuilderFake.swift */,
+			);
+			path = Missing;
+			sourceTree = "<group>";
+		};
 		55D37C4F2996ED1E00947787 /* Packages */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +315,10 @@
 		55FE80DE294D066400763BE7 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				55D10A7629BEAA09005FC2E1 /* BuilderFake.swift */,
 				55DBD2D529982028003CC4F7 /* FinderLost */,
+				55D10A7429BEA9FE005FC2E1 /* Login */,
+				55D10A7829BEAA10005FC2E1 /* Missing */,
 				55FE80DF294D066400763BE7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -423,6 +448,8 @@
 				55DBD2E42998470D003CC4F7 /* GoogleSignInButton.swift in Sources */,
 				55A9D06529A0EB0600B9CD28 /* PreviewContent.swift in Sources */,
 				552F5586297D670200E2EFBF /* YourMissingView.swift in Sources */,
+				55D10A7729BEAA09005FC2E1 /* BuilderFake.swift in Sources */,
+				55D10A7B29BEAB24005FC2E1 /* MissingStateBuilderFake.swift in Sources */,
 				559E604529B403C100168337 /* MissingAddView.swift in Sources */,
 				559E604D29B40B3D00168337 /* HelpView.swift in Sources */,
 				55A03E082997F61200FE8091 /* StoreBuilderFake.swift in Sources */,
@@ -435,6 +462,7 @@
 				552F559B297D791E00E2EFBF /* AppDelegate.swift in Sources */,
 				55FE80D9294D066200763BE7 /* FinderLostApp.swift in Sources */,
 				554A7EED29B73CD40072E535 /* ProfileDetail.swift in Sources */,
+				55D10A7A29BEAB20005FC2E1 /* LoginStateBuilderFake.swift in Sources */,
 				559E604B29B40B0B00168337 /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
