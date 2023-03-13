@@ -13,4 +13,7 @@ final class RepositoryDI: SharedContainer {
     static let user = Factory<UserRepository>(scope: .test) {
         UserRepositoryMock()
     }
+    static let missing = Factory<MissingRepository>(scope: .test) {
+        MissingRepositoryMock()
+    }
 }
