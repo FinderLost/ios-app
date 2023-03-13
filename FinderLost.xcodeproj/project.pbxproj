@@ -293,12 +293,12 @@
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
-				5563444529BF5DC500C3F4DA /* Release notes */,
 				55EDE69D29BB36FE002BD45C /* CHANGELOG.md */,
 				55FE80D7294D066200763BE7 /* FinderLost */,
 				55EDCE6A2996F255002A52BD /* Frameworks */,
 				55D37C4F2996ED1E00947787 /* Packages */,
 				55FE80D6294D066200763BE7 /* Products */,
+				5563444529BF5DC500C3F4DA /* Release notes */,
 			);
 			sourceTree = "<group>";
 		};
@@ -425,6 +425,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		5532FF5E29B69A30007960D2 /* GoogleService-Info */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
