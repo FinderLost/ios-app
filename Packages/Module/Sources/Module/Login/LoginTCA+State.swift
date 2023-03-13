@@ -1,5 +1,5 @@
 //
-//  LoginTCA.swift
+//  LoginTCA+State.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
@@ -52,15 +52,5 @@ public enum LoginTCA {
             guard case let .failed(error) = self else { return nil }
             return error
         }
-    }
-    public enum Action: ReduxAction {
-        case getUserSession
-        case setUserSession(Result<UserSession, Error>)
-        case getSignIn
-        case setSignIn(Result<UserSession, Error>)
-        case getSignOut
-        case setSignOut(Result<Void, Error>)
-        case getInfo
-        case setInfo(Result<UserInfo, Error>)
     }
 }

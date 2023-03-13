@@ -1,5 +1,5 @@
 //
-//  LoginHandler.swift
+//  LoginTCA+Handler.swift
 //  FinderLost
 //
 //  Created by Andres Felipe Alzate Restrepo on 31/1/23.
@@ -22,33 +22,45 @@ extension LoginTCA {
         public func handle(_ context: some HandlerContext) -> AnyPublisher<ReduxAction, Never>? {
             guard let action = context.action as? LoginTCA.Action else { return nil }
             switch action {
-
-            case .setSignIn(.success),
-                    .setUserSession(.success),
-                    .getInfo:
+                // MARK: - Info
+            case .getInfo:
                 return userRepository.getInfo()
-                    .compactMap { LoginTCA.Action.setInfo(.success($0)) }
+                    .map { LoginTCA.Action.setInfo(.success($0)) }
                     .catch { Just(LoginTCA.Action.setInfo(.failure($0))) }
                     .eraseToAnyPublisher()
 
+                // MARK: - SignIn
             case .getSignIn:
                 return userRepository.signIn()
-                    .compactMap { LoginTCA.Action.setSignIn(.success($0)) }
+                    .map { LoginTCA.Action.setSignIn(.success($0)) }
                     .catch { Just(LoginTCA.Action.setSignIn(.failure($0))) }
                     .eraseToAnyPublisher()
 
+                // MARK: - UserSession
             case .getUserSession:
                 return userRepository.restorePreviousSignIn()
                     .map { LoginTCA.Action.setUserSession(.success($0)) }
                     .catch { Just(LoginTCA.Action.setUserSession(.failure($0))) }
                     .eraseToAnyPublisher()
 
-            case .getSignOut, .setUserSession(.failure):
+                // MARK: - SignOut
+            case .getSignOut:
                 return userRepository.signOut()
                     .map { LoginTCA.Action.setSignOut(.success($0)) }
                     .catch { Just(LoginTCA.Action.setSignOut(.failure($0))) }
                     .eraseToAnyPublisher()
 
+                // MARK: - Trigger getInfo
+            case .setSignIn(.success), .setUserSession(.success):
+                return Just(LoginTCA.Action.getInfo)
+                    .eraseToAnyPublisher()
+
+                // MARK: - Trigger getSignOut
+            case .setUserSession(.failure):
+                return Just(LoginTCA.Action.getSignOut)
+                    .eraseToAnyPublisher()
+
+                // MARK: - Return nil
             case
                     .setSignIn(.failure),
                     .setSignOut,

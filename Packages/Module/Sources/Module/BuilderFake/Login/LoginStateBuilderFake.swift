@@ -14,7 +14,9 @@ extension BuilderFake {
         public struct Data: Modifiable {
             var email: String = "Test User"
             var name: String = "test@email.com"
-            var imageUrl: URL? = URL(string: "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png")
+            var imageUrl: URL? = URL(
+                string: "https://cdn.icon-icons.com/icons2/2468/PNG/512/user_kids_avatar_user_profile_icon_149314.png"
+            )
             public init() {}
             public var entity: Module.LoginTCA.Data {
                 .init(
