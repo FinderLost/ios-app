@@ -63,6 +63,7 @@
 		5532FF5D29B699E0007960D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		554A7EE929B72E570072E535 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		554A7EEC29B73CD40072E535 /* ProfileDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetail.swift; sourceTree = "<group>"; };
+		5563444629BF5DE800C3F4DA /* iOS FinderLost 1.0.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "iOS FinderLost 1.0.md"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.markdown; };
 		5566D73E2997BF6F005A3A93 /* Domain */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Domain; path = Packages/Domain; sourceTree = "<group>"; };
 		5566D7412997C04D005A3A93 /* Redux */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Redux; path = Packages/Redux; sourceTree = "<group>"; };
 		5566D7482997C177005A3A93 /* Utilities */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Utilities; path = Packages/Utilities; sourceTree = "<group>"; };
@@ -210,6 +211,14 @@
 			path = PRO;
 			sourceTree = "<group>";
 		};
+		5563444529BF5DC500C3F4DA /* Release notes */ = {
+			isa = PBXGroup;
+			children = (
+				5563444629BF5DE800C3F4DA /* iOS FinderLost 1.0.md */,
+			);
+			path = "Release notes";
+			sourceTree = "<group>";
+		};
 		5591F663297F2C24007F7A1C /* Info */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +293,7 @@
 		55FE80CC294D066200763BE7 = {
 			isa = PBXGroup;
 			children = (
+				5563444529BF5DC500C3F4DA /* Release notes */,
 				55EDE69D29BB36FE002BD45C /* CHANGELOG.md */,
 				55FE80D7294D066200763BE7 /* FinderLost */,
 				55EDCE6A2996F255002A52BD /* Frameworks */,
@@ -610,7 +620,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -645,7 +655,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.finderlost.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
