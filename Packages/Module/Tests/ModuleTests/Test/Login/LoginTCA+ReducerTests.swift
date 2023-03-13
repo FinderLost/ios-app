@@ -1,5 +1,5 @@
 //
-//  LoginTCAReduceTests.swift
+//  LoginTCA+ReducerTests.swift
 //  FinderLostTests
 //
 //  Created by Andres Felipe Alzate Restrepo on 13/2/23.
@@ -9,7 +9,7 @@ import XCTest
 
 @testable import Module
 
-class LoginTCAReduceTests: XCTestCase {
+class LoginTCAReducerTests: XCTestCase {
     let signIn = LoginTCA.DataBuilderFake().entity
     let userSession = UserSessionBuilderFake().entity
     let error = NSErrorBuilderFake().entity
@@ -18,7 +18,7 @@ class LoginTCAReduceTests: XCTestCase {
 }
 
 // MARK: - Idle State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testReduceGetUserSession() {
         let action = LoginTCA.Action.getUserSession
         let newState = LoginTCA.reduce(action, with: initialState)
@@ -27,7 +27,7 @@ extension LoginTCAReduceTests {
 }
 
 // MARK: - Loading State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testReduceSignInAction() {
         let action = LoginTCA.Action.getSignIn
         let newState = LoginTCA.reduce(action, with: initialState)
@@ -46,7 +46,7 @@ extension LoginTCAReduceTests {
 }
 
 // MARK: - SignIn State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testGetInfoResultSuccessAction() {
         let action = LoginTCA.Action.setInfo(.success(userInfo))
         let signIn = LoginTCA.DataBuilderFake()
@@ -61,7 +61,7 @@ extension LoginTCAReduceTests {
 }
 
 // MARK: - SignOut State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testSignOutResultSuccessAction() {
         let action = LoginTCA.Action.setSignOut(.success(()))
         let newState = LoginTCA.reduce(action, with: initialState)
@@ -70,7 +70,7 @@ extension LoginTCAReduceTests {
 }
 
 // MARK: - Error State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testReduceGetUserSessionResultFailureAction() {
         let action = LoginTCA.Action.setUserSession(.failure(error))
         let newState = LoginTCA.reduce(action, with: initialState)
@@ -94,7 +94,7 @@ extension LoginTCAReduceTests {
 }
 
 // MARK: - Break State
-extension LoginTCAReduceTests {
+extension LoginTCAReducerTests {
     func testReduceGetUserSessionResultSuccessAction() {
         let action = LoginTCA.Action.setUserSession(.success(userSession))
         let newState = LoginTCA.reduce(action, with: initialState)

@@ -36,9 +36,7 @@ final class HandlerContextImplTests: XCTestCase {
     }
 
     func testNextActionUnwrapFail() {
-        struct ExampleActionFail: ReduxAction, Equatable {
-            let text: String
-        }
+        struct ExampleActionFail: ReduxAction, Equatable { }
         let action = ExampleAction(value: 0)
         let state = ExampleState(value: 0)
         let next: (ExampleAction) -> ReduxAction = { $0 }
@@ -50,7 +48,7 @@ final class HandlerContextImplTests: XCTestCase {
         )
 
         expectAssertionFailure(expectedMessage: "Fails to unwrap the next action") {
-            let nextAction = ExampleActionFail(text: "not an action")
+            let nextAction = ExampleActionFail()
             let result = context.nextAction(nextAction)
             XCTAssertNil(result, "The next action should return nil if it fails to unwrap")
         }
